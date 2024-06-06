@@ -1,0 +1,10 @@
+build/
+stripeStore/simulation*
+stripeStore/standalone*
+stripeStore/placement
+res
+conf/*
+scripts/start.py
+scripts/stop.py
+
+*/*/log/*
