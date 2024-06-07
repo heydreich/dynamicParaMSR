@@ -2,9 +2,12 @@ build/
 stripeStore/simulation*
 stripeStore/standalone*
 stripeStore/placement
+stripeStore/*
 res
 conf/*
 scripts/start.py
 scripts/stop.py
 
 */*/log/*
+
+log.txt

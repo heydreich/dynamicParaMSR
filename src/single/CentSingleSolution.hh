@@ -11,13 +11,13 @@ class CentSingleSolution : public SingleSolutionBase {
     private:
 
         //void genRepairBatchesForSingleFailure(int fail_node_id,  string scenario, bool enqueue);
-        void genCentralizedColoringForSingleFailure(Stripe* stripe, unordered_map<int, int>& res, int fail_node_id, string scenario);
+        void genCentralizedColoringForSingleFailure(Stripe* stripe, unordered_map<int, int>& res, int failblkidx);
 
     public:
 
         CentSingleSolution();
 
-        void genRepairSolution(int failnodeid);
+        void genRepairSolution(string blkname);
 };
 
 #endif

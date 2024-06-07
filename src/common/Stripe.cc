@@ -60,6 +60,38 @@ ECDAG* Stripe::genRepairECDAG(ECBase* ec, int fail_node_id) {
     return _ecdag;
 }
 
+ECDAG* Stripe::genRepairECDAG(ECBase* ec, string blkname) {
+    vector<int> from;
+    vector<int> to;
+
+    int ecw = ec->_w;                                                                                                                                   
+    int ecn = ec->_n;
+
+    // blkidx refers to the idx of a block in this stripe
+    for (int blkidx=0; blkidx<ecn; blkidx++){
+        string curblk = _blklist[blkidx];
+        if (curblk == blkname) {
+            // this is the failed block, we need to repair this block
+            // offset refers the offset of sub-packets
+            for (int offset=0; offset < ecw; offset++) {
+                int pktidx = blkidx * ecw + offset;
+                to.push_back(pktidx);
+            }
+            _fail_blk_idx = blkidx;
+        } else {
+            for (int offset=0; offset < ecw; offset++) {
+                int pktidx = blkidx * ecw + offset;
+                from.push_back(pktidx);
+            }
+        }
+    }
+    _ecdag = ec->Decode(from, to);
+    // cout << "debug 57 " << endl;
+    // _ecdag->dumpTOPO();
+    _ecdag->Concact(to);
+    return _ecdag;
+}
+
 ECDAG* Stripe::getECDAG() {
     return _ecdag;
 }
@@ -582,15 +614,15 @@ unordered_map<int, vector<Task*>> Stripe::genRepairTasks(int batchid, int ecn, i
         }
     }
 
-    // for (auto item: _taskmap) {
-    //     int nodeid = item.first;
-    //     vector<Task*> list = item.second;
+    for (auto item: _taskmap) {
+        int nodeid = item.first;
+        vector<Task*> list = item.second;
 
-    //     cout << "----- nodeid: " << nodeid << endl;
-    //     for (int i=0; i<list.size(); i++) {
-    //         list[i]->dump();
-    //     }
-    // }
+        cout << "----- nodeid: " << nodeid << endl;
+        for (int i=0; i<list.size(); i++) {
+            list[i]->dump();
+        }
+    }
 
     return _taskmap;
 }
@@ -1219,4 +1251,29 @@ vector<int> Stripe::getsolution(){
         ret.push_back(it.second);
     }
     return ret;
+}
+
+int Stripe::getBlockIdxByName(string blkname) {
+    int toret = -1;
+    for (int i=0; i<_blklist.size(); i++) {
+        string blk = _blklist[i];
+        if (blkname == blk) {
+            toret = i;
+            break;
+        }
+    }
+    return toret;
+}
+
+int Stripe::getNodeIdByBlock(string blkname) {
+    int toret = -1;
+    for (int i=0; i<_blklist.size(); i++) {
+        string blk = _blklist[i];
+        int nodeid = _nodelist[i];
+        if (blkname == blk) {
+            toret = nodeid;
+            break;
+        }
+    }
+    return toret;
 }

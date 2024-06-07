@@ -10,18 +10,20 @@ using namespace std;
 void usage() {
     cout << "Usage: ./SingleCoordinator " << endl;
     cout << "   1. method [centralize|pararc|naive|dynamic]" << endl;
-    cout << "   2. failnodeid [0]" << endl;
+    cout << "   2. blockname " << endl;
 }
 
 int main(int argc, char** argv) {
 
-    if (argc < 4) {
+    if (argc < 3) {
         usage();
         return 0;
     }
 
     string method = string(argv[1]);
-    int failnodeid = atoi(argv[2]);
+    string blkname = string(argv[2]);
+    cout << "method: " << method << ", blkname: " << blkname << endl;
+    //int failnodeid = atoi(argv[2]);
     
     string configpath = "conf/sysSetting.xml";
     Config* conf = new Config(configpath);
@@ -29,12 +31,15 @@ int main(int argc, char** argv) {
     int eck = conf->_eck;
     int ecw = conf->_ecw;
     
+    // generate repair solution
     StripeStore* ss = new StripeStore(conf); 
     Coordinator* coor = new Coordinator(conf, ss);
-    coor->initSingleBlockRepair(method, failnodeid);
-    struct timeval time1, time2, time3, time4, time5;
 
-    coor->repairSingleBlock();
+    struct timeval time1, time2, time3, time4, time5;
+    gettimeofday(&time1, NULL);
+    coor->repairSingleBlock(method, blkname);
+    gettimeofday(&time2, NULL);
+    cout << "SingleCoordinator::repair time = " << DistUtil::duration(time1, time2) << endl;
 
     // clean
     if (coor)

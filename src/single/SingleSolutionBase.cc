@@ -16,7 +16,8 @@ void SingleSolutionBase::init(Stripe* stripe, ECBase* ec, string codename, Confi
     _conf = conf;
 }
 
-void SingleSolutionBase::genRepairTasks(int ecn, int eck, int ecw, Config* conf, unordered_map<int, int> fail2repair, unsigned int coorIp) {
+//void SingleSolutionBase::genRepairTasks(int ecn, int eck, int ecw, Config* conf, unordered_map<int, int> fail2repair, unsigned int coorIp) {
+void SingleSolutionBase::genRepairTasks(int ecn, int eck, int ecw){
 
     struct timeval time1, time2, time3, time4, time5, time6;
     gettimeofday(&time1, NULL);
@@ -25,17 +26,18 @@ void SingleSolutionBase::genRepairTasks(int ecn, int eck, int ecw, Config* conf,
     unordered_map<int, vector<int>> nodeid2internalidx;
 
     int _batch_id = 0;
+    unordered_map<int, int> fail2repair; // for single block repair, we set the repair node when generating the coloring 
     unordered_map<int, vector<Task*>> curtaskmap = _stripe->genRepairTasks(_batch_id, ecn, eck, ecw, fail2repair);
 
     // mark that nodeid needs to deal with tasks for the i-th stripe in this batch
-    int i=0; // stripeid = 0;
+    int stripeid = 0;
     for (auto item: curtaskmap) {
         int nodeid = item.first;
         if (nodeid2internalidx.find(nodeid) == nodeid2internalidx.end()) {
-            vector<int> list = {i};
+            vector<int> list = {stripeid};
             nodeid2internalidx.insert(make_pair(nodeid, list));
         } else
-            nodeid2internalidx[nodeid].push_back(i); 
+            nodeid2internalidx[nodeid].push_back(stripeid); 
     }
     gettimeofday(&time2, NULL);
 
@@ -63,11 +65,11 @@ void SingleSolutionBase::genRepairTasks(int ecn, int eck, int ecw, Config* conf,
 
         // 1.1 get ip for nodeid
         unsigned int ip;
-        if (nodeid < conf->_agentsIPs.size()) {
-            ip = conf->_agentsIPs[nodeid];
+        if (nodeid < _conf->_agentsIPs.size()) {
+            ip = _conf->_agentsIPs[nodeid];
         } else {
-            int idx = nodeid - conf->_agentsIPs.size();
-            ip = conf->_repairIPs[idx];
+            int idx = nodeid - _conf->_agentsIPs.size();
+            ip = _conf->_repairIPs[idx];
         }
 
         // 1.2 prepare NodeBatchTask
@@ -94,6 +96,7 @@ void SingleSolutionBase::genRepairTasks(int ecn, int eck, int ecw, Config* conf,
 
     // 2. for each node, we wait for a response that make sure corresponding node finishes assigned tasks for this batch
     tid=0;
+    unsigned int coorIp = _conf->_coorIp;
     for (auto item: nodeid2internalidx) {
         int nodeid = item.first;
         NodeBatchTask* nbtask = batchtaskmap[nodeid];
@@ -111,5 +114,5 @@ void SingleSolutionBase::genRepairTasks(int ecn, int eck, int ecw, Config* conf,
             delete nbtask;
     }
     gettimeofday(&time6, NULL);
-    LOG << "RepairBatch::genRepairTasks.time: " << DistUtil::duration(time1, time6) << endl;
+    LOG << "SingleSolutionBase::genRepairTasks.time: " << DistUtil::duration(time1, time6) << endl;
 }

@@ -33,6 +33,10 @@ StripeStore::StripeStore(Config* conf) {
         
         Stripe* curstripe = new Stripe(stripeid++, stripename, blklist, iplist, nodeidlist);
         _stripe_list.push_back(curstripe);
+
+        for (string blk: blklist) {
+            _blk2stripe.insert(make_pair(blk, curstripe));
+        }
     }
 
     cout << "number of stripes: " << _stripe_list.size() << endl;
@@ -50,4 +54,9 @@ StripeStore::~StripeStore() {
 
 vector<Stripe*> StripeStore::getStripeList() {
     return _stripe_list;
+}
+
+Stripe* StripeStore::getStripeFromBlock(string blkname) {
+    assert(_blk2stripe.find(blkname) != _blk2stripe.end());
+    return _blk2stripe[blkname];
 }

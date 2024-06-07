@@ -4,14 +4,21 @@ CentSingleSolution::CentSingleSolution(){
 
 }
 
-void CentSingleSolution::genRepairSolution(int failnodeid) {
+void CentSingleSolution::genRepairSolution(string blkname) {
+
+    _blkname = blkname;
     
     // 1.1 construct ECDAG to repair
-    ECDAG* curecdag = _stripe->genRepairECDAG(_ec, failnodeid);
+    ECDAG* curecdag = _stripe->genRepairECDAG(_ec, blkname);
+
+    // 1.2 get fail block idx
+    int fail_blk_idx = _stripe->getBlockIdxByName(blkname);
+    int fail_node_id = _stripe->getNodeIdByBlock(blkname);
+    cout << "fail_node_id: " << fail_node_id << endl;
     
     // 1.2 generate centralized coloring for the current stripe
     unordered_map<int, int> curcoloring;
-    genCentralizedColoringForSingleFailure(_stripe, curcoloring, failnodeid, "standby");
+    genCentralizedColoringForSingleFailure(_stripe, curcoloring, fail_blk_idx);
     
     // set the coloring result in curstripe
     _stripe->setColoring(curcoloring);
@@ -21,8 +28,7 @@ void CentSingleSolution::genRepairSolution(int failnodeid) {
 }
 
 
-void CentSingleSolution::genCentralizedColoringForSingleFailure(Stripe* stripe, unordered_map<int, int>& res, 
-    int fail_node_id, string scenario) {
+void CentSingleSolution::genCentralizedColoringForSingleFailure(Stripe* stripe, unordered_map<int, int>& res, int failblkidx) {
     // map a sub-packet idx to a real physical node id
     
     ECDAG* ecdag = stripe->getECDAG();
@@ -64,9 +70,11 @@ void CentSingleSolution::genCentralizedColoringForSingleFailure(Stripe* stripe, 
         res.insert(make_pair(dagidx, nodeid));
     }
     // 2.1 avoid fail nodeid
+    int fail_node_id = curplacement[failblkidx];
     avoid_node_ids.push_back(fail_node_id);
 
     // 3. figure out a nodeid that performs the centralized repair
+    // note that we assign the newnode for repair
     int repair_node_id = _conf->_agentsIPs.size();
     stripe->_new_node = repair_node_id;
 
@@ -80,13 +88,13 @@ void CentSingleSolution::genCentralizedColoringForSingleFailure(Stripe* stripe, 
         }
     }
 
-    // // debug
-    // for (auto item: res) {
-    //     int dagidx = item.first;
-    //     int nodeid = item.second;
-    //     cout << "dagidx: " << dagidx << ", nodeid: " << nodeid << endl;
-    // }
-
-
+//    // // debug
+//    // for (auto item: res) {
+//    //     int dagidx = item.first;
+//    //     int nodeid = item.second;
+//    //     cout << "dagidx: " << dagidx << ", nodeid: " << nodeid << endl;
+//    // }
+//
+//
     
 }

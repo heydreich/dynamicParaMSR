@@ -11,11 +11,13 @@ class StripeStore{
     private:
         Config* _conf;
         vector<Stripe*> _stripe_list;
+        unordered_map<string, Stripe*> _blk2stripe;
 
     public:
         StripeStore(Config* conf);
         ~StripeStore();
         vector<Stripe*> getStripeList();
+        Stripe* getStripeFromBlock(string blkname);
 };
 
 #endif

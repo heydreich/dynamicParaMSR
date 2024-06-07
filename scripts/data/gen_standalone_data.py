@@ -36,11 +36,11 @@ home_dir_str, stderr = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
 home_dir = home_dir_str.decode().strip()
 
 # proj dir
-proj_dir="{}/parafullnode".format(home_dir)
+proj_dir="{}/dynamicParaMSR".format(home_dir)
 
 script_dir = "{}/scripts".format(proj_dir)
 
-# not varing stripe num 
+# not varing stripe num
 key="{}_{}_{}_{}_{}".format(CODE,ECN,ECK,ECW,BLKMB)
 blk_dir = "{}/blkDir/{}".format(proj_dir,key)
 stripestore_dir = "{}/stripeStore/{}".format(proj_dir,key)

@@ -33,46 +33,46 @@ Coordinator::~Coordinator() {
         delete _ec;
 }
 
-bool Coordinator::initSingleBlockRepair(string method, int failnodeid) {
-    _method = method;
-    _scenario = "standby";
-    _failnodeid = failnodeid;
-    vector<string> param;
-    // 1. create ECBase
-
-    if (_codename == "Clay") {
-        _ec = new Clay(_ecn, _eck, _ecw, {to_string(_ecn-1)});
-    } else if (_codename == "RDP") {
-        _ec = new RDP(_ecn, _eck, _ecw, param);
-    } else if (_codename == "HHXORPlus") {
-        _ec = new HHXORPlus(_ecn, _eck, _ecw, param);
-    } else if (_codename == "BUTTERFLY") {
-        _ec = new BUTTERFLY(_ecn, _eck, _ecw, param);
-    } else {
-        cout << "Non-supported code!" << endl;
-        return 0;
-    }
-
-    int batchsize = 1;
-    int agentnum = _conf->_agents_num;
-
-    // 2. create solutionk
-    if (method == "centralize") {
-        _ssol = new CentSingleSolution();
-        _ssol->init(_ss->getStripeList()[0], _ec, _codename, _conf);
-        _ssol->genRepairSolution(failnodeid);
-    } 
-
-    _fail2repair.insert(make_pair(failnodeid, _conf->_agentsIPs.size()));
-
-
-//    // 3. fail2repair
-//    if (scenario == "standby") {
-//        _fail2repair.insert(make_pair(failnodeid, _conf->_agentsIPs.size()));
-//    }
-
-    return true;
-}
+//bool Coordinator::initSingleBlockRepair(string method, string blkname) {
+//     _method = method;
+//     Stripe* stripe = _ss->getStripeFromBlock(blkname);
+//
+//     int failblkidx = stripe->getBlockIdxByName(blkname);
+//     cout << "failblkidx = " << failblkidx << endl;
+//
+////     _scenario = "standby";
+////     _failnodeid = failnodeid;
+//
+//     vector<string> param;
+//     // 1. create ECBase
+// 
+//     if (_codename == "Clay") {
+//         _ec = new Clay(_ecn, _eck, _ecw, {to_string(_ecn-1)});
+//     } else if (_codename == "RDP") {
+//         _ec = new RDP(_ecn, _eck, _ecw, param);
+//     } else if (_codename == "HHXORPlus") {
+//         _ec = new HHXORPlus(_ecn, _eck, _ecw, param);
+//     } else if (_codename == "BUTTERFLY") {
+//         _ec = new BUTTERFLY(_ecn, _eck, _ecw, param);
+//     } else {
+//         cout << "Non-supported code!" << endl;
+//         return 0;
+//     }
+// 
+////     int batchsize = 1;
+////     int agentnum = _conf->_agents_num;
+// 
+//     // 2. create solutionk
+//     if (method == "centralize") {
+//         _ssol = new CentSingleSolution();
+//         _ssol->init(stripe, _ec, _codename, _conf);
+//         _ssol->genRepairSolution(blkname);
+//     } 
+// 
+////     _fail2repair.insert(make_pair(failnodeid, _conf->_agentsIPs.size()));
+//
+//    return true;
+//}
 
 bool Coordinator::initRepair(string method, string scenario, int failnodeid) {
     _method = method;
@@ -138,13 +138,46 @@ int Coordinator::genRepairSolutionAsync() {
     return 0;
 }
 
-void Coordinator::repairSingleBlock() {
-    struct timeval time1, time2, time3, time4, time5;
-    unsigned int coorIp = _conf->_coorIp;
+bool Coordinator::repairSingleBlock(string method, string blkname) {
+     _method = method;
+     Stripe* stripe = _ss->getStripeFromBlock(blkname);
 
-    gettimeofday(&time1, NULL);
-    _ssol->genRepairTasks(_ecn, _eck, _ecw, _conf, _fail2repair, coorIp);
-    gettimeofday(&time2, NULL);
+     int failblkidx = stripe->getBlockIdxByName(blkname);
+     cout << "failblkidx = " << failblkidx << endl;
+
+     vector<string> param;
+     // 1. create ECBase
+ 
+     if (_codename == "Clay") {
+         _ec = new Clay(_ecn, _eck, _ecw, {to_string(_ecn-1)});
+     } else if (_codename == "RDP") {
+         _ec = new RDP(_ecn, _eck, _ecw, param);
+     } else if (_codename == "HHXORPlus") {
+         _ec = new HHXORPlus(_ecn, _eck, _ecw, param);
+     } else if (_codename == "BUTTERFLY") {
+         _ec = new BUTTERFLY(_ecn, _eck, _ecw, param);
+     } else {
+         cout << "Non-supported code!" << endl;
+         return 0;
+     }
+ 
+     SingleSolutionBase* _ssol;
+     // 2. create solutionk
+     if (method == "centralize") {
+         _ssol = new CentSingleSolution();
+         _ssol->init(stripe, _ec, _codename, _conf);
+         _ssol->genRepairSolution(blkname);
+     } 
+ 
+     _ssol->genRepairTasks(_ecn, _eck, _ecw);
+
+//     _fail2repair.insert(make_pair(failnodeid, _conf->_agentsIPs.size()));
+//    struct timeval time1, time2, time3, time4, time5;
+//    unsigned int coorIp = _conf->_coorIp;
+//
+//    gettimeofday(&time1, NULL);
+//    _ssol->genRepairTasks(_ecn, _eck, _ecw, _conf, _fail2repair, coorIp);
+//    gettimeofday(&time2, NULL);
 }
 
 void Coordinator::repair() {

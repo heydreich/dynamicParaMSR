@@ -16,6 +16,7 @@ class SingleSolutionBase {
 
         Config* _conf;
         Stripe* _stripe;
+        string _blkname; // the blk name to repair
 
         // targeting ec
         ECBase* _ec;
@@ -26,8 +27,9 @@ class SingleSolutionBase {
         SingleSolutionBase(string param);
 
         void init(Stripe* stripe, ECBase* ec, string codename, Config* conf);
-        void genRepairTasks(int ecn, int eck, int ecw, Config* conf, unordered_map<int, int> fail2repair, unsigned int coorIp);
-        virtual void genRepairSolution(int failnodeid) = 0;
+        //void genRepairTasks(int ecn, int eck, int ecw, Config* conf, unordered_map<int, int> fail2repair, unsigned int coorIp);
+        void genRepairTasks(int ecn, int eck, int ecw);
+        virtual void genRepairSolution(string blkname) = 0;
 };
 
 #endif

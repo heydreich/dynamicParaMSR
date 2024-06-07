@@ -59,6 +59,7 @@ class Stripe {
         int getStripeId();
 
         ECDAG* genRepairECDAG(ECBase* ec, int fail_node_id);
+        ECDAG* genRepairECDAG(ECBase* ec, string blkname);
         ECDAG* getECDAG();
         
         void setColoring(unordered_map<int, int> coloring);
@@ -85,6 +86,8 @@ class Stripe {
         vector<vector<int>> evaluateChange(int agent_num, int idx, int new_color);
         int getMinOutput(int nodeid);
         vector<int> getsolution();
+        int getBlockIdxByName(string blkname);
+        int getNodeIdByBlock(string blkname);
 };
 
 #endif

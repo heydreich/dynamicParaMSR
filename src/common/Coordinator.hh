@@ -40,18 +40,17 @@ class Coordinator {
         vector<RepairBatch*> _repair_batch_list;
         ECBase* _ec;
         SolutionBase* _sol;
-        SingleSolutionBase* _ssol;
 
     public:
         Coordinator(Config* conf, StripeStore* ss);
         ~Coordinator();
 
         bool initRepair(string method, string scenario, int failnodeid);
-        bool initSingleBlockRepair(string method, int failnodeid);
+        //bool initSingleBlockRepair(string method, string blkname);
         vector<RepairBatch*> genRepairSolution();
         int genRepairSolutionAsync();
         void repair();
-        void repairSingleBlock();
+        bool repairSingleBlock(string method, string blkname);
 
         unordered_map<int, int> _fail2repair;
 };
