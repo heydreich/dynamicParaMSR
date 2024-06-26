@@ -21,6 +21,7 @@ class DynamicSolution : public SingleSolutionBase {
         // han add
         bool _debug = false;
         int _batch_size;
+        double cur_thre;
         
 
         // xiaolu add

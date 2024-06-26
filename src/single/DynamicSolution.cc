@@ -221,8 +221,13 @@ void DynamicSolution::genDynamicColoringForSingleFailure(Stripe* stripe, unorder
     int eck = _ec->_k;
     int ecw = _ec->_w;
 
+    vector<int> candidateColors;
     for (int i = 0; i < _conf->_agentsIPs.size()+1; i++) 
+    {
         _interLoadTable.push_back(vector<int>(2, 0));
+        // candidateColors
+        if (i != fail_node_id) candidateColors.push_back(i);
+    }
     
     int fail_block_idx = -1;
     for (int i=0; i<curplacement.size(); i++) {
@@ -237,7 +242,7 @@ void DynamicSolution::genDynamicColoringForSingleFailure(Stripe* stripe, unorder
     int intermediate_num = ecNodeMap.size() - ecHeaders.size() - ecLeaves.size();
     //cout << "number of intermediate vertices: " << intermediate_num << endl;
 
-    vector<int> candidateColors;
+    
     // 1. color leave vertices 
     // If a leave vertex is part of a real block, we first figure out its block index, and then find corresponding node id
     // If a leave vertex is part of a virtual block (shortening), we mark nodeid as -1
@@ -252,7 +257,7 @@ void DynamicSolution::genDynamicColoringForSingleFailure(Stripe* stripe, unorder
             nodeid = curplacement[blkidx];
             avoid_node_ids.push_back(nodeid);
             realLeaves++;
-            if(_interLoadTable[nodeid][0] == 0) candidateColors.push_back(nodeid);
+            // if(_interLoadTable[nodeid][0] == 0) candidateColors.push_back(nodeid);
             _interLoadTable[nodeid][0]++;
         }
         if (DEBUG_ENABLE2) cout << "dagidx : " << dagidx << " , blkidx : " << blkidx <<  " , nodeid : " << nodeid << endl;
@@ -267,8 +272,11 @@ void DynamicSolution::genDynamicColoringForSingleFailure(Stripe* stripe, unorder
     stripe->_new_node = repair_node_id;
     res.insert(make_pair(ecHeaders[0], repair_node_id));
     _interLoadTable[repair_node_id][1] = ecw;
-    candidateColors.push_back(repair_node_id);
+    // candidateColors.push_back(repair_node_id);
     // dumpTable2(_interLoadTable);
+    // for (auto color : candidateColors) {
+    //     cout << "candidateColor : " << color << endl;
+    // }
 
     // intermediate node idxs
     vector<int> itm_idx;

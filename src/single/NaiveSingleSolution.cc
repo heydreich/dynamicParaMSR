@@ -31,7 +31,7 @@ void NaiveSingleSolution::evaluateColoring(Stripe* stripe, vector<int> curres, u
     unordered_map<int, int> coloring_res; 
     for (auto item: coloring) {
         coloring_res.insert(make_pair(item.first, item.second));
-        cout << "32 pair:" << item.first << "," << item.second << endl;
+        // cout << "32 pair:" << item.first << "," << item.second << endl;
     }
     for (int ii=0; ii<curres.size(); ii++) {
         int idx = itm_idx[ii];
