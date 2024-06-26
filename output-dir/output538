@@ -1,0 +1,108 @@
+method: dynamic, blkname: Clay-538-0-0
+0: upload 10, download 10
+1: upload 600, download 130
+2: upload 800, download 1000
+3: upload 510, download 200
+4: upload 600, download 400
+5: upload 1000, download 1000
+/home/jsjs/Desktop/dynamicParaMSR/stripeStore/placement
+blockname:Clay-538-0-0, location: 192.168.7.14, nodeid:0
+blockname:Clay-538-0-1, location: 192.168.7.23, nodeid:1
+blockname:Clay-538-0-2, location: 192.168.7.27, nodeid:2
+blockname:Clay-538-0-3, location: 192.168.7.28, nodeid:3
+blockname:Clay-538-0-4, location: 192.168.7.29, nodeid:4
+number of stripes: 1
+codename: Clay
+ecn: 5
+eck: 3
+ecw: 8
+blkbytes: 268435456
+pktbytes: 65536
+failblkidx = 0
+fail_node_id: 0
+Stripe 0
+  inmap:  0 1 6 0 1 12 
+  outmap: 0 4 7 4 5 0 
+load = 12
+bdwt = 20
+bottleneck: 83.3333
+
+Runtime: 0.369
+Stripe::genRepairTasks
+----- nodeid: 5
+0:0    RecvTask: dagidx: 17 9 19 35 11 33 
+0:0    ReadTask: blockname: ZERO, dagidxlist: 43 41 
+0:0    ComputeTask: 
+            Compute: dstidx 67; srclist: 41 19 ; coefs: 1 2 ; usage: (1, 0) 
+            Compute: dstidx 89; srclist: 41 19 ; coefs: 1 1 ; usage: (1, 0) 
+0:0    RecvTask: dagidx: 75 73 
+0:0    ComputeTask: 
+            Compute: dstidx 57; srclist: 17 89 73 33 ; coefs: 3 7 244 244 ; usage: (1, 0) 
+            Compute: dstidx 3; srclist: 67 43 75 35 ; coefs: 2 6 245 244 ; usage: (1, 0) 
+            Compute: dstidx 59; srclist: 67 43 75 35 ; coefs: 3 7 244 244 ; usage: (1, 0) 
+            Compute: dstidx 1; srclist: 17 89 73 33 ; coefs: 2 6 245 244 ; usage: (1, 0) 
+0:0    RecvTask: dagidx: 2 0 
+0:0    ComputeTask: 
+            Compute: dstidx 5; srclist: 9 57 ; coefs: 1 1 ; usage: (1, 0) 
+            Compute: dstidx 7; srclist: 11 59 ; coefs: 1 1 ; usage: (1, 0) 
+0:0    RecvTask: dagidx: 6 4 
+0:0    PersistTask: Clay-538-0-0, collect: 0 1 2 3 4 5 6 7 
+----- nodeid: 4
+0:0    ReadTask: blockname: Clay-538-0-4, dagidxlist: 32 (1, 0) 33 (0, 1) 34 (0, 1) 35 (0, 1) 
+0:0    SendTask: 
+            dagidx: 34, sendto: 2 
+            dagidx: 35, sendto: 5 
+            dagidx: 33, sendto: 5 
+0:0    RecvTask: dagidx: 25 
+0:0    ComputeTask: 
+            Compute: dstidx 73; srclist: 32 25 ; coefs: 1 2 ; usage: (0, 1) 
+            Compute: dstidx 80; srclist: 32 25 ; coefs: 1 1 ; usage: (0, 1) 
+0:0    SendTask: 
+            dagidx: 73, sendto: 5 
+            dagidx: 80, sendto: 2 
+----- nodeid: 2
+0:0    ReadTask: blockname: Clay-538-0-2, dagidxlist: 16 (1, 0) 17 (0, 1) 18 (1, 0) 19 (0, 1) 
+0:0    SendTask: 
+            dagidx: 17, sendto: 5 
+            dagidx: 19, sendto: 5 
+0:0    RecvTask: dagidx: 34 27 26 10 24 
+0:0    ReadTask: blockname: ZERO, dagidxlist: 42 40 
+0:0    ComputeTask: 
+            Compute: dstidx 75; srclist: 34 27 ; coefs: 1 2 ; usage: (0, 1) 
+            Compute: dstidx 88; srclist: 40 18 ; coefs: 1 1 ; usage: (1, 0) 
+            Compute: dstidx 82; srclist: 34 27 ; coefs: 1 1 ; usage: (1, 0) 
+            Compute: dstidx 66; srclist: 40 18 ; coefs: 1 2 ; usage: (1, 0) 
+0:0    SendTask: 
+            dagidx: 75, sendto: 5 
+0:0    RecvTask: dagidx: 80 
+0:0    ComputeTask: 
+            Compute: dstidx 56; srclist: 16 88 24 80 ; coefs: 3 7 244 244 ; usage: (0, 1) 
+            Compute: dstidx 2; srclist: 66 42 26 82 ; coefs: 2 6 245 244 ; usage: (0, 1) 
+            Compute: dstidx 58; srclist: 66 42 26 82 ; coefs: 3 7 244 244 ; usage: (1, 0) 
+            Compute: dstidx 0; srclist: 16 88 24 80 ; coefs: 2 6 245 244 ; usage: (0, 1) 
+0:0    SendTask: 
+            dagidx: 56, sendto: 1 
+            dagidx: 2, sendto: 5 
+            dagidx: 0, sendto: 5 
+0:0    ComputeTask: 
+            Compute: dstidx 6; srclist: 10 58 ; coefs: 1 1 ; usage: (0, 1) 
+0:0    SendTask: 
+            dagidx: 6, sendto: 5 
+----- nodeid: 1
+0:0    ReadTask: blockname: Clay-538-0-1, dagidxlist: 8 (1, 0) 9 (0, 1) 10 (0, 1) 11 (0, 1) 
+0:0    SendTask: 
+            dagidx: 9, sendto: 5 
+            dagidx: 10, sendto: 2 
+            dagidx: 11, sendto: 5 
+0:0    RecvTask: dagidx: 56 
+0:0    ComputeTask: 
+            Compute: dstidx 4; srclist: 8 56 ; coefs: 1 1 ; usage: (0, 1) 
+0:0    SendTask: 
+            dagidx: 4, sendto: 5 
+----- nodeid: 3
+0:0    ReadTask: blockname: Clay-538-0-3, dagidxlist: 24 (0, 1) 25 (0, 1) 26 (0, 1) 27 (0, 1) 
+0:0    SendTask: 
+            dagidx: 27, sendto: 2 
+            dagidx: 26, sendto: 2 
+            dagidx: 24, sendto: 2 
+            dagidx: 25, sendto: 4 

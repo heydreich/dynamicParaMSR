@@ -21,6 +21,7 @@ class PRSolution {
         // per node
         int _bdwt;
         int _load;
+        double _threshold;
         bool _searched;
 
         // under hierarchy architecture
@@ -36,6 +37,7 @@ class PRSolution {
         void evaluateWithHierarchy(ECDAG* ecdag, unordered_map<int, int> sid2color, vector<int> idm_idx, unordered_map<int, int> sidx2rackid);
         int getBdwt();
         int getLoad();
+        double getThreshold();
         int getHierarchyBdwt();
         int getHierarchyLoad();
         long long getId();
@@ -45,6 +47,7 @@ class PRSolution {
         string getString();
         void setLoad(int load);
         void setBdwt(int bdwt);
+        void setThreshold(double threshold);
 
         string dump();
 

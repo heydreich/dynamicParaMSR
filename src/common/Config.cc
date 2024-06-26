@@ -18,6 +18,7 @@ Config::Config(std::string& filepath) {
                 unsigned int ip = inet_addr(ipstr.c_str());
                 _agentsIPs.push_back(ip);
                 _agents_num=_agentsIPs.size();
+                // std::cout << "ip:" << ipstr << std::endl;
             }
             for (int i=0; i<_agentsIPs.size(); i++) {
                 unsigned int ip = _agentsIPs[i];

@@ -1,5 +1,6 @@
 //#include "common/CmdDistributor.hh"
 #include "common/Config.hh"
+#include "common/Bandwidth.hh"
 #include "common/Coordinator.hh"
 #include "common/StripeStore.hh"
 #include "inc/include.hh"
@@ -24,16 +25,23 @@ int main(int argc, char** argv) {
     string blkname = string(argv[2]);
     cout << "method: " << method << ", blkname: " << blkname << endl;
     //int failnodeid = atoi(argv[2]);
-    
+    //read config file and bandwidth file 
     string configpath = "conf/sysSetting.xml";
+    string bandwidthFile  = "conf/bandwidth.txt";
     Config* conf = new Config(configpath);
+
     int ecn = conf->_ecn;
     int eck = conf->_eck;
     int ecw = conf->_ecw;
+
+    Bandwidth* bdwt = new Bandwidth(bandwidthFile);
+    bdwt->LoadNext();
+
     
     // generate repair solution
     StripeStore* ss = new StripeStore(conf); 
     Coordinator* coor = new Coordinator(conf, ss);
+    ss->setBandwidth(bdwt);
 
     struct timeval time1, time2, time3, time4, time5;
     gettimeofday(&time1, NULL);

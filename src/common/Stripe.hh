@@ -5,6 +5,7 @@
 #include "../ec/ECBase.hh"
 #include "../ec/ECDAG.hh"
 #include "../ec/Task.hh"
+#include "Bandwidth.hh"
 
 using namespace std;
 
@@ -49,9 +50,12 @@ class Stripe {
 
         // for single failure
         int _fail_blk_idx;
+
         
 
     public:
+        Bandwidth* _bandwidth; // lx add
+
         Stripe(int stripeid, vector<int> nodelist);
         Stripe(int stripeid, string stripename, vector<string> blklist, vector<unsigned int> loclist, vector<int> nodelist);
         ~Stripe();
@@ -80,6 +84,7 @@ class Stripe {
         vector<Task*> getTaskForNodeId(int nodeid);
         int _new_node = -1;
         void dumpLoad(int);
+        void dumpBottleneck();
         void dumpTrans();
         vector<vector<int>> evalColoringGlobal(vector<vector<int>> loadTable);
         void changeColor(int idx, int new_color);
@@ -88,6 +93,10 @@ class Stripe {
         vector<int> getsolution();
         int getBlockIdxByName(string blkname);
         int getNodeIdByBlock(string blkname);
+        //lx add
+        void setBandwidth(Bandwidth* bdwt);
+        double getBottleneck();
+        void evaluateColorLoad(vector<int> idxs, vector<int>* Load, int newColor);
 };
 
 #endif

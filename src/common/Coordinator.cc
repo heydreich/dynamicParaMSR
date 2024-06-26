@@ -141,6 +141,7 @@ int Coordinator::genRepairSolutionAsync() {
 bool Coordinator::repairSingleBlock(string method, string blkname) {
      _method = method;
      Stripe* stripe = _ss->getStripeFromBlock(blkname);
+     stripe->setBandwidth(_ss->_bdwt);
 
      int failblkidx = stripe->getBlockIdxByName(blkname);
      cout << "failblkidx = " << failblkidx << endl;
@@ -161,14 +162,34 @@ bool Coordinator::repairSingleBlock(string method, string blkname) {
          return 0;
      }
  
+     int batchsize = _conf->_batch_size;
+     int agentnum = _conf->_agents_num;
+     int standbysize = _conf->_standby_size;
+
      SingleSolutionBase* _ssol;
      // 2. create solutionk
      if (method == "centralize") {
          _ssol = new CentSingleSolution();
          _ssol->init(stripe, _ec, _codename, _conf);
          _ssol->genRepairSolution(blkname);
-     } 
+     } else if (method == "pararc") {
+         string offline_solution_path = _conf->_tpDir+"/"+_codename+"_"+to_string(_ecn)+"_"+to_string(_eck)+"_"+to_string(_ecw)+".xml";
+         TradeoffPoints* tp = new TradeoffPoints(offline_solution_path);
+         _ssol = new ParaSingleSolution(tp);
+         _ssol->init(stripe, _ec, _codename, _conf);
+         _ssol->genRepairSolution(blkname);
+     } else if (method == "naive") {
+        //  cout << "naive has not been implemented" << endl;
+         _ssol = new NaiveSingleSolution();
+         _ssol->init(stripe, _ec, _codename, _conf);
+         _ssol->genRepairSolution(blkname);
+     } else if (method == "dynamic") {
+         _ssol = new DynamicSolution();
+         _ssol->init(stripe, _ec, _codename, _conf);
+         _ssol->genRepairSolution(blkname);
+     }
  
+
      _ssol->genRepairTasks(_ecn, _eck, _ecw);
 
 //     _fail2repair.insert(make_pair(failnodeid, _conf->_agentsIPs.size()));

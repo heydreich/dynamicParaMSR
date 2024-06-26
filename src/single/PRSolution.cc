@@ -321,6 +321,10 @@ int PRSolution::getLoad() {
     return _load;
 }
 
+double PRSolution::getThreshold() {
+    return _threshold;
+}
+
 int PRSolution::getHierarchyBdwt() {
     return _h_bdwt;
 }
@@ -351,6 +355,10 @@ void PRSolution::setLoad(int load) {
 
 void PRSolution::setBdwt(int bdwt) {
     _bdwt = bdwt;
+}
+
+void PRSolution::setThreshold(double threshold) {
+    _threshold = threshold;
 }
 
 string PRSolution::getString() {

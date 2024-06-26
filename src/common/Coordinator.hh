@@ -14,6 +14,9 @@
 #include "../sol/RepairBatch.hh"
 #include "../single/SingleSolutionBase.hh"
 #include "../single/CentSingleSolution.hh"
+#include "../single/ParaSingleSolution.hh"
+#include "../single/DynamicSolution.hh"
+#include "../single/NaiveSingleSolution.hh"
 #include "Config.hh"
 #include "StripeStore.hh"
 

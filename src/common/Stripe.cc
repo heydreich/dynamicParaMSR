@@ -1277,3 +1277,58 @@ int Stripe::getNodeIdByBlock(string blkname) {
     }
     return toret;
 }
+
+void Stripe::setBandwidth(Bandwidth* bdwt) {
+    _bandwidth = bdwt;
+}
+
+void Stripe::evaluateColorLoad(vector<int> idxs, vector<int>* Load, int newColor){
+
+    ECNode *node = _ecdag->getECNodeMap()[idxs[0]];
+    int old_color = _coloring[node->getNodeId()];
+
+    vector<ECNode*> children = node->getChildNodes();
+    vector<int> childColors = node->getChildColors(_coloring);
+    if (old_color == -1) {
+        for (auto child : children) {
+            int child_color = _coloring[child->getNodeId()];
+            // cout << "child_color: " << child_color << endl;
+            if (child_color == newColor) (*Load)[0]--;
+            else if (child_color != -1) (*Load)[1]++;
+        }
+    }
+    
+    for (auto idx : idxs) {
+        ECNode *node = _ecdag->getECNodeMap()[idx];
+        vector<ECNode*> parents = node->getParentNodes();
+        set<int> parent_colors;
+        for (auto parent : parents) parent_colors.insert(_coloring[parent->getNodeId()]);
+
+        for (auto parent_color : parent_colors) {
+            if (parent_color != newColor) {
+                (*Load)[0]++;
+            } if (parent_color == newColor) {
+                (*Load)[1]--;
+            }
+        }
+    }
+
+}
+
+void Stripe::dumpBottleneck() {
+    double bottleneck = DBL_MAX;
+    for (int i = 0; i < _in.size(); i++) {
+        double newbottleneck = _bandwidth->getBottleneck(i, vector<int>{_out[i], _in[i]});
+        if (newbottleneck < bottleneck) bottleneck = newbottleneck;
+    }
+    cout << "bottleneck: " << bottleneck << endl;
+}
+
+double Stripe::getBottleneck() {
+    double bottleneck = DBL_MAX;
+    for (int i = 0; i < _in.size(); i++) {
+        double newbottleneck = _bandwidth->getBottleneck(i, vector<int>{_out[i], _in[i]});
+        if (newbottleneck < bottleneck) bottleneck = newbottleneck;
+    }
+    return bottleneck;
+}

@@ -28,6 +28,7 @@ StripeStore::StripeStore(Config* conf) {
 
             blklist.push_back(blockname);
             iplist.push_back(location);
+            cout << "blockname:" << blockname << ", location: " << locationstr << ", nodeid:" << nodeid << endl; 
             nodeidlist.push_back(nodeid);
         }
         
@@ -40,6 +41,7 @@ StripeStore::StripeStore(Config* conf) {
     }
 
     cout << "number of stripes: " << _stripe_list.size() << endl;
+
 }
 
 StripeStore::~StripeStore() {
@@ -60,3 +62,8 @@ Stripe* StripeStore::getStripeFromBlock(string blkname) {
     assert(_blk2stripe.find(blkname) != _blk2stripe.end());
     return _blk2stripe[blkname];
 }
+
+void StripeStore::setBandwidth(Bandwidth* bdwt) {
+    _bdwt = bdwt;
+}
+
