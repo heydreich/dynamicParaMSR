@@ -4,7 +4,7 @@ stripeStore/simulation*
 stripeStore/standalone*
 stripeStore/placement
 stripeStore/*
-output-dir/*
+output/*
 res
 conf/*
 scripts/start.py
