@@ -1,15 +1,15 @@
-#include "DynamicSolution.hh"
+#include "Dynamic2Solution.hh"
 #include "ParaSingleSolution.hh"
 
-DynamicSolution::DynamicSolution(){
+Dynamic2Solution::Dynamic2Solution(){
     _groupList = new RepairGroup();
 }
 
-DynamicSolution::DynamicSolution(int batchsize, int standbysize, int agentsnum) {
+Dynamic2Solution::Dynamic2Solution(int batchsize, int standbysize, int agentsnum) {
     _batch_size = batchsize;
 }
 
-vector<vector<int>> deepCopyTable2(const std::vector<std::vector<int>>& source) {
+vector<vector<int>> deepCopyTable22(const std::vector<std::vector<int>>& source) {
     vector<vector<int>> destination;
     destination.resize(source.size());
     for (size_t i = 0; i < source.size(); ++i) {
@@ -19,7 +19,7 @@ vector<vector<int>> deepCopyTable2(const std::vector<std::vector<int>>& source) 
     return destination;
 }
 
-void dumpTable2(vector<vector<int>> table)
+void dumpTable22(vector<vector<int>> table)
 {
     cout << "in  ";
     for(auto it : table)
@@ -41,7 +41,7 @@ void dumpTable2(vector<vector<int>> table)
 
 
 // if st1 is better than st2, then return ture;
-bool DynamicSolution::isBetter(State st1, State st2)
+bool Dynamic2Solution::isBetter(State st1, State st2)
 {
     // if load and bandwidth both equal, will return false
     if(st1._load < st2._load){
@@ -61,7 +61,7 @@ bool DynamicSolution::isBetter(State st1, State st2)
 
 
 // if st1 is better than st2, then return ture;
-bool DynamicSolution::isBetter(State st1,int color1, State st2, int color2,const vector<vector<int>> & table)
+bool Dynamic2Solution::isBetter(State st1,int color1, State st2, int color2,const vector<vector<int>> & table)
 {
     // just consider global input, because input load is easier to occur imbanlance
     if(st1._load < st2._load){
@@ -78,61 +78,43 @@ bool DynamicSolution::isBetter(State st1,int color1, State st2, int color2,const
 }
 
 
-int DynamicSolution::chooseColor_single(Stripe* stripe, vector<int> candidateColors, vector<int> childColors, unordered_map<int, int> coloring, vector<int> idxs)
+int Dynamic2Solution::chooseColor_single(Stripe* stripe, vector<int> candidateColors, vector<int> childColors, unordered_map<int, int> coloring, vector<int> idxs)
 {
     // choose the color which has the minimum local load among the childColors node.
     int bestColor = -1;  
     double nodeBottleneck = 0;
     int n = _ec->_n;
-    int idx = 0;
     int repair_node_id = candidateColors[candidateColors.size()-1];
-    for(int i = 0; i < candidatesNum; i++)
+    for(auto newColor:candidateColors)
     {   
-        ColorSort* newColoritem = candidatesSort[i];
-        if (nodeBottleneck > newColoritem->bandwidthperblock) {
-            candidatesSort[idx]->bandwidthperblock=nodeBottleneck;
-            int  j = idx + 1;
-            while (j < candidatesNum && candidatesSort[j]->bandwidthperblock > nodeBottleneck) {
-                ColorSort* tmp = candidatesSort[j-1];
-                candidatesSort[j-1] = candidatesSort[j];
-                candidatesSort[j] = tmp; 
-                j++;
-            }
-            break;
-        }
-        int newColor = newColoritem->color;
         // try new color, and evaluate state
         // cout << "   child color: " << newColor << endl; 
+
         vector<int> testload = {0,0};
         testload[0] = _interLoadTable[newColor][0];
         testload[1] = _interLoadTable[newColor][1];
         // cout << "before"  << idxs[0] << ":" << testload[0] << "," << testload[1] << endl;
         stripe->evaluateColorLoad(idxs, &testload, newColor);
-        if (DEBUG_ENABLE2) cout << "newColor" << newColor << ":" << testload[0] << "," << testload[1] << endl;
+        if (DEBUG_ENABLE22) cout << "newColor" << newColor << ":" << testload[0] << "," << testload[1] << endl;
         double newNodeBottleneck = stripe->_bandwidth->getBottleneck(newColor, testload);
-        if (DEBUG_ENABLE2) cout << "99!!!" << newColor << ":" << newNodeBottleneck << endl;
+        if (DEBUG_ENABLE22) cout << "99!!!" << newColor << ":" << newNodeBottleneck << endl;
         if (newNodeBottleneck > nodeBottleneck) {
             nodeBottleneck = newNodeBottleneck;
             bestColor = newColor;
-            idx = i;
         } else if (newNodeBottleneck == nodeBottleneck) {
             if (newColor == repair_node_id) {
                 nodeBottleneck = newNodeBottleneck;
                 bestColor = repair_node_id;
-                idx = i;
             } else if (find(childColors.begin(), childColors.end(), newColor) != childColors.end()) {
                 nodeBottleneck = newNodeBottleneck;
                 bestColor = newColor;
-                idx = i;
             }
         } else {
             if (newColor == repair_node_id && find(childColors.begin(), childColors.end(), repair_node_id) != childColors.end()) {
                 nodeBottleneck = newNodeBottleneck;
                 bestColor = repair_node_id;
-                idx = i;
             }
         }
-
 
         // vector<vector<int>> testTable = stripe->evaluateChange(_cluster_size, idx, newColor);
         // State state = evalTable(testTable, childColors);
@@ -146,14 +128,14 @@ int DynamicSolution::chooseColor_single(Stripe* stripe, vector<int> candidateCol
     testload[1] = _interLoadTable[bestColor][1];
     // cout << "before"  << idxs[0] << ":" << testload[0] << "," << testload[1] << endl;
     stripe->evaluateColorLoad(idxs, &testload, bestColor);
-    if (DEBUG_ENABLE2) cout << "bestColor" << bestColor << ":" << testload[0] << "," << testload[1] << endl;
+    if (DEBUG_ENABLE22) cout << "bestColor" << bestColor << ":" << testload[0] << "," << testload[1] << endl;
     _interLoadTable[bestColor][0] = testload[0];
     _interLoadTable[bestColor][1] = testload[1];
 
     return bestColor;
 }
 
-string childs2string(vector<int> childNodes) {
+string childs2string2(vector<int> childNodes) {
     string res = "";
     for (auto childIdx : childNodes) {
         res += to_string(childIdx);
@@ -162,10 +144,10 @@ string childs2string(vector<int> childNodes) {
     return res;
 }
 
-void DynamicSolution::SingleMLP(Stripe* stripe, const vector<int> & itm_idx, const vector<int> & candidateColors,ECDAG * ecdag, unordered_map<int, int> & coloring)
+void Dynamic2Solution::SingleMLP(Stripe* stripe, const vector<int> & itm_idx, const vector<int> & candidateColors,ECDAG * ecdag, unordered_map<int, int> & coloring)
 {
-    if(DEBUG_ENABLE2)
-        cout << "DynamicSolution::SingleMLP for stripe " << stripe->getStripeId() << endl;
+    if(DEBUG_ENABLE22)
+        cout << "Dynamic2Solution::SingleMLP for stripe " << stripe->getStripeId() << endl;
 
     // 1. init information and blank solution
     vector<int> topoIdxs = ecdag->genTopoIdxs();
@@ -177,7 +159,6 @@ void DynamicSolution::SingleMLP(Stripe* stripe, const vector<int> & itm_idx, con
     stripe->evaluateColoring();   
   
     // 2. group all blanknodes
-    //group init start
     for (int i = 0; i < topoIdxs.size(); i++) 
     {
         int idx = topoIdxs[i];
@@ -186,38 +167,10 @@ void DynamicSolution::SingleMLP(Stripe* stripe, const vector<int> & itm_idx, con
 
         // color the vetex with child colors
         vector<int> childNodes = node->getChildIndices();
-        string childsStr = childs2string(childNodes); 
+        string childsStr = childs2string2(childNodes); 
         _groupList->push(childsStr, idx);
     }
-    if (1 == 1) {
-        ECNode* node = ecdag->getECNodeMap()[REQUESTOR];
-        vector<int> childNodes = node->getChildIndices();
-        string childsStr = childs2string(childNodes); 
-        _groupList->push(childsStr, REQUESTOR);
-    }
-     _groupList->FinishPush();
-    //group init finish
-     if(DEBUG_ENABLE2) cout << "group init finished" << endl;
-    // _groupList->dump();
-
-    for (int i = 0; i < _groupList->getGroupNum(); i++) {
-        vector<int> group = _groupList->getGroupByIdx(i);
-        if (_groupList->getLevel(i) == 0) _groupList->setLevel(i, 1);
-        int cur_level = _groupList->getLevel(i);
-        for (auto mem : group) {
-            ECNode* node = ecdag->getECNodeMap()[mem];
-            vector<int> parentNodes = node->getParentIndices();
-            string gstr = childs2string(parentNodes);
-            // cout << "gstr : " << gstr << endl;
-            int parentIndex = _groupList->getIdxByGroupStr(gstr);
-            _groupList->setLevel(parentIndex, cur_level + 1);
-            _groupList->AddChildGroup(parentIndex, i);
-            _groupList->AddParentGroup(i, parentIndex);
-        }
-    }
-    //add parent child in
-    if (DEBUG_ENABLE2) _groupList->dump();
-    // _groupList->dump();
+    if (DEBUG_ENABLE22) _groupList->dump();
 
     // 2. coloring the blank node one by one 
     int groupnum = _groupList->getGroupNum();   
@@ -233,24 +186,20 @@ void DynamicSolution::SingleMLP(Stripe* stripe, const vector<int> & itm_idx, con
         vector<int> childColors = node->getChildColors(coloring);
         
         int greedyColor = chooseColor_single(stripe, candidateColors, childColors, coloring, idxs);
-        if (DEBUG_ENABLE2) cout << "for node " << idxs[0]  << " color = " << greedyColor << endl;
+        if (DEBUG_ENABLE22) cout << "for node " << idxs[0]  << " color = " << greedyColor << endl;
         if (greedyColor == oldColor)
             continue;
         for (auto idx : idxs) {
-            if (DEBUG_ENABLE2) cout << "for node " << idx  << " color = " << greedyColor << endl;
+            if (DEBUG_ENABLE22) cout << "for node " << idx  << " color = " << greedyColor << endl;
             coloring[idx] = greedyColor;
-            // stripe->changeColor(idx, greedyColor);
-            stripe->changeBlockColor(idx, greedyColor);
-
+            stripe->changeColor(idx, greedyColor);
         }
-        _groupList->setColor(i, greedyColor);
-        if (DEBUG_ENABLE2) stripe->dumpLoad(_conf->_agents_num + 1);
-        if (DEBUG_ENABLE2) cout << stripe->getBdwt() << " " << stripe->getLoad() << endl;
+        if (DEBUG_ENABLE22) stripe->dumpLoad(_conf->_agents_num + 1);
+        if (DEBUG_ENABLE22) cout << stripe->getBdwt() << " " << stripe->getLoad() << endl;
     }
-    stripe->evaluateColoring(); 
     stripe->dumpLoad(_conf->_agents_num + 1);
     stripe->dumpBottleneck();
-    // stripe->evaluateColoring(); 
+    stripe->evaluateColoring(); 
     unordered_map<int,int> ret = stripe->getColoring();
     // for(auto it : ret) {
     //     cout << it.first << ":" << it.second << " " << endl;
@@ -261,11 +210,11 @@ void DynamicSolution::SingleMLP(Stripe* stripe, const vector<int> & itm_idx, con
 }
 
 
-void DynamicSolution::genDynamicColoringForSingleFailure(Stripe* stripe, unordered_map<int, int>& res,
+void Dynamic2Solution::genDynamicColoringForSingleFailure(Stripe* stripe, unordered_map<int, int>& res,
         int fail_node_id) {
     // map a sub-packet idx to a real physical node id
-    if(DEBUG_ENABLE2)
-        cout << "DynamicSolution::genDynamicColoringForSingleFailure" << endl;
+    if(DEBUG_ENABLE22)
+        cout << "Dynamic2Solution::genDynamicColoringForSingleFailure" << endl;
     ECDAG* ecdag = stripe->getECDAG();
     vector<int> curplacement = stripe->getPlacement();
     int ecn = _ec->_n;
@@ -277,7 +226,7 @@ void DynamicSolution::genDynamicColoringForSingleFailure(Stripe* stripe, unorder
     {
         _interLoadTable.push_back(vector<int>(2, 0));
         // candidateColors
-        if (GLOBAL_COLOR && i != fail_node_id) candidateColors.push_back(i);
+        // if (i != fail_node_id) candidateColors.push_back(i);
     }
     
     int fail_block_idx = -1;
@@ -308,19 +257,12 @@ void DynamicSolution::genDynamicColoringForSingleFailure(Stripe* stripe, unorder
             nodeid = curplacement[blkidx];
             avoid_node_ids.push_back(nodeid);
             realLeaves++;
-            if(!GLOBAL_COLOR && _interLoadTable[nodeid][0] == 0) candidateColors.push_back(nodeid);
+            if(_interLoadTable[nodeid][0] == 0) candidateColors.push_back(nodeid);
             _interLoadTable[nodeid][0]++;
         }
-        if (DEBUG_ENABLE2) cout << "dagidx : " << dagidx << " , blkidx : " << blkidx <<  " , nodeid : " << nodeid << endl;
+        if (DEBUG_ENABLE22) cout << "dagidx : " << dagidx << " , blkidx : " << blkidx <<  " , nodeid : " << nodeid << endl;
         res.insert(make_pair(dagidx, nodeid));
     }
-
-    vector<int> idleColors;
-    for (int i = 0; i < _conf->_agentsIPs.size(); i++) {
-        if (find(candidateColors.begin(), candidateColors.end(), i) != candidateColors.end() || i == fail_node_id) continue;
-        idleColors.push_back(i);
-    }
-    // for (auto i : idleColors) cout << i << "," << endl;
 
 
     // choose new node after coloring
@@ -330,7 +272,7 @@ void DynamicSolution::genDynamicColoringForSingleFailure(Stripe* stripe, unorder
     stripe->_new_node = repair_node_id;
     res.insert(make_pair(ecHeaders[0], repair_node_id));
     _interLoadTable[repair_node_id][1] = ecw;
-    if(!GLOBAL_COLOR) candidateColors.push_back(repair_node_id);
+    candidateColors.push_back(repair_node_id);
     // dumpTable2(_interLoadTable);
     // for (auto color : candidateColors) {
     //     cout << "candidateColor : " << color << endl;
@@ -349,85 +291,14 @@ void DynamicSolution::genDynamicColoringForSingleFailure(Stripe* stripe, unorder
     sort(itm_idx.begin(), itm_idx.end());    
     struct timeval time1, time2;
     gettimeofday(&time1, NULL);
-    sortInit(candidateColors);
-    // cout << "sortInit complete" << endl;
-    // for (auto item: candidatesSort) {
-    //     cout << item->color << "," << item->bandwidthperblock << endl;
-    // }
     SingleMLP(stripe ,itm_idx, candidateColors, ecdag, res);
     gettimeofday(&time2,NULL);
-
-    //idle nodes
-    useIdleNodesForSingleFailure(stripe, itm_idx, idleColors, ecdag, res);
-
     double latency  = DistUtil::duration(time1, time2);
     cout << "Runtime: " << latency << endl;
 } 
 
-void DynamicSolution::sortInit(vector<int>& candidateColors) {
-    vector<int> testload = {0,0};
-    for (int i = 0; i < candidateColors.size(); i++) {
-        candidatesSort.push_back(new ColorSort());
-        int icolor=candidateColors[i];
-        candidatesSort[i]->color=icolor;
-        testload[0] = _interLoadTable[icolor][0];
-        testload[1] = _interLoadTable[icolor][1];
-        candidatesSort[i]->bandwidthperblock=_stripe->_bandwidth->evaluateSort(icolor, testload);
-        candidatesNum++;
-    }
 
-    for (int i = 0; i < candidatesSort.size()-1; i++) {
-        for (int j = 0; j < candidatesSort.size()-1-i; j++) {
-            double lBottle = candidatesSort[j]->bandwidthperblock;
-            double rBottle = candidatesSort[j+1]->bandwidthperblock;
-            if (lBottle < rBottle) {
-                ColorSort* temp = candidatesSort[j];
-                candidatesSort[j]=candidatesSort[j+1];
-                candidatesSort[j+1]=temp;
-            }
-        }
-    }
-}
-
-
-void DynamicSolution::useIdleNodesForSingleFailure(Stripe* stripe, const vector<int> & itm_idx, const vector<int>& idleColors,ECDAG * ecdag, unordered_map<int, int> & coloring) {
-    _groupList->evaluateDegree(ecdag, coloring);
-    vector<int> usedColors;
-    unordered_map<int, DegreeTable*> color2table;
-    for (int i = 0; i < _groupList->getGroupNum(); i++) {
-        vector<int> degree = _groupList->getDegree(i);
-        int color = _groupList->getColor(i);
-        // cout << "color" << color << endl;
-        string degreeStr = to_string(degree[0]) + "_" + to_string(degree[1]);
-        if (color2table.find(color) == color2table.end()) {
-            color2table.insert(make_pair(color, new DegreeTable()));
-            color2table[color]->_color=color;
-        }
-        color2table[color]->pushDegree(degreeStr, i);
-    }
-
-    for (auto &t : color2table) {
-        cout << "color : " << t.first << endl;
-        for (auto t2 : t.second->degree2setIdx) {
-            cout << "degree : " << t2.first << " , " << " groupIndex : ";
-            for (auto t3 : t.second->idx2set[t2.second]) cout << t3 << ",";
-            cout << endl;
-        }
-    }
-
-    int bottlenode;
-    int port;
-    int bottleneck;
-
-    bool complete = false;
-    while (!complete) {
-        stripe->evaluateBottleneck(bottlenode, port, bottleneck);
-        cout << "bottlenode : " << bottlenode << " , port : " << port << " , bottleneck : " << bottleneck << endl;
-        if (1 == 1 ) complete = true;
-    }
-}
-
-State DynamicSolution::evalTable(const vector<vector<int>> & table)
+State Dynamic2Solution::evalTable(const vector<vector<int>> & table)
 {
     int bdwt = 0;
     int load = 0;
@@ -441,7 +312,7 @@ State DynamicSolution::evalTable(const vector<vector<int>> & table)
     return State(load,bdwt);
 }
 
-State DynamicSolution::evalTable(vector<vector<int>> table, vector<int> colors)
+State Dynamic2Solution::evalTable(vector<vector<int>> table, vector<int> colors)
 {
     // return the load which is the maximum load among the colors_node
     // return the bdwt which is full dag bandwidth
@@ -462,7 +333,7 @@ State DynamicSolution::evalTable(vector<vector<int>> table, vector<int> colors)
 
 
 
-void DynamicSolution::genRepairSolution(string blkname){
+void Dynamic2Solution::genRepairSolution(string blkname){
     _blkname = blkname;
     
     // 1.1 construct ECDAG to repair
@@ -483,19 +354,4 @@ void DynamicSolution::genRepairSolution(string blkname){
     // evaluate the coloring solution
     _stripe->evaluateColoring();
     // _stripe->dumpLoad(5);
-}
-
-
-DegreeTable::DegreeTable(){
-    index=0;
-}
-
-
-void DegreeTable::pushDegree(string degree, int groupIndex) {
-    if (degree2setIdx.find(degree) == degree2setIdx.end()) {
-        degree2setIdx.insert(make_pair(degree, index));
-        index++;
-        idx2set.push_back(unordered_set<int>{});
-    }
-    idx2set[degree2setIdx[degree]].insert(groupIndex);
 }

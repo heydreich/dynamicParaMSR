@@ -187,10 +187,16 @@ bool Coordinator::repairSingleBlock(string method, string blkname) {
          _ssol = new DynamicSolution();
          _ssol->init(stripe, _ec, _codename, _conf);
          _ssol->genRepairSolution(blkname);
+     } else if (method == "dynamic2") {
+         _ssol = new Dynamic2Solution();
+         _ssol->init(stripe, _ec, _codename, _conf);
+         _ssol->genRepairSolution(blkname);
      }
  
 
      _ssol->genRepairTasks(_ecn, _eck, _ecw);
+
+     return true;
 
 //     _fail2repair.insert(make_pair(failnodeid, _conf->_agentsIPs.size()));
 //    struct timeval time1, time2, time3, time4, time5;

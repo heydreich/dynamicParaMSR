@@ -13,7 +13,9 @@ class Bandwidth {
     bool LoadNext();
     ~Bandwidth();
     void Close();
-    double getBottleneck(int newColor, std::vector<int> testTable);
+    double getBottleneck(int index, std::vector<int> testTable);
+    int getBottlePort(int index, std::vector<int> testTable);
+    double evaluateSort(int index, std::vector<int> testTable);
  
     //nodeid -> (upload, download)
   private:

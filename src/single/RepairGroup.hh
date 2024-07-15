@@ -12,12 +12,28 @@
 
 using namespace std;
 
+
+class GroupInfo {
+    public:
+        vector<int> members;
+        vector<int> parentGroupIndices;
+        vector<int> childGroupIndices;
+        int inDegree;
+        int outDegree;
+        int level;
+        int color;
+        bool isRequest;
+
+        GroupInfo();
+};
+
 class RepairGroup {
 
     private:
-        vector<vector<int>> idx2group;
+        vector<GroupInfo*> idx2group;
         vector<string> idx2childs;
         unordered_map<string, int> childsMapIdx;
+        unordered_map<string, int> groupMapIdx;
         int groupNum;
 
     public:
@@ -28,6 +44,19 @@ class RepairGroup {
         void push(string Gstr, int idx);
         void dump();
         vector<int> getGroupByIdx(int index);
+        void setLevel(int groupIndex, int level);
+        int getLevel(int groupIndex);
+        void FinishPush();
+        int getIdxByGroupStr(string str);
+        void AddParentGroup(int groupIndex, int parentIndex);
+        void AddChildGroup(int groupIndex, int childIndex);
+        void setColor(int groupIndex, int Color);
+        void changeColor(int groupIndex, int Color);
+        int getColor(int groupIndex);
+        void evaluateDegree(ECDAG * ecdag, unordered_map<int, int> & coloring);
+        vector<int> getDegree(int groupIndex);
+
+        string array2string(vector<int>& Nodes);
 };
 
 #endif

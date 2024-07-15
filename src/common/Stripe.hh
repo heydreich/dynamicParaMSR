@@ -19,6 +19,8 @@ class State{
     }
 };
 
+
+
 class Stripe {
 
     private:
@@ -96,7 +98,9 @@ class Stripe {
         //lx add
         void setBandwidth(Bandwidth* bdwt);
         double getBottleneck();
+        void evaluateBottleneck(int& bottlenode, int& port, int& bottleneck);
         void evaluateColorLoad(vector<int> idxs, vector<int>* Load, int newColor);
+        void changeBlockColor(int idx, int new_color);
 };
 
 #endif

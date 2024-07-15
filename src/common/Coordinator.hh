@@ -17,6 +17,7 @@
 #include "../single/ParaSingleSolution.hh"
 #include "../single/DynamicSolution.hh"
 #include "../single/NaiveSingleSolution.hh"
+#include "../single/Dynamic2Solution.hh"
 #include "Config.hh"
 #include "StripeStore.hh"
 

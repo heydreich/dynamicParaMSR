@@ -1,4 +1,5 @@
 build/
+.vscode/
 stripeStore/simulation*
 stripeStore/standalone*
 stripeStore/placement

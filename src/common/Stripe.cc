@@ -245,6 +245,12 @@ void Stripe::changeColor(int idx, int new_color)
     return;
 }
 
+void Stripe::changeBlockColor(int idx, int new_color) {
+    _coloring[idx] = new_color;
+    return;
+}
+
+
 vector<vector<int>> Stripe::evaluateChange(int cluster_size, int idx, int new_color)
 {
     // change vetex[idx] to new_color, then generate the local load table 
@@ -1331,4 +1337,19 @@ double Stripe::getBottleneck() {
         if (newbottleneck < bottleneck) bottleneck = newbottleneck;
     }
     return bottleneck;
+}
+
+
+void Stripe::evaluateBottleneck(int& bottlenode , int& port, int& bottleneck) {
+    double curbottleneck = DBL_MAX;
+    for (int i = 0; i < _in.size(); i++) {
+        double newbottleneck = _bandwidth->getBottleneck(i, vector<int>{_out[i], _in[i]});
+        int newport = _bandwidth->getBottlePort(i, vector<int>{_out[i], _in[i]});
+        if (newbottleneck < curbottleneck) {
+            curbottleneck = newbottleneck;
+            bottlenode = i;
+            port = newport;
+        }
+    }
+    bottleneck = curbottleneck;
 }

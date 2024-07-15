@@ -1,43 +1,21 @@
-#ifndef _DYNAMICSOLUTION_HH_
-#define _DYNAMICSOLUTION_HH_
+#ifndef _DYNAMIC2SOLUTION_HH_
+#define _DYNAMIC2SOLUTION_HH_
 
 #include "../common/TradeoffPoints.hh"
 #include "../ec/ECBase.hh"
 #include "SingleSolutionBase.hh"
 #include "RepairGroup.hh"
 
-#define DEBUG_ENABLE2 false
-
-#define GLOBAL_COLOR true
+#define DEBUG_ENABLE22 false
 
 using namespace std;
 
-class ColorSort {
-    public:
-        int color;
-        double bandwidthperblock;
-};  
-
-class DegreeTable {
-    public:
-        int _color;
-        unordered_map<string, int> degree2setIdx;  //
-        vector<unordered_set<int>> idx2set;
-        int index;
-
-        DegreeTable();
-        void pushDegree(string degree, int groupIndex);
-};
-
-
-class DynamicSolution : public SingleSolutionBase {
+class Dynamic2Solution : public SingleSolutionBase {
 
     private:
         TradeoffPoints* _tp;
         RepairGroup* _groupList;
         vector<vector<int>> _interLoadTable;
-        vector<ColorSort*> candidatesSort;
-        int candidatesNum;
     
     public:
         // han add
@@ -57,12 +35,10 @@ class DynamicSolution : public SingleSolutionBase {
 
         void genRepairSolution(string blkname);
         void genDynamicColoringForSingleFailure(Stripe* stripe, unordered_map<int, int>& res, int fail_node_id);
-        void useIdleNodesForSingleFailure(Stripe* stripe, const vector<int> & itm_idx, const vector<int> & idleColors,ECDAG * ecdag, unordered_map<int, int> & coloring);
 
         // end
-        DynamicSolution();
-        DynamicSolution(int batchsize, int standbysize, int agentsnum);
-        void sortInit(vector<int>& candidateColors);
+        Dynamic2Solution();
+        Dynamic2Solution(int batchsize, int standbysize, int agentsnum);
 
 };
 
