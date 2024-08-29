@@ -17,6 +17,7 @@ Bandwidth::Bandwidth(std::string& filepath)     {
 bool Bandwidth::LoadNext() {
     //Check whether the file is ended   
     if (++_cur > _bwNum) return false;
+    std::cout << "\n cur : " << _cur << std::endl;
 
     //Load
     double UploadArray[_nodeNum];
@@ -24,7 +25,11 @@ bool Bandwidth::LoadNext() {
     std::string content;
     int flag;
     int i = 0;
-    while (_bwf >> content) {
+    int lineNum = _nodeNum * 2 + 2;
+    int readNum = 0;
+    while (readNum < lineNum) {
+        readNum++;
+        _bwf >> content;
         if (content == "u") {
             flag = 1;
             i = 0;
@@ -46,12 +51,13 @@ bool Bandwidth::LoadNext() {
     if (_cur == 1) {
         for (int i = 0; i < _nodeNum; i++) {
             _idx2bdwt.insert(std::make_pair(i, std::make_pair(UploadArray[i], DownloadArray[i])));
-            std::cout << i << ": upload " << UploadArray[i] << ", download " << DownloadArray[i] << std::endl;
+            if(BANDWIDTHDEBUG) std::cout << i << ": upload " << UploadArray[i] << ", download " << DownloadArray[i] << std::endl;
         }
     } else {
         for (int i = 0; i < _nodeNum; i++) {
             _idx2bdwt[i].first = UploadArray[i];
             _idx2bdwt[i].second = DownloadArray[i];
+            if(BANDWIDTHDEBUG) std::cout << i << ": upload " << UploadArray[i] << ", download " << DownloadArray[i] << std::endl;
         }
     }
 
@@ -85,4 +91,21 @@ double Bandwidth::evaluateSort(int index, std::vector<int> testTable) {
     double UpPerSubBlock = testTable[0] == 0 ? _idx2bdwt[index].first : _idx2bdwt[index].first/testTable[0];
     double DownPerSubBlock = testTable[1] == 0 ? _idx2bdwt[index].second : _idx2bdwt[index].second/testTable[1];
     return UpPerSubBlock < DownPerSubBlock ? UpPerSubBlock:DownPerSubBlock;
+}
+
+double Bandwidth::getglobalBottleneck(std::vector<std::vector<int>> testtable) {
+    double bottleneck = DBL_MAX;
+    for (int i = 0; i < testtable.size(); i++) {
+        double newbottleneck = getBottleneck(i, std::vector<int>{testtable[i][0], testtable[i][1]});
+        if (newbottleneck < bottleneck) bottleneck = newbottleneck;
+    }
+    return bottleneck;
+}
+
+std::vector<int> Bandwidth::getIdealLoad(int index, double limitedbn) {
+    //0 out, 1 in
+    int outLoad = _idx2bdwt[index].first / limitedbn;
+    int inLoad = _idx2bdwt[index].second / limitedbn;
+    
+    return std::vector<int>{outLoad, inLoad};
 }

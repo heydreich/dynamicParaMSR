@@ -4,7 +4,7 @@ GroupInfo::GroupInfo() {
         inDegree = 0;
         outDegree = 0;
         level = 0;
-        color = 0;
+        color = -1;
         isRequest = false;
 }
 
@@ -113,7 +113,7 @@ int RepairGroup::getColor(int groupIndex) {
     return idx2group[groupIndex]->color;
 }
 
-void RepairGroup::evaluateDegree(ECDAG * ecdag, unordered_map<int, int> & coloring){
+void RepairGroup::evaluateDegree(ECDAG * ecdag, unordered_map<int, int> & coloring, int ecw, int ecn){
     for (int i = 0; i < groupNum; i++) {
         // cout << i << " : " << endl; 
         int SameparentColorNum = 0;
@@ -131,6 +131,10 @@ void RepairGroup::evaluateDegree(ECDAG * ecdag, unordered_map<int, int> & colori
         ECNode* node = ecdag->getECNodeMap()[mem];
         vector<int> childNodes = node->getChildIndices();
         for (int childIndex: childNodes) {
+            int blkidx = childIndex / ecw;
+            int nodeid = -1;
+
+            if (coloring[childIndex] == -1) continue;
             if (coloring[childIndex] == ownColor) SamechildColorNum++;
             else DiffchildColorNum++;
             // cout << "idx2group[childIndex]->color : " << idx2group[childIndex]->color << endl;

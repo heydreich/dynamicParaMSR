@@ -191,7 +191,12 @@ bool Coordinator::repairSingleBlock(string method, string blkname) {
          _ssol = new Dynamic2Solution();
          _ssol->init(stripe, _ec, _codename, _conf);
          _ssol->genRepairSolution(blkname);
+     } else if (method == "dynamic3") {
+         _ssol = new Dynamic3Solution();
+         _ssol->init(stripe, _ec, _codename, _conf);
+         _ssol->genRepairSolution(blkname);
      }
+     
  
 
      _ssol->genRepairTasks(_ecn, _eck, _ecw);

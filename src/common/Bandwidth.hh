@@ -7,6 +7,8 @@
 
 using namespace tinyxml2;
 
+#define BANDWIDTHDEBUG false
+
 class Bandwidth {
   public:
     Bandwidth(std::string& filePath);
@@ -16,6 +18,8 @@ class Bandwidth {
     double getBottleneck(int index, std::vector<int> testTable);
     int getBottlePort(int index, std::vector<int> testTable);
     double evaluateSort(int index, std::vector<int> testTable);
+    double getglobalBottleneck(std::vector<std::vector<int>> testtable);
+    std::vector<int> getIdealLoad(int index, double limitedbn);
  
     //nodeid -> (upload, download)
   private:

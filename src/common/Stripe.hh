@@ -101,6 +101,9 @@ class Stripe {
         void evaluateBottleneck(int& bottlenode, int& port, int& bottleneck);
         void evaluateColorLoad(vector<int> idxs, vector<int>* Load, int newColor);
         void changeBlockColor(int idx, int new_color);
+        int evaluateIdleColor( const vector<int>& idleColors);
+        double limitedBottleneck();
+        double getNodeBottleneck(int nodeid);
 };
 
 #endif

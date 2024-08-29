@@ -626,6 +626,7 @@ unordered_map<int, vector<Task*>> Stripe::genRepairTasks(int batchid, int ecn, i
 
         cout << "----- nodeid: " << nodeid << endl;
         for (int i=0; i<list.size(); i++) {
+            cout << i << " : ";
             list[i]->dump();
         }
     }
@@ -1353,3 +1354,19 @@ void Stripe::evaluateBottleneck(int& bottlenode , int& port, int& bottleneck) {
     }
     bottleneck = curbottleneck;
 }
+
+int Stripe::evaluateIdleColor(const vector<int>& idleColors) {
+    int res = 0;
+    double bottleneck = 0;
+    for (int icolor : idleColors) {
+        double newbottleneck = _bandwidth->evaluateSort(icolor, vector<int>{_in[icolor], _out[icolor]});
+        if (newbottleneck > bottleneck) {
+            bottleneck = newbottleneck;
+            res = icolor;
+        }
+    }
+    return res;
+}
+
+
+

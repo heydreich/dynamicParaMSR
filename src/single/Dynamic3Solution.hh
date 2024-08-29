@@ -1,42 +1,42 @@
-#ifndef _DYNAMICSOLUTION_HH_
-#define _DYNAMICSOLUTION_HH_
+#ifndef _Dynamic3Solution_HH_
+#define _Dynamic3Solution_HH_
 
 #include "../common/TradeoffPoints.hh"
 #include "../ec/ECBase.hh"
 #include "SingleSolutionBase.hh"
 #include "RepairGroup.hh"
 
-#define DEBUG_ENABLE2 false
+#define DEBUG_ENABLE3 false
 
-#define GLOBAL_COLOR false
+#define GLOBAL_COLOR3 false
 
 using namespace std;
 
-class ColorSort {
+class Color3Sort {
     public:
         int color;
         double bandwidthperblock;
 };  
 
-class DegreeTable {
+class Degree3Table {
     public:
         int _color;
         unordered_map<string, int> degree2setIdx;  //
         vector<unordered_set<int>> idx2set;
         int index;
 
-        DegreeTable();
+        Degree3Table();
         void pushDegree(string degree, int groupIndex);
 };
 
 
-class DynamicSolution : public SingleSolutionBase {
+class Dynamic3Solution : public SingleSolutionBase {
 
     private:
         TradeoffPoints* _tp;
         RepairGroup* _groupList;
         vector<vector<int>> _interLoadTable;
-        vector<ColorSort*> candidatesSort;
+        vector<Color3Sort*> candidatesSort;
         int candidatesNum;
     
     public:
@@ -51,17 +51,17 @@ class DynamicSolution : public SingleSolutionBase {
         State evalTable(const vector<vector<int>> & table);
         State evalTable(vector<vector<int>> table, vector<int> colors);
         void SingleMLP(Stripe* stripe, const vector<int> & itm_idx, const vector<int> & candidates,ECDAG * ecdag, unordered_map<int, int> & coloring);
-        int chooseColor_single(Stripe* stripe, vector<int> candidateColors, vector<int> childColors, unordered_map<int, int> coloring, vector<int> idxs);
+        int chooseColor_single(Stripe* stripe, vector<int> candidateColors, vector<int> childColors, unordered_map<int, int> coloring, int idxs);
         bool isBetter(State st1, State st2);
         bool isBetter(State st1,int color1, State st2, int color2,const vector<vector<int>> & table);
 
         void genRepairSolution(string blkname);
         void genDynamicColoringForSingleFailure(Stripe* stripe, unordered_map<int, int>& res, int fail_node_id);
-        void useIdleNodes1ForSingleFailure(Stripe* stripe, const vector<int> & itm_idx, vector<int> & idleColors,ECDAG * ecdag, unordered_map<int, int> & coloring, double limitedbn);
+        void useIdleNodesForSingleFailure(Stripe* stripe, const vector<int> & itm_idx, vector<int> & idleColors,ECDAG * ecdag, unordered_map<int, int> & coloring, double limitedbn);
 
         // end
-        DynamicSolution();
-        DynamicSolution(int batchsize, int standbysize, int agentsnum);
+        Dynamic3Solution();
+        Dynamic3Solution(int batchsize, int standbysize, int agentsnum);
         void sortInit(vector<int>& candidateColors);
 
 };

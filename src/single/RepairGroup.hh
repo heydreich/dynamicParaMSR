@@ -23,6 +23,7 @@ class GroupInfo {
         int level;
         int color;
         bool isRequest;
+        bool isReal;
 
         GroupInfo();
 };
@@ -53,7 +54,7 @@ class RepairGroup {
         void setColor(int groupIndex, int Color);
         void changeColor(int groupIndex, int Color);
         int getColor(int groupIndex);
-        void evaluateDegree(ECDAG * ecdag, unordered_map<int, int> & coloring);
+        void evaluateDegree(ECDAG * ecdag, unordered_map<int, int> & coloring, int ecw, int ecn);
         vector<int> getDegree(int groupIndex);
 
         string array2string(vector<int>& Nodes);

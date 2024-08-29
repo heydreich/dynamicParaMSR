@@ -41,6 +41,7 @@ void SingleSolutionBase::genRepairTasks(int ecn, int eck, int ecw){
     }
     gettimeofday(&time2, NULL);
 
+
     // 1. for each node, send command to agent to tell the number of stripes that the agent need to deal with
     unordered_map<int, NodeBatchTask*> batchtaskmap;
     for (auto item: nodeid2internalidx) {
