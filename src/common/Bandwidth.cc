@@ -7,7 +7,7 @@ Bandwidth::Bandwidth(std::string& filepath)     {
         exit(-1);    
     }
 
-    _bwf >> _bwNum >> _nodeNum;
+    _bwf >> _bwNum >> _nodeNum >> _eth;
     std::unordered_map<int,double> UploadMap;
     std::unordered_map<int,double> DownloadMap;
     _cur = 0;
@@ -62,6 +62,17 @@ bool Bandwidth::LoadNext() {
     }
 
     return true;
+}
+
+void Bandwidth::setBandwidth() {
+  for (auto node : _idx2bdwt) {
+    double upload = node.second.first;
+    double download = node.second.second;
+
+    std::stringstream fmt;
+    fmt << ksetCmd << " " <<  _eth << " " << upload << " " << download;
+
+  }
 }
 
 Bandwidth::~Bandwidth() {

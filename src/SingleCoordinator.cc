@@ -27,7 +27,7 @@ int main(int argc, char** argv) {
     //int failnodeid = atoi(argv[2]);
     //read config file and bandwidth file 
     string configpath = "conf/sysSetting.xml";
-    string bandwidthFile  = "conf/bandwidth.txt";
+    string bandwidthFile  = "conf/bandwidth/bandwidth.txt";
     Config* conf = new Config(configpath);
 
     int ecn = conf->_ecn;
@@ -36,6 +36,7 @@ int main(int argc, char** argv) {
 
     Bandwidth* bdwt = new Bandwidth(bandwidthFile);
     bdwt->LoadNext();
+    bdwt->setBandwidth();
 
     
     // generate repair solution

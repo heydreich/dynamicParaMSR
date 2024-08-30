@@ -36,6 +36,8 @@ Config::Config(std::string& filepath) {
             _coorThreadNum = std::stoi(ele -> NextSiblingElement("value") -> GetText());
         } else if (attName == "agent.thread.num") {
             _agWorkerThreadNum = std::stoi(ele -> NextSiblingElement("value") -> GetText());
+        } else if (attName == "eth") {
+            _blkBytes = std::stoi(ele -> NextSiblingElement("value") -> GetText());
         } else if (attName == "block.bytes") {
             _blkBytes = std::stoi(ele -> NextSiblingElement("value") -> GetText());
         } else if (attName == "packet.bytes") {

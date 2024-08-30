@@ -20,6 +20,7 @@ class Bandwidth {
     double evaluateSort(int index, std::vector<int> testTable);
     double getglobalBottleneck(std::vector<std::vector<int>> testtable);
     std::vector<int> getIdealLoad(int index, double limitedbn);
+    void setBandwidth();
  
     //nodeid -> (upload, download)
   private:
@@ -28,6 +29,9 @@ class Bandwidth {
     int _nodeNum;
     int _cur;
     std::fstream _bwf;
+    std::string _eth;
+
+    const std::string ksetCmd = "python conf/bandwidth/setbdwt.py ";
 
 };
 #endif
