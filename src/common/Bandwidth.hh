@@ -3,6 +3,8 @@
 
 #include "../inc/include.hh"
 #include "../util/tinyxml2.h"
+#include "../util/RedisUtil.hh"
+#include "Config.hh"
 #include "float.h"
 
 using namespace tinyxml2;
@@ -11,7 +13,7 @@ using namespace tinyxml2;
 
 class Bandwidth {
   public:
-    Bandwidth(std::string& filePath);
+    Bandwidth(std::string& filePath, bool print);
     bool LoadNext();
     ~Bandwidth();
     void Close();
@@ -20,7 +22,8 @@ class Bandwidth {
     double evaluateSort(int index, std::vector<int> testTable);
     double getglobalBottleneck(std::vector<std::vector<int>> testtable);
     std::vector<int> getIdealLoad(int index, double limitedbn);
-    void setBandwidth();
+    void setBandwidth(const Config* conf);
+    void ResetBandwidth(const Config* conf);
  
     //nodeid -> (upload, download)
   private:
@@ -28,10 +31,12 @@ class Bandwidth {
     int _bwNum;
     int _nodeNum;
     int _cur;
+    bool _if_print;
     std::fstream _bwf;
     std::string _eth;
 
-    const std::string ksetCmd = "python conf/bandwidth/setbdwt.py ";
+    const std::string ksetCmd = "wondershaper -a ";
+    const std::string ResetCmd = "wondershaper -c -a ";
 
 };
 #endif

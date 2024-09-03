@@ -34,9 +34,9 @@ int main(int argc, char** argv) {
     int eck = conf->_eck;
     int ecw = conf->_ecw;
 
-    Bandwidth* bdwt = new Bandwidth(bandwidthFile);
+    Bandwidth* bdwt = new Bandwidth(bandwidthFile, true);
     bdwt->LoadNext();
-    bdwt->setBandwidth();
+    bdwt->setBandwidth(conf);
 
     
     // generate repair solution

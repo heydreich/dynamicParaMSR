@@ -68,6 +68,8 @@ Config::Config(std::string& filepath) {
             _ssDir = std::string(ele->NextSiblingElement("value")->GetText());
         } else if (attName == "tradeoffpoint.directory") {
             _tpDir = std::string(ele->NextSiblingElement("value")->GetText());
+        } else if (attName == "wondershaper.directory") {
+            _wsDir = std::string(ele->NextSiblingElement("value")->GetText());
         } else if (attName == "network.bandwidth") {
             _netbdwt = std::stoi(ele -> NextSiblingElement("value") -> GetText());
         }

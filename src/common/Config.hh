@@ -49,6 +49,7 @@ class Config {
     std::string _blkDir;
     std::string _ssDir;
     std::string _tpDir;
+    std::string _wsDir;
     
     // network bandwidth
     int _netbdwt;

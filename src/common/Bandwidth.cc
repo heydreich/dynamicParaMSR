@@ -1,6 +1,6 @@
 #include "Bandwidth.hh"
 
-Bandwidth::Bandwidth(std::string& filepath)     {
+Bandwidth::Bandwidth(std::string& filepath, bool print)     {
     _bwf = std::fstream(filepath, std::ios::in);
     if (!_bwf.is_open()) {
         std::cerr << "no bandwidth file:" << filepath << std::endl;
@@ -11,7 +11,7 @@ Bandwidth::Bandwidth(std::string& filepath)     {
     std::unordered_map<int,double> UploadMap;
     std::unordered_map<int,double> DownloadMap;
     _cur = 0;
-    
+    _if_print = print;
 }
 
 bool Bandwidth::LoadNext() {
@@ -64,14 +64,42 @@ bool Bandwidth::LoadNext() {
     return true;
 }
 
-void Bandwidth::setBandwidth() {
+void Bandwidth::setBandwidth(const Config* conf) {
   for (auto node : _idx2bdwt) {
     double upload = node.second.first;
     double download = node.second.second;
 
     std::stringstream fmt;
-    fmt << ksetCmd << " " <<  _eth << " " << upload << " " << download;
+    if (node.first < conf -> _agentsIPs.size()) fmt << "ssh " << 
+    RedisUtil::ip2Str(conf -> _agentsIPs[node.first]) <<  
+    " \"" << ksetCmd << _eth << " -u " << upload << " -d " << download << "\"";
+    if (node.first >= conf -> _agentsIPs.size()) fmt << "ssh " <<
+    RedisUtil::ip2Str(conf -> _repairIPs[node.first-conf -> _agentsIPs.size()]) << 
+    " \"" << ksetCmd << _eth << " -u " << upload << " -d " << download << "\"";
+    // auto _ = system(fmt.str().c_str());
+    if (_if_print) {
+        std::cout << fmt.str() << std::endl;
+    } else {
+        auto _ = system(fmt.str().c_str());
+    }
+  }
+}
 
+void Bandwidth::ResetBandwidth(const Config* conf) {
+  for (auto node : _idx2bdwt) {
+    std::stringstream fmt;
+    if (node.first < conf -> _agentsIPs.size()) fmt << "ssh " << 
+    RedisUtil::ip2Str(conf -> _agentsIPs[node.first]) <<  
+    " \"" << ResetCmd << _eth << "\"";
+    if (node.first >= conf -> _agentsIPs.size()) fmt << "ssh " <<
+    RedisUtil::ip2Str(conf -> _repairIPs[node.first-conf -> _agentsIPs.size()]) << 
+    " \"" << ResetCmd << _eth << "\"";
+    // auto _ = system(fmt.str().c_str());
+    if (_if_print) {
+        std::cout << fmt.str() << std::endl;
+    } else {
+        auto _ = system(fmt.str().c_str());
+    } 
   }
 }
 

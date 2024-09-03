@@ -6,6 +6,7 @@
 #include <deque>
 #include <fstream>
 #include <iostream>
+#include <sstream>
 #include <mutex>
 #include <set>
 #include <stdexcept>

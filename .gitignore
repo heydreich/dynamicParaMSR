@@ -6,7 +6,6 @@ stripeStore/placement
 stripeStore/*
 output/*
 res
-conf/*
 scripts/start.py
 scripts/stop.py
 
