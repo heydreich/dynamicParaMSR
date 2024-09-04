@@ -66,8 +66,8 @@ bool Bandwidth::LoadNext() {
 
 void Bandwidth::setBandwidth(const Config* conf) {
   for (auto node : _idx2bdwt) {
-    double upload = node.second.first;
-    double download = node.second.second;
+    double upload = node.second.first * 1024;
+    double download = node.second.second * 1024;
 
     std::stringstream fmt;
     if (node.first < conf -> _agentsIPs.size()) fmt << "ssh " << 
