@@ -80,6 +80,7 @@ void Bandwidth::setBandwidth(const Config* conf) {
     if (_if_print) {
         std::cout << fmt.str() << std::endl;
     } else {
+        std::cout << fmt.str() << std::endl;
         auto _ = system(fmt.str().c_str());
     }
   }
@@ -98,6 +99,7 @@ void Bandwidth::ResetBandwidth(const Config* conf) {
     if (_if_print) {
         std::cout << fmt.str() << std::endl;
     } else {
+        std::cout << fmt.str() << std::endl;
         auto _ = system(fmt.str().c_str());
     } 
   }
