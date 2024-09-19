@@ -10,7 +10,7 @@
 
 # home dir
 home_dir=$HOME
-proj_dir="$home_dir/parafullnode"
+proj_dir="$home_dir/dynamicParaMSR"
 script_dir="$proj_dir/scripts"
 script="${script_dir}/pretest/bw.py"
 

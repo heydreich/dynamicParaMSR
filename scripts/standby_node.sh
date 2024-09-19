@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # home dir
-system="parafullnode"
+system="dynamicParaMSR"
 home_dir=$HOME
 proj_dir="$home_dir/$system"
 script_dir="$proj_dir/scripts"

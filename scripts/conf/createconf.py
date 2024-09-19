@@ -9,7 +9,7 @@
 #       7. eck [2]
 #       8. ecw [4]
 #       9. batch [3]
-#       10. repairsize [2]
+#       10. repairsize [1]
 
 import os
 import sys
@@ -28,7 +28,7 @@ def usage():
     #       7. eck [2]
     #       8. ecw [4]
     #       9. batch [3]
-    #       10. repairsize [2]
+    #       10. repairsize [1]
     ''')
 
 

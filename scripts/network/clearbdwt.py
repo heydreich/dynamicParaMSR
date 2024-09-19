@@ -43,6 +43,7 @@ for i in range(hostnum):
     nic = niclist[i]
     #print(ip, nic)
 
-    cmd = "ssh "+ip+" \"cd "+WONDERSHAPER+"; sudo ./wondershaper -c -a "+nic+"\""
+    # cmd = "ssh "+ip+" \"cd "+WONDERSHAPER+"; sudo ./wondershaper -c -a "+nic+"\""
+    cmd = "ssh "+ip+"\"sudo ./wondershaper -c -a "+nic+"\""
     print(cmd)
     os.system(cmd)

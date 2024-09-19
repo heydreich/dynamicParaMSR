@@ -369,7 +369,7 @@ void DynamicSolution::genDynamicColoringForSingleFailure(Stripe* stripe, unorder
 
     //idle nodes
     cout << "limitedBottleneck : " << limitedBottleneck << endl;
-    // useIdleNodes1ForSingleFailure(stripe, itm_idx, idleColors, ecdag, res, limitedBottleneck);
+    useIdleNodes1ForSingleFailure(stripe, itm_idx, idleColors, ecdag, res, limitedBottleneck);
 
     double latency  = DistUtil::duration(time1, time2);
     cout << "Runtime: " << latency << endl;
@@ -400,6 +400,17 @@ void DynamicSolution::sortInit(vector<int>& candidateColors) {
     }
 }
 
+vector<int> Stringsplit(string str,const char split)
+{
+	istringstream iss(str);	
+	string token;			
+    vector<int> res;
+	while (getline(iss, token, split))	
+	{
+		res.push_back(atoi(token.c_str())); 
+	}
+    return res;
+}
 
 void DynamicSolution::useIdleNodes1ForSingleFailure(Stripe* stripe, const vector<int> & itm_idx, vector<int>& idleColors,ECDAG * ecdag, unordered_map<int, int> & coloring, double limitedbn) {
     _groupList->evaluateDegree(ecdag, coloring, _ec->_w, _ec->_n);
@@ -417,14 +428,14 @@ void DynamicSolution::useIdleNodes1ForSingleFailure(Stripe* stripe, const vector
         color2table[color]->pushDegree(degreeStr, i);
     }
 
-    for (auto &t : color2table) {
-        cout << "color : " << t.first << endl;
-        for (auto t2 : t.second->degree2setIdx) {
-            cout << "degree : " << t2.first << " , " << " groupIndex : ";
-            for (auto t3 : t.second->idx2set[t2.second]) cout << t3 << ",";
-            cout << endl;
-        }
-    }
+    // for (auto &t : color2table) {
+    //     cout << "color : " << t.first << endl;
+    //     for (auto t2 : t.second->degree2setIdx) {
+    //         cout << "degree : " << t2.first << " , " << " groupIndex : ";
+    //         for (auto t3 : t.second->idx2set[t2.second]) cout << t3 << ",";
+    //         cout << endl;
+    //     }
+    // }
 
     int bottlenode;
     int port;
@@ -435,10 +446,10 @@ void DynamicSolution::useIdleNodes1ForSingleFailure(Stripe* stripe, const vector
     bool complete = false;
 
     stripe->evaluateBottleneck(bottlenode, port, bottleneck);
-    if (bottleneck == limitedbn) return;
+    if (bottleneck == limitedbn || idleColors.size() == 0) return;
     while (!complete) {
 
-        cout << "bottlenode : " << bottlenode << " , port : " << port << " , bottleneck : " << bottleneck << endl;
+        // cout << "bottlenode : " << bottlenode << " , port : " << port << " , bottleneck : " << bottleneck << endl;
         if (1 == 1 ) complete = true;
         if (IdleUse ==  -1) {
             IdleUse = stripe->evaluateIdleColor(idleColors);
@@ -449,11 +460,39 @@ void DynamicSolution::useIdleNodes1ForSingleFailure(Stripe* stripe, const vector
         IdleNodeBottleneck = stripe->_bandwidth->getBottleneck(IdleUse, vector<int>{_interLoadTable[IdleUse][0], _interLoadTable[IdleUse][1]});
 
         // vector<int> idealLoad = stripe->_bandwidth->getIdealLoad();
+        vector<int> degree = {0, 0};
+        for (auto t : color2table[bottlenode]->degree2setIdx) {
+            vector<int> temp = Stringsplit(t.first, '_');
+            // cout << temp[0] << "_" << temp[1] << endl;
+            if (degree[port] > temp[port] || (degree[port] == temp[port] && degree[1-port] > temp[1-port]) ) degree = temp;
+        }
+        cout << degree[0] << "_" << degree[1] << endl;
+        string degreeStr = to_string(degree[0]) + "_" + to_string(degree[1]);
+        
+        for (int idx : color2table[bottlenode]->idx2set[color2table[bottlenode]->degree2setIdx[degreeStr]]) {
+            vector<int> idxs = _groupList->getGroupByIdx(idx);
+            for (auto idx2 : idxs) {
+            if (DEBUG_ENABLE2) cout << "for node " << idx2  << " color = " << IdleUse << endl;
+            coloring[idx2] = IdleUse;
+            // stripe->changeColor(idx, greedyColor);
+            stripe->changeBlockColor(idx2, IdleUse);
+
+            }
+
+            _groupList->changeColor(idx, IdleUse);
+            _interLoadTable[bottlenode][0] += degree[0];
+            _interLoadTable[bottlenode][1] += degree[1];
+            double bottlenodeneck = stripe->_bandwidth->getBottleneck(bottlenode, _interLoadTable[bottlenode]);
+            if (bottlenodeneck >= limitedbn) break;
+        }
 
         
         if (IdleNodeBottleneck <= limitedbn) IdleUse = -1;
         if (bottleneck >= limitedbn) complete = true;
     }
+    stripe->evaluateColoring(); 
+    stripe->dumpLoad(_conf->_agents_num + 1);
+    stripe->dumpBottleneck();
 }
 
 State DynamicSolution::evalTable(const vector<vector<int>> & table)

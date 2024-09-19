@@ -29,7 +29,7 @@ if len(sys.argv) != 15:
     #       3.  ECN [4]
     #       4.  ECK [2]
     #       5.  ECW [4]
-    #       6.  method [centralize|offline|parallel]
+    #       6.  method [dynamic|pararc|centralize]
     #       7.  scenario [standby|scatter]
     #       8.  blkMiB [1|256]
     #       9.  pktKiB [64]
@@ -51,7 +51,7 @@ SCENARIO=sys.argv[7]
 BLKMB=int(sys.argv[8])
 PKTKB=int(sys.argv[9])
 BATCHSIZE=int(sys.argv[10])
-NSTRIPE=int(sys.argv[11])
+NSTRIPE=1
 GENDATASTR=sys.argv[12]
 BDWT=int(sys.argv[13])
 STANDBYSIZE=int(sys.argv[14])
@@ -63,6 +63,7 @@ if GENDATASTR == "true":
 BLOCKSOURCE="standalone"
 print("Blcok source is "+BLOCKSOURCE)
 FAILNODEID=0
+FAILBLOCKID=0
 
 # home dir
 cmd = r'echo ~'
@@ -70,14 +71,14 @@ home_dir_str, stderr = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
 home_dir = home_dir_str.decode().strip()
 
 # proj dir
-proj_dir="{}/parafullnode".format(home_dir)
+proj_dir="{}/dynamicParaMSR".format(home_dir)
 script_dir="{}/scripts".format(proj_dir)
 data_dir="{}/data".format(script_dir)
 conf_dir="{}/conf".format(script_dir)
 cache_dir="{}/cache".format(script_dir)
 network_dir="{}/network".format(script_dir)
 
-exe="{}/build/ParaCoordinator".format(proj_dir)
+exe="{}/build/SingleCoordinator".format(proj_dir)
 
 # 0. stop parafullnode
 cmd="cd {}; python stop.py".format(script_dir)
@@ -99,9 +100,9 @@ os.system(cmd)
 cmd="cd {}; python clearcache.py {}".format(cache_dir, CLUSTER)
 os.system(cmd)
 
-# 4. set bdwt
-cmd="cd {}; python setbdwt.py {} {}".format(network_dir, CLUSTER, BDWT)
-os.system(cmd)
+# # 4. set bdwt
+# cmd="cd {}; python setbdwt.py {} {}".format(network_dir, CLUSTER, BDWT)
+# os.system(cmd)
 
 
 time.sleep(2)
@@ -111,7 +112,9 @@ cmd="cd {}; python start.py".format(script_dir)
 os.system(cmd)
 
 # 6 repair
-cmd="cd {}; ./build/ParaCoordinator {} {} {}".format(proj_dir, METHOD, FAILNODEID, SCENARIO)
+# cmd="cd {}; ./build/SingleCoordinator {} {} {}".format(proj_dir, METHOD, FAILNODEID, SCENARIO)
+FAILBLOCK="{}-{}{}{}-{}".format(CODE, ECN, ECK, ECW, FAILBLOCKID)
+cmd="cd {}; ./build/SingleCoordinator {} {}".format(proj_dir, METHOD, FAILBLOCK)
 print(cmd)
 res=subprocess.Popen(['/bin/bash','-c',cmd], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 out, err = res.communicate()
