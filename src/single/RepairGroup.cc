@@ -10,6 +10,7 @@ GroupInfo::GroupInfo() {
 
 RepairGroup::RepairGroup() {
     groupNum = 0;
+    virGroupNum = 0;
 }
 
 RepairGroup::~RepairGroup() {
@@ -25,22 +26,24 @@ bool RepairGroup::hasGroup(string Gstr){
 
 void RepairGroup::push(string Gstr, int idx) {
     if (!hasGroup(Gstr)) {
-        childsMapIdx.insert(make_pair(Gstr, groupNum));
+        childsMapIdx.insert(make_pair(Gstr, virGroupNum));
         idx2childs.push_back(Gstr);       
         idx2group.push_back(new GroupInfo());
         groupNum++;
+        virGroupNum++;
     }
     int index = childsMapIdx[Gstr];
+    // cout << "GSTR : " << Gstr << " , index : " << childsMapIdx[Gstr] << endl;
     idx2group[index]->members.push_back(idx);
     idx2group[index]->isRequest = false;
-    if (idx == REQUESTOR) {
-        idx2group[index]->isRequest = false;
+    if (idx > REQUESTOR-_ecn) {
+        idx2group[index]->isRequest = true;
         groupNum--;
     }
 }
 
 void RepairGroup::dump() {
-    for (int i = 0; i < groupNum + 1; i++) {
+    for (int i = 0; i < virGroupNum; i++) {
         cout << idx2childs[i] << ":";
         for (auto index : idx2group[i]->members) cout << index << ", ";
         cout << "parent: ";
@@ -51,6 +54,10 @@ void RepairGroup::dump() {
         cout << endl;
     }
     
+}
+
+void RepairGroup::setecn(int ecn){
+    _ecn = ecn;
 }
 
 int RepairGroup::getGroupNum(){
@@ -70,7 +77,7 @@ int RepairGroup::getLevel(int groupIndex){
 }
 
 void RepairGroup::FinishPush(){
-    for (int i = 0; i < groupNum + 1; i++) {
+    for (int i = 0; i < virGroupNum; i++) {
         string sstr = array2string(idx2group[i]->members);
         groupMapIdx.insert(make_pair(sstr, i));
     }

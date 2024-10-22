@@ -139,6 +139,7 @@ void Stripe::changeColor(int idx, int new_color)
 
     for (auto parent_color : parent_colors)
     {
+        // cout << "parent_color " << parent_color << endl;
         if(parent_color == -1)
             continue;
         
@@ -216,8 +217,10 @@ void Stripe::changeColor(int idx, int new_color)
             
             // delete old_color will minus one chunk output 
             if(count_old_color == 1 && old_color != child_color){
-                _out[old_color]--;
-                _in[child_color]--;
+                // _out[old_color]--;
+                // _in[child_color]--;
+                _in[old_color]--;
+                _out[child_color]--;
             }
             
             // add new color will bring one chunk input
@@ -250,6 +253,9 @@ void Stripe::changeBlockColor(int idx, int new_color) {
     return;
 }
 
+vector<int> Stripe::getNodeLoad(int nodeid) {
+    return vector<int>{_in[nodeid], _out[nodeid]};
+}
 
 vector<vector<int>> Stripe::evaluateChange(int cluster_size, int idx, int new_color)
 {
@@ -382,6 +388,7 @@ void Stripe::evaluateColoring() {
     _bdwt = 0;
     _in.clear();
     _out.clear();
+    // cout << "Stripe::evaluateColoring() coloring351 " << endl;
     unordered_map<int, ECNode*> ecNodeMap = _ecdag->getECNodeMap();
 
     // evaluate inmap and outmap
@@ -400,8 +407,9 @@ void Stripe::evaluateColoring() {
         vector<int> parent_colors;
         for (int i=0; i<parents.size(); i++) {
             ECNode* parentnode = parents[i];
-            int parentidx = parentnode->getNodeId();
             
+            int parentidx = parentnode->getNodeId();
+            // cout << "pkt id : " << dagidx << " parent_idxs " << parentidx << endl;
             // int parentcolor = _coloring[parentidx];
             int parentcolor = _coloring.at(parentidx);
 
@@ -409,6 +417,7 @@ void Stripe::evaluateColoring() {
                 parent_colors.push_back(parentcolor);
         }
         for (int i=0; i<parent_colors.size(); i++) {
+            // cout << "pkt id : " << dagidx << " parent_colors " << parent_colors[i] << endl;
             if (mycolor != parent_colors[i] && parent_colors[i] != -1) {
                 if (_out.find(mycolor) == _out.end())
                     _out.insert(make_pair(mycolor, 1));
@@ -425,11 +434,13 @@ void Stripe::evaluateColoring() {
     }
     for (auto item: _in) {
         _bdwt += item.second;
+        // cout << "item.second in " << item.second << endl;
         if (item.second > _load)
             _load = item.second;
     }
 
     for (auto item: _out) {
+        // cout << "item.second in " << item.second << endl;
         if (item.second > _load)
             _load = item.second;
     }
@@ -1341,11 +1352,12 @@ double Stripe::getBottleneck() {
 }
 
 
-void Stripe::evaluateBottleneck(int& bottlenode , int& port, int& bottleneck) {
+void Stripe::evaluateBottleneck(int& bottlenode , int& port, double& bottleneck) {
     double curbottleneck = DBL_MAX;
     for (int i = 0; i < _in.size(); i++) {
         double newbottleneck = _bandwidth->getBottleneck(i, vector<int>{_out[i], _in[i]});
         int newport = _bandwidth->getBottlePort(i, vector<int>{_out[i], _in[i]});
+        // cout << "out : " << _out[i] << "in : " << _in[i] << endl;
         if (newbottleneck < curbottleneck) {
             curbottleneck = newbottleneck;
             bottlenode = i;
@@ -1356,7 +1368,7 @@ void Stripe::evaluateBottleneck(int& bottlenode , int& port, int& bottleneck) {
 }
 
 int Stripe::evaluateIdleColor(const vector<int>& idleColors) {
-    int res = 0;
+    int res = -1;
     double bottleneck = 0;
     for (int icolor : idleColors) {
         double newbottleneck = _bandwidth->evaluateSort(icolor, vector<int>{_in[icolor], _out[icolor]});
@@ -1370,3 +1382,173 @@ int Stripe::evaluateIdleColor(const vector<int>& idleColors) {
 
 
 
+ECDAG* Stripe::genRepairECDAG(ECBase* ec, vector<int> failidx) {
+    // LOG << "Stripe::genRepairECDAG start " << getStripeId()<< endl;
+    // LOG << "node  list: ";
+    // for(auto it : _nodelist){
+    //     LOG << " " << it;
+    // }
+    // LOG << endl;
+    
+    vector<int> from;
+    vector<int> to;
+    int ecw = ec->_w;                                                                                                                                   
+    int ecn = ec->_n;
+
+    _fail_blk_idxs.clear();
+    // blkidx refers to the idx of a block in this stripe
+    for (int blkidx=0; blkidx < ecn; blkidx++){
+        int curnodeid = _nodelist[blkidx];
+        if(find(failidx.begin(),failidx.end(),curnodeid)!=failidx.end()){
+            // if this node fails, we need to repair this block
+            // offset refers the offset of sub-packets
+            for (int offset=0; offset < ecw; offset++) {
+                int pktidx = blkidx * ecw + offset;
+                to.push_back(pktidx);
+            }
+            _fail_blk_idxs.push_back(blkidx);
+        } else {
+            for (int offset=0; offset < ecw; offset++) {
+                int pktidx = blkidx * ecw + offset;
+                from.push_back(pktidx);
+            }
+        }
+    }
+    // LOG << "DEBUG TO " << endl;
+    // for(auto it : to){
+    //     LOG << " " << it;
+    // }
+    // LOG << endl;
+    _ecdag = ec->Decode(from, to);//decode
+    _ecdag->Concact(to, ecn, ecw);
+    
+    vector<int>  headers_ec = _ecdag->getECHeaders();
+    // cout << "_fail_blk_idx " << _fail_blk_idx << endl;
+    //剪枝
+
+    for (auto req : headers_ec){
+        if (req == REQUESTOR -  _fail_blk_idx) continue;
+        _ecdag->getECNodeMap()[req]->removeChildNode();
+        _ecdag->removeNode(req);
+    }
+    _ecdag->DeleteUseless();
+    if(ECDAG_DEBUG_ENABLE)
+        LOG << "Stripe::genRepairECDAG end" << endl;
+    return _ecdag;
+}
+
+
+ECDAG* Stripe::genMutiRepairECDAG(ECBase* ec, string blkname, int repair_node_id) {
+    vector<int> from;
+    vector<int> to;
+
+    int ecw = ec->_w;                                                                                                                                   
+    int ecn = ec->_n;
+    int eck = ec->_k;
+
+    // blkidx refers to the idx of a block in this stripe
+    for (int blkidx=0; blkidx<ecn; blkidx++){
+        string curblk = _blklist[blkidx];
+        if (curblk == blkname) {
+            _fail_blk_idx = blkidx;
+        }
+    }
+    vector<int> failnodeidxs;
+    vector<int> igb_idx = _bandwidth->sortByUp(_nodelist);
+    vector<ECDAG*> selectECDAG;
+    vector<double> limiteds;
+    failnodeidxs.push_back(_nodelist[_fail_blk_idx]);
+    selectECDAG.push_back(genRepairECDAG(ec, failnodeidxs));
+    double limitedbn = preEvaluate(repair_node_id, ecn, ecw, selectECDAG[0]);
+    limiteds.push_back(limitedbn);
+    if(1 == 1) {
+        cout << "limitedbn = " << limitedbn << endl;
+        // for (int nodeid : igb_idx){
+        //     cout << "igb_idx " << " , blockid " << nodeid << " , nodeid " << _nodelist[nodeid] << endl;
+        // }
+    }
+    int ii = 0;
+    int len = 1;
+    while(len < ecn-eck) {
+        if (igb_idx[ii] == _fail_blk_idx) {
+            ii++;
+            continue;
+        }
+        failnodeidxs.push_back(_nodelist[igb_idx[ii]]);
+
+        selectECDAG.push_back(genRepairECDAG(ec, failnodeidxs));
+        limitedbn = preEvaluate(repair_node_id, ecn, ecw, selectECDAG[selectECDAG.size()-1]);
+        if(1 == 1) {
+            for (int nodeid : failnodeidxs){
+                cout << "failidxs " << nodeid << endl;
+            }
+            cout << "limitedbn = " << limitedbn << endl;
+        }
+        limiteds.push_back(limitedbn);
+        ii++;
+        len++;
+    }
+
+    int selectidx = 0;
+    limitedbn = 0;
+    for (int i = 0; i < limiteds.size(); i++) 
+    {
+        // cout << "selectidx : " << selectidx << " , limiteds[i] : " << limiteds[i] << " , limitedbn : " << limitedbn << endl;
+        if (limiteds[i] - limitedbn > 0.1 * limiteds[i]) {
+            
+            selectidx = i;
+            limitedbn = limiteds[i];
+        }
+    }
+
+    cout << "selectidx : " << selectidx << endl;
+    for (int i = 0; i <= selectidx; i++){
+        int nodeid = failnodeidxs[i];
+        cout << "failidxs " << nodeid << endl;
+    }
+    _ecdag = selectECDAG[selectidx];
+    return _ecdag;
+}
+
+double Stripe::preEvaluate(int repair_node_id, int ecn, 
+        int ecw, ECDAG* selectECDAG) {
+    vector<vector<int>> interLoadTable;
+    for (int i = 0; i < ecn; i++) interLoadTable.push_back(vector<int>(2, 0));
+    vector<int> ecLeaves = selectECDAG->getECLeaves();
+    int realLeaves = 0;
+    for (auto dagidx: ecLeaves) {
+        int blkidx = dagidx / ecw;
+        // cout << "blkidx : " << blkidx << ", dagidx : " << dagidx << endl;
+        int nodeid = -1;
+
+        if (blkidx < ecn) {
+            nodeid = blkidx;
+            realLeaves++;
+            interLoadTable[nodeid][0]++;
+        }
+    }
+    double requestorNeck = _bandwidth->getBottleneck(repair_node_id, vector<int>{0, ecw});
+    vector<vector<int>> table = interLoadTable;
+    if (1==1) {
+        cout << "in  ";
+        for(auto it : table)
+        {
+            cout  << it[1]<<" ";
+        }
+        cout << endl;
+
+        cout << "out ";
+        for(auto it : table)
+        {
+            cout  << it[0] << " ";
+        }
+        cout << endl;
+    }
+    double limitedbn = requestorNeck;
+    for (int i = 0; i < ecn; i++) {
+        double newbottleneck = _bandwidth->getBottleneck(_nodelist[i], vector<int>{interLoadTable[i][0], interLoadTable[i][1]});
+        // cout << "newbottleneck : " << newbottleneck << endl;
+        if (newbottleneck < limitedbn) limitedbn = newbottleneck;
+    }
+    return limitedbn;
+}

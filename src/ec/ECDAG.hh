@@ -29,14 +29,18 @@ class ECDAG {
   public:
     ECDAG(); 
     ~ECDAG();
+    vector<int> _ecConcacts; // concact(blkdix) = REQUESTOR - blkidx
 
     void Join(int pidx, vector<int> cidx, vector<int> coefs);
     void Concact(vector<int> cidx);
+    void Concact(vector<int> cidx, int n, int w);
     void genItmIdxs();
     unordered_map<int, ECNode*> getECNodeMap();
     vector<int> getECHeaders();
     vector<int> getECLeaves();
     vector<int> getAllNodeIds();
+    void removeNode(int NodeId);
+    void DeleteUseless();
 
     // for debug
     void dump();

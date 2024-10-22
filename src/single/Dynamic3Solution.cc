@@ -398,7 +398,7 @@ void Dynamic3Solution::useIdleNodesForSingleFailure(Stripe* stripe, const vector
 
     int bottlenode;
     int port;
-    int bottleneck;
+    double bottleneck;
     int IdleUse = -1;
     double limitedBottleneck ;
     double IdleNodeBottleneck;

@@ -50,7 +50,7 @@ int main(int argc, char** argv) {
     gettimeofday(&time2, NULL);
     // cout << "SingleCoordinator::repair time = " << DistUtil::duration(time1, time2) << endl;
 
-    // while (bdwt->LoadNext()) coor->repairSingleBlock(method, blkname);
+    while (bdwt->LoadNext()) coor->repairSingleBlock(method, blkname);
     // clean
     if (coor)
         delete coor;

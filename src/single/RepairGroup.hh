@@ -36,6 +36,8 @@ class RepairGroup {
         unordered_map<string, int> childsMapIdx;
         unordered_map<string, int> groupMapIdx;
         int groupNum;
+        int virGroupNum;
+        int _ecn;
 
     public:
         RepairGroup();
@@ -56,6 +58,7 @@ class RepairGroup {
         int getColor(int groupIndex);
         void evaluateDegree(ECDAG * ecdag, unordered_map<int, int> & coloring, int ecw, int ecn);
         vector<int> getDegree(int groupIndex);
+        void setecn(int ecn);
 
         string array2string(vector<int>& Nodes);
 };

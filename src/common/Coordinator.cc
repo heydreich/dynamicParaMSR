@@ -199,7 +199,7 @@ bool Coordinator::repairSingleBlock(string method, string blkname) {
      
  
 
-     _ssol->genRepairTasks(_ecn, _eck, _ecw);
+    //  _ssol->genRepairTasks(_ecn, _eck, _ecw);
 
      return true;
 

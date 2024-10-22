@@ -1,0 +1,77 @@
+method: dynamic, blkname: Clay-1410256-0-0
+
+ cur : 1
+ssh 192.168.7.30 "wondershaper -a eth0 -u 1024000.000000 -d 1024000.000000"
+ssh 192.168.7.39 "wondershaper -a eth0 -u 1022976.000000 -d 932864.000000"
+ssh 192.168.7.14 "wondershaper -a eth0 -u 1022976.000000 -d 960512.000000"
+ssh 192.168.7.23 "wondershaper -a eth0 -u 1022976.000000 -d 943104.000000"
+ssh 192.168.7.27 "wondershaper -a eth0 -u 1022976.000000 -d 984064.000000"
+ssh 192.168.7.28 "wondershaper -a eth0 -u 1022976.000000 -d 974848.000000"
+ssh 192.168.7.29 "wondershaper -a eth0 -u 1022976.000000 -d 990208.000000"
+ssh 192.168.7.31 "wondershaper -a eth0 -u 1022976.000000 -d 835584.000000"
+ssh 192.168.7.32 "wondershaper -a eth0 -u 1022976.000000 -d 975872.000000"
+ssh 192.168.7.33 "wondershaper -a eth0 -u 1022976.000000 -d 960512.000000"
+ssh 192.168.7.34 "wondershaper -a eth0 -u 1022976.000000 -d 963584.000000"
+ssh 192.168.7.35 "wondershaper -a eth0 -u 1022976.000000 -d 978944.000000"
+ssh 192.168.7.36 "wondershaper -a eth0 -u 1022976.000000 -d 946176.000000"
+ssh 192.168.7.37 "wondershaper -a eth0 -u 0.000000 -d 1015808.000000"
+ssh 192.168.7.38 "wondershaper -a eth0 -u 1022976.000000 -d 936960.000000"
+/home/jsjs/Desktop/dynamicParaMSR/stripeStore/placement
+blockname:Clay-1410256-0-0, location: 192.168.7.14, nodeid:0
+blockname:Clay-1410256-0-1, location: 192.168.7.23, nodeid:1
+blockname:Clay-1410256-0-2, location: 192.168.7.27, nodeid:2
+blockname:Clay-1410256-0-3, location: 192.168.7.28, nodeid:3
+blockname:Clay-1410256-0-4, location: 192.168.7.29, nodeid:4
+blockname:Clay-1410256-0-5, location: 192.168.7.31, nodeid:5
+blockname:Clay-1410256-0-6, location: 192.168.7.32, nodeid:6
+blockname:Clay-1410256-0-7, location: 192.168.7.33, nodeid:7
+blockname:Clay-1410256-0-8, location: 192.168.7.34, nodeid:8
+blockname:Clay-1410256-0-9, location: 192.168.7.35, nodeid:9
+blockname:Clay-1410256-0-10, location: 192.168.7.36, nodeid:10
+blockname:Clay-1410256-0-11, location: 192.168.7.37, nodeid:11
+blockname:Clay-1410256-0-12, location: 192.168.7.38, nodeid:12
+blockname:Clay-1410256-0-13, location: 192.168.7.39, nodeid:13
+number of stripes: 1
+codename: Clay
+ecn: 14
+eck: 10
+ecw: 256
+blkbytes: 268435456
+pktbytes: 65536
+failblkidx = 0
+in  0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+out 0 64 64 64 64 64 64 64 64 64 64 64 64 64 
+limitedbn = 0
+in  0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+out 0 256 256 256 256 256 256 256 256 256 256 0 0 0 
+failidxs 0
+failidxs 11
+limitedbn = 3.90234
+in  0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+out 0 0 256 256 256 256 256 256 256 256 256 0 256 0 
+failidxs 0
+failidxs 11
+failidxs 1
+limitedbn = 3.90234
+in  0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+out 0 0 0 256 256 256 256 256 256 256 256 0 256 256 
+failidxs 0
+failidxs 11
+failidxs 1
+failidxs 2
+limitedbn = 3.90234
+selectidx : 0 , limiteds[i] : 0 , limitedbn : 0
+selectidx : 0 , limiteds[i] : 3.90234 , limitedbn : 0
+selectidx : 1 , limiteds[i] : 3.90234 , limitedbn : 3.90234
+selectidx : 1 , limiteds[i] : 3.90234 , limitedbn : 3.90234
+selectidx : 1
+failidxs 0
+failidxs 11
+fail_node_id: 0
+Stripe 0
+  inmap:  0 347 360 359 365 308 359 360 356 366 346 0 0 0 378 
+  outmap: 0 363 381 377 367 361 365 364 378 375 376 0 0 0 197 
+load = 381
+bdwt = 3904
+bottleneck: 2.60556
+limitedBottleneck: 3.90234

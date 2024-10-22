@@ -80,6 +80,8 @@ void ECDAG::Join(int pidx, vector<int> cidx, vector<int> coefs) {
   for (auto cnode: targetChilds) {
     cnode->addParentNode(rNode);
   }
+    if (ECDAG_DEBUG_ENABLE)
+    cout << "ECDAG::Join end" << endl;
 }
 
 void ECDAG::Concact(vector<int> cidx) {
@@ -89,6 +91,31 @@ void ECDAG::Concact(vector<int> cidx) {
   }
 
   Join(REQUESTOR, cidx, coefs);
+}
+
+void ECDAG::Concact(vector<int> cidx, int n, int w) {
+  vector<vector<int>> block(n);
+  for(auto it : cidx){
+    int blkidx = it / w;
+    block[blkidx].push_back(it);
+  }
+
+  vector<int> coefs;
+  for (int i=0; i<cidx.size(); i++) {
+    coefs.push_back(-1);
+  }
+  for(int i = 0; i < n; i++){
+    if(block[i].empty())
+      continue;
+    // TODO: the idx of concact block is (concact_block- blkidx)
+    Join(REQUESTOR-i, block[i], coefs);
+    // cout << "concact ";
+    // for(auto it : block[i]){
+    //   cout << " " << it;
+    // }
+    // cout << " ->" << REQUESTOR-i <<  endl;
+    _ecConcacts.push_back(REQUESTOR-i);
+  }
 }
 
 //void ECDAG::genECUnits() {
@@ -2217,7 +2244,7 @@ vector<int> ECDAG::genTopoIdxs() {
     int idx = leaves.front();
     leaves.pop_front();
     // cout << "leaves idx = " << idx << endl;
-    if(idx != REQUESTOR && find(_ecLeaves.begin(), _ecLeaves.end(), idx) == _ecLeaves.end()){
+    if(find(_ecHeaders.begin(), _ecHeaders.end(), idx) == _ecHeaders.end() && find(_ecLeaves.begin(), _ecLeaves.end(), idx) == _ecLeaves.end()){
         topoIdxs.push_back(idx);
     }
     ECNode* node = _ecNodeMap[idx];
@@ -2236,3 +2263,50 @@ vector<int> ECDAG::genTopoIdxs() {
   return topoIdxs;
 }
 
+void ECDAG::removeNode(int NodeId) {
+  vector<int>::iterator it = find(_ecHeaders.begin(), _ecHeaders.end(), NodeId);
+  if (it != _ecHeaders.end()) _ecHeaders.erase(it);
+  // ECNode* Nptr = _ecNodeMap[NodeId];
+  // auto MapIt = _ecNodeMap.find(NodeId);
+  // if (MapIt != _ecNodeMap.end()) _ecNodeMap.erase(MapIt);
+  // cout << "ECDAG::removeNode to delete " << NodeId << endl;
+  // for (auto itmIdx : Nptr->getChildIndices()) {
+  //   // cout << "itm : " << itmIdx << " _toDelete : " << _ecNodeMap[itmIdx]->_toDelete << endl; 
+  //   if (_ecNodeMap[itmIdx]->_toDelete) {
+  //     // cout << "ECDAG::removeNode to delete " << itmIdx << endl;
+  //     ECNode* ptr = _ecNodeMap[itmIdx];
+  //     auto Mit = _ecNodeMap.find(itmIdx);
+  //     _ecNodeMap.erase(Mit);
+  //     delete(ptr);
+  //   }
+  // }
+  // for (auto itmIdx : Nptr->getChildIndices()) {
+  //   // cout << "itm : " << itmIdx << " _toDelete : " << _ecNodeMap[itmIdx]->_toDelete << endl; 
+  //   if (_ecNodeMap[itmIdx]->_toDelete) {
+  //     // cout << "ECDAG::removeNode to delete " << itmIdx << endl;
+  //     ECNode* ptr = _ecNodeMap[itmIdx];
+  //     auto Mit = _ecNodeMap.find(itmIdx);
+  //     _ecNodeMap.erase(Mit);
+  //     delete(ptr);
+  //   }
+  // }
+  // delete(Nptr);
+}
+
+void ECDAG::DeleteUseless() {
+  for (auto iter = _ecNodeMap.begin(); iter != _ecNodeMap.end();) {
+    // cout << "ECDAG::removeNode to delete " << iter->first  << " , , , " << iter->second->_toDelete << endl;
+    if (iter->second->_toDelete) {
+      // cout << "ECDAG::removeNode to delete " << iter->first << endl;
+      ECNode* ptr = iter->second;
+      if (ptr->getType() == 0) {
+        auto LeaveItr = find(_ecLeaves.begin(), _ecLeaves.end(), ptr->getNodeId());
+        _ecLeaves.erase(LeaveItr);
+      }
+      _ecNodeMap.erase(iter++);
+      delete(ptr);
+    } else {
+      iter++;
+    } 
+  }
+}

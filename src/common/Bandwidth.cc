@@ -66,8 +66,10 @@ bool Bandwidth::LoadNext() {
 
 void Bandwidth::setBandwidth(const Config* conf) {
   for (auto node : _idx2bdwt) {
-    double upload = node.second.first * 1024;
-    double download = node.second.second * 1024;
+    double uploaddb = node.second.first * 1024;
+    double downloaddb = node.second.second * 1024;
+    string upload = to_string(uploaddb);
+    string download = to_string(downloaddb);
 
     std::stringstream fmt;
     if (node.first < conf -> _agentsIPs.size()) fmt << "ssh " << 
@@ -149,4 +151,19 @@ std::vector<int> Bandwidth::getIdealLoad(int index, double limitedbn) {
     int inLoad = _idx2bdwt[index].second / limitedbn;
     
     return std::vector<int>{outLoad, inLoad};
+}
+
+std::vector<int> Bandwidth::sortByUp(vector<int> nodeidxs){
+    vector<int> res;
+    for (int i = 0; i < nodeidxs.size(); i++) res.push_back(i);
+    for (int i = 0; i < nodeidxs.size(); i++) {
+        for (int j = i + 1; j < nodeidxs.size(); j++) {
+            if (_idx2bdwt[nodeidxs[res[i]]].first > _idx2bdwt[nodeidxs[res[j]]].first) {
+                int swap = res[i];
+                res[i] = res[j];
+                res[j] = swap;
+            }
+        }
+    }
+    return res;
 }

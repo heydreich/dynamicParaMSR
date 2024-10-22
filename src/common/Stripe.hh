@@ -52,6 +52,7 @@ class Stripe {
 
         // for single failure
         int _fail_blk_idx;
+        vector<int> _fail_blk_idxs;
 
         
 
@@ -62,10 +63,12 @@ class Stripe {
         Stripe(int stripeid, string stripename, vector<string> blklist, vector<unsigned int> loclist, vector<int> nodelist);
         ~Stripe();
         vector<int> getPlacement();
+
         int getStripeId();
 
         ECDAG* genRepairECDAG(ECBase* ec, int fail_node_id);
         ECDAG* genRepairECDAG(ECBase* ec, string blkname);
+        ECDAG* genRepairECDAG(ECBase* ec, vector<int> failidx);
         ECDAG* getECDAG();
         
         void setColoring(unordered_map<int, int> coloring);
@@ -98,12 +101,15 @@ class Stripe {
         //lx add
         void setBandwidth(Bandwidth* bdwt);
         double getBottleneck();
-        void evaluateBottleneck(int& bottlenode, int& port, int& bottleneck);
+        void evaluateBottleneck(int& bottlenode, int& port, double& bottleneck);
         void evaluateColorLoad(vector<int> idxs, vector<int>* Load, int newColor);
         void changeBlockColor(int idx, int new_color);
         int evaluateIdleColor( const vector<int>& idleColors);
+        ECDAG* genMutiRepairECDAG(ECBase* ec, string blkname, int repair_node_id);
         double limitedBottleneck();
         double getNodeBottleneck(int nodeid);
+        double preEvaluate(int repair_node_id, int ecn, int ecw, ECDAG* selectECDAG);
+        vector<int> getNodeLoad(int nodeid);
 };
 
 #endif

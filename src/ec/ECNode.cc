@@ -22,6 +22,10 @@ void ECNode::setType(string type) {
     _type = 2;
 }
 
+int ECNode::getType() {
+  return _type;
+}
+
 int ECNode::getNodeId() {
   return _nodeId;
 }
@@ -112,4 +116,43 @@ vector<int> ECNode::getChildColors(const unordered_map<int,int> & coloring) {
       }
   }
   return ret;
+}
+void ECNode::removeChildNode() {
+  //remove childnodes
+  // for (auto it: _childNodes){
+  //   cout << it -> getNodeId() << " " << endl;
+  // }
+  // cout << endl;
+  // cout << "ECNode::removeChildNode() " << _nodeId << " " << endl;
+  for (auto it:_childNodes){
+    // cout << it -> getNodeId() << " " << endl;
+    vector<ECNode*>::iterator iter_child=find(_childNodes.begin(), _childNodes.end(),it);
+    //erase child's parent's child
+    if (iter_child != _childNodes.end()) {
+      ECNode* c = *iter_child;
+      
+      c -> removeParent(this);
+      // cout << "node: " << c->getNodeId() << "ParentSizes" << c->getParentsNum() << endl ;
+      if (c->getParentsNum() == 0) {
+        // cout << "remove " << (*iter_child)->_nodeId << endl;
+        c->removeChildNode();
+      }
+      // _childNodes.erase(iter_child);
+    }
+  }
+  _toDelete = true;
+}
+
+
+void ECNode::removeParent(ECNode* parentPtr) {
+  auto it = find(_parentNodes.begin(), _parentNodes.end(), parentPtr);
+  if (it != _parentNodes.end()) _parentNodes.erase(it);
+}
+// void ECNode::removeChild(ECNode* childPtr) {
+//   auto it = find(_parentNodes.begin(), _parentNodes.end(), childPtr);
+//   if (it != _parentNodes.end()) _parentNodes.erase(it);
+// }
+
+int ECNode::getParentsNum(){
+  return _parentNodes.size();
 }

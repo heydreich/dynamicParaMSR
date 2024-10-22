@@ -38,6 +38,7 @@ class DynamicSolution : public SingleSolutionBase {
         vector<vector<int>> _interLoadTable;
         vector<ColorSort*> candidatesSort;
         int candidatesNum;
+        int _repair_nodeid;
     
     public:
         // han add
@@ -57,7 +58,7 @@ class DynamicSolution : public SingleSolutionBase {
 
         void genRepairSolution(string blkname);
         void genDynamicColoringForSingleFailure(Stripe* stripe, unordered_map<int, int>& res, int fail_node_id);
-        void useIdleNodes1ForSingleFailure(Stripe* stripe, const vector<int> & itm_idx, vector<int> & idleColors,ECDAG * ecdag, unordered_map<int, int> & coloring, double limitedbn);
+        int useIdleNodes1ForSingleFailure(Stripe* stripe, const vector<int> & itm_idx, vector<int> & idleColors,ECDAG * ecdag, unordered_map<int, int> & coloring, double limitedbn, int times);
 
         // end
         DynamicSolution();

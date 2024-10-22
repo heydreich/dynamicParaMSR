@@ -24,6 +24,7 @@ class Bandwidth {
     std::vector<int> getIdealLoad(int index, double limitedbn);
     void setBandwidth(const Config* conf);
     void ResetBandwidth(const Config* conf);
+    std::vector<int> sortByUp(std::vector<int> nodeidxs);
  
     //nodeid -> (upload, download)
   private:

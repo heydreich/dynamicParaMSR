@@ -20,10 +20,13 @@ class ECNode {
     vector<ECNode*> _parentNodes;
 
   public:
+    bool _toDelete = false;
+
     ECNode(int id);
     ~ECNode();
 
     void setType(string type);
+    int getType();
 
     int getNodeId();
 
@@ -37,6 +40,10 @@ class ECNode {
     vector<int> getCoefs();
     vector<int> getChildIndices();
     vector<int> getParentIndices();
+    void removeChildNode();
+    void removeParent(ECNode* parentPtr);
+    void removeChild(ECNode* childPtr);
+    int getParentsNum();
     
     // for debug
     void dump(int parent);
