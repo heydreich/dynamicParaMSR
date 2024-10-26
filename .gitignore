@@ -5,6 +5,7 @@ stripeStore/standalone*
 stripeStore/placement
 stripeStore/*
 output/*
+output*
 conf/*
 res
 
