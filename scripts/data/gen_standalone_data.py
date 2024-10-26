@@ -106,7 +106,7 @@ for stripeid in range(NSTRIPES):
         blkname = "{}-{}{}{}-{}-{}".format(CODE, ECN, ECK, ECW, stripeid, blkid)
         blklist.append(blkname)
 
-        tmpid = random.randint(0, len(agentnodes)-1)
+        tmpid = blkid
         tmploc = agentnodes[tmpid]
 
         while tmploc in loclist:
