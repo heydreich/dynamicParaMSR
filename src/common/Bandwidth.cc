@@ -70,6 +70,8 @@ void Bandwidth::setBandwidth(const Config* conf) {
     double downloaddb = node.second.second * 1024;
     string upload = to_string(uploaddb);
     string download = to_string(downloaddb);
+    upload = upload.substr(0, upload.find("."));
+    download = download.substr(0, download.find("."));
 
     std::stringstream fmt;
     if (node.first < conf -> _agentsIPs.size()) fmt << "ssh " << 

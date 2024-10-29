@@ -4,7 +4,7 @@ CentSingleSolution::CentSingleSolution(){
 
 }
 
-void CentSingleSolution::genRepairSolution(string blkname) {
+int CentSingleSolution::genRepairSolution(string blkname) {
 
     _blkname = blkname;
     

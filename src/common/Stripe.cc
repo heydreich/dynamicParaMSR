@@ -248,6 +248,11 @@ void Stripe::changeColor(int idx, int new_color)
     return;
 }
 
+
+void Stripe::clearContant() {
+    _taskmap.clear();
+}
+
 void Stripe::changeBlockColor(int idx, int new_color) {
     _coloring[idx] = new_color;
     return;

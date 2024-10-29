@@ -56,8 +56,8 @@ class DynamicSolution : public SingleSolutionBase {
         bool isBetter(State st1, State st2);
         bool isBetter(State st1,int color1, State st2, int color2,const vector<vector<int>> & table);
 
-        void genRepairSolution(string blkname);
-        void genDynamicColoringForSingleFailure(Stripe* stripe, unordered_map<int, int>& res, int fail_node_id);
+        int genRepairSolution(string blkname);
+        int genDynamicColoringForSingleFailure(Stripe* stripe, unordered_map<int, int>& res, int fail_node_id);
         int useIdleNodes1ForSingleFailure(Stripe* stripe, const vector<int> & itm_idx, vector<int> & idleColors,ECDAG * ecdag, unordered_map<int, int> & coloring, double limitedbn, int times);
 
         // end

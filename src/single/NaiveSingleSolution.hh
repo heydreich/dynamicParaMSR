@@ -20,7 +20,7 @@ class NaiveSingleSolution : public SingleSolutionBase {
 
     public:
         NaiveSingleSolution();
-        void genRepairSolution(string blkname);
+        int genRepairSolution(string blkname);
 
 };
 

@@ -287,7 +287,7 @@ void DynamicSolution::SingleMLP(Stripe* stripe, const vector<int> & itm_idx, con
 }
 
 
-void DynamicSolution::genDynamicColoringForSingleFailure(Stripe* stripe, unordered_map<int, int>& res,
+int DynamicSolution::genDynamicColoringForSingleFailure(Stripe* stripe, unordered_map<int, int>& res,
         int fail_node_id) {
     // map a sub-packet idx to a real physical node id
     if(DEBUG_ENABLE2)
@@ -410,8 +410,17 @@ void DynamicSolution::genDynamicColoringForSingleFailure(Stripe* stripe, unorder
     cout << "idlebottleneck: " << idlebn << endl;
     cout << "idlelimitedBottleneck: " << limitedBottleneck << endl;
 
+
+
     double latency  = DistUtil::duration(time1, time2);
     cout << "Runtime: " << latency << endl;
+
+    if (idlebn * eck >= 10) {
+        stripe->_bandwidth -> setBandwidth(_conf);
+        return 1;
+    } else {
+        return 0;
+    }
 } 
 
 void DynamicSolution::sortInit(vector<int>& candidateColors) {
@@ -614,7 +623,7 @@ State DynamicSolution::evalTable(vector<vector<int>> table, vector<int> colors)
 
 
 
-void DynamicSolution::genRepairSolution(string blkname){
+int DynamicSolution::genRepairSolution(string blkname){
     _blkname = blkname;
     
     // 1.1 construct ECDAG to repair
@@ -629,7 +638,7 @@ void DynamicSolution::genRepairSolution(string blkname){
     
     // 1.2 generate centralized coloring for the current stripe
     unordered_map<int, int> curcoloring;
-    genDynamicColoringForSingleFailure(_stripe, curcoloring, fail_blk_idx);
+    int toGen = genDynamicColoringForSingleFailure(_stripe, curcoloring, fail_blk_idx);
     
     // set the coloring result in curstripe
     _stripe->setColoring(curcoloring);
@@ -637,6 +646,7 @@ void DynamicSolution::genRepairSolution(string blkname){
     // evaluate the coloring solution
     _stripe->evaluateColoring();
     // _stripe->dumpLoad(5);
+    return toGen;
 }
 
 

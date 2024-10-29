@@ -34,9 +34,9 @@ int main(int argc, char** argv) {
     int eck = conf->_eck;
     int ecw = conf->_ecw;
 
-    Bandwidth* bdwt = new Bandwidth(bandwidthFile, true);
+    Bandwidth* bdwt = new Bandwidth(bandwidthFile, false);
     bdwt->LoadNext();
-    bdwt->setBandwidth(conf);
+    // bdwt->setBandwidth(conf);
 
     
     // generate repair solution
@@ -45,9 +45,9 @@ int main(int argc, char** argv) {
     ss->setBandwidth(bdwt);
 
     struct timeval time1, time2, time3, time4, time5;
-    gettimeofday(&time1, NULL);
+    // gettimeofday(&time1, NULL);
     coor->repairSingleBlock(method, blkname);
-    gettimeofday(&time2, NULL);
+    // gettimeofday(&time2, NULL);
     // cout << "SingleCoordinator::repair time = " << DistUtil::duration(time1, time2) << endl;
 
     while (bdwt->LoadNext()) coor->repairSingleBlock(method, blkname);

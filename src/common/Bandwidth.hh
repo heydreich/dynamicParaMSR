@@ -9,7 +9,7 @@
 
 using namespace tinyxml2;
 
-#define BANDWIDTHDEBUG false
+#define BANDWIDTHDEBUG true
 
 class Bandwidth {
   public:
@@ -36,8 +36,8 @@ class Bandwidth {
     std::fstream _bwf;
     std::string _eth;
 
-    const std::string ksetCmd = "wondershaper -a ";
-    const std::string ResetCmd = "wondershaper -c -a ";
+    const std::string ksetCmd = "sudo wondershaper -a ";
+    const std::string ResetCmd = "sudo wondershaper -c -a ";
 
 };
 #endif

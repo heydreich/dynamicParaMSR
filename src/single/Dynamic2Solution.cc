@@ -333,7 +333,7 @@ State Dynamic2Solution::evalTable(vector<vector<int>> table, vector<int> colors)
 
 
 
-void Dynamic2Solution::genRepairSolution(string blkname){
+int Dynamic2Solution::genRepairSolution(string blkname){
     _blkname = blkname;
     
     // 1.1 construct ECDAG to repair

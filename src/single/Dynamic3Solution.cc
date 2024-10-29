@@ -457,7 +457,7 @@ State Dynamic3Solution::evalTable(vector<vector<int>> table, vector<int> colors)
 
 
 
-void Dynamic3Solution::genRepairSolution(string blkname){
+int Dynamic3Solution::genRepairSolution(string blkname){
     _blkname = blkname;
     
     // 1.1 construct ECDAG to repair

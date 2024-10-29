@@ -101,7 +101,7 @@ void ParaSingleSolution::genOfflineColoringForSingleFailure(Stripe* stripe, unor
     // }
 }
 
-void ParaSingleSolution::genRepairSolution(string blkname) {
+int ParaSingleSolution::genRepairSolution(string blkname) {
     _blkname = blkname;
     
     // 1.1 construct ECDAG to repair

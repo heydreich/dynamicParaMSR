@@ -394,7 +394,7 @@ void NaiveSingleSolution::genNaiveColoringForSingleFailure(Stripe* stripe, unord
 
 }
 
-void NaiveSingleSolution::genRepairSolution(string blkname){
+int NaiveSingleSolution::genRepairSolution(string blkname){
     _blkname = blkname;
     
     // 1.1 construct ECDAG to repair

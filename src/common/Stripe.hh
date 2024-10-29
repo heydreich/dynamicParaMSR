@@ -110,6 +110,8 @@ class Stripe {
         double getNodeBottleneck(int nodeid);
         double preEvaluate(int repair_node_id, int ecn, int ecw, ECDAG* selectECDAG);
         vector<int> getNodeLoad(int nodeid);
+
+        void clearContant();
 };
 
 #endif

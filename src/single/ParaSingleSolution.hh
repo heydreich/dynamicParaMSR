@@ -20,7 +20,7 @@ class ParaSingleSolution : public SingleSolutionBase {
         ParaSingleSolution();
         ParaSingleSolution(TradeoffPoints* tp);
         
-        void genRepairSolution(string blkname);         
+        int genRepairSolution(string blkname);         
         void setTradeoffPoints(TradeoffPoints* tp);
         
 };

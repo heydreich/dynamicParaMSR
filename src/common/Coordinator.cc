@@ -139,9 +139,12 @@ int Coordinator::genRepairSolutionAsync() {
 }
 
 bool Coordinator::repairSingleBlock(string method, string blkname) {
+    struct timeval time1, time2, time3, time4, time5;
+    gettimeofday(&time1, NULL);
      _method = method;
      Stripe* stripe = _ss->getStripeFromBlock(blkname);
      stripe->setBandwidth(_ss->_bdwt);
+     _ss->_bdwt->ResetBandwidth(_conf);
 
      int failblkidx = stripe->getBlockIdxByName(blkname);
      cout << "failblkidx = " << failblkidx << endl;
@@ -171,35 +174,39 @@ bool Coordinator::repairSingleBlock(string method, string blkname) {
      if (method == "centralize") {
          _ssol = new CentSingleSolution();
          _ssol->init(stripe, _ec, _codename, _conf);
-         _ssol->genRepairSolution(blkname);
+        //  _ssol->genRepairSolution(blkname);
      } else if (method == "pararc") {
          string offline_solution_path = _conf->_tpDir+"/"+_codename+"_"+to_string(_ecn)+"_"+to_string(_eck)+"_"+to_string(_ecw)+".xml";
          TradeoffPoints* tp = new TradeoffPoints(offline_solution_path);
          _ssol = new ParaSingleSolution(tp);
          _ssol->init(stripe, _ec, _codename, _conf);
-         _ssol->genRepairSolution(blkname);
+        //  _ssol->genRepairSolution(blkname);
      } else if (method == "naive") {
         //  cout << "naive has not been implemented" << endl;
          _ssol = new NaiveSingleSolution();
          _ssol->init(stripe, _ec, _codename, _conf);
-         _ssol->genRepairSolution(blkname);
+        //  _ssol->genRepairSolution(blkname);
      } else if (method == "dynamic") {
          _ssol = new DynamicSolution();
          _ssol->init(stripe, _ec, _codename, _conf);
-         _ssol->genRepairSolution(blkname);
+        //  _ssol->genRepairSolution(blkname);
      } else if (method == "dynamic2") {
          _ssol = new Dynamic2Solution();
          _ssol->init(stripe, _ec, _codename, _conf);
-         _ssol->genRepairSolution(blkname);
+        //  _ssol->genRepairSolution(blkname);
      } else if (method == "dynamic3") {
          _ssol = new Dynamic3Solution();
          _ssol->init(stripe, _ec, _codename, _conf);
-         _ssol->genRepairSolution(blkname);
+        //  _ssol->genRepairSolution(blkname);
      }
      
+     int Togen = _ssol->genRepairSolution(blkname);
  
-
-    //  _ssol->genRepairTasks(_ecn, _eck, _ecw);
+     gettimeofday(&time3, NULL);
+     if (Togen == 1) _ssol->genRepairTasks(_ecn, _eck, _ecw);
+     gettimeofday(&time2, NULL);
+     stripe->clearContant();
+    cout << "SingleCoordinator::repair time = " << DistUtil::duration(time3, time2) << endl;
 
      return true;
 

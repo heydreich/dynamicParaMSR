@@ -29,7 +29,7 @@ class SingleSolutionBase {
         void init(Stripe* stripe, ECBase* ec, string codename, Config* conf);
         //void genRepairTasks(int ecn, int eck, int ecw, Config* conf, unordered_map<int, int> fail2repair, unsigned int coorIp);
         void genRepairTasks(int ecn, int eck, int ecw);
-        virtual void genRepairSolution(string blkname) = 0;
+        virtual int genRepairSolution(string blkname) = 0;
 };
 
 #endif

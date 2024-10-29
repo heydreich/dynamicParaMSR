@@ -17,7 +17,7 @@ class CentSingleSolution : public SingleSolutionBase {
 
         CentSingleSolution();
 
-        void genRepairSolution(string blkname);
+        int genRepairSolution(string blkname);
 };
 
 #endif
