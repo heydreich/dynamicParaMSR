@@ -230,6 +230,14 @@ for node in clusternodes:
     print(cmd)
     os.system(cmd)
 
+    cmd="ssh "+node+" \" mkdir -p "+blk_dir+ "\""
+    print(cmd)
+    os.system(cmd)
+
+    cmd="ssh "+node+" \" mkdir -p "+stripeStore_dir+ "\""
+    print(cmd)
+    os.system(cmd)
+
     cmd="rm sysSetting.xml"
     print(cmd)
     os.system(cmd)

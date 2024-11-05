@@ -197,12 +197,15 @@ bool Coordinator::repairSingleBlock(string method, string blkname) {
          _ssol = new Dynamic3Solution();
          _ssol->init(stripe, _ec, _codename, _conf);
         //  _ssol->genRepairSolution(blkname);
+     } else {
+         cout << "Non-supported code!" << endl;
+         return 0;
      }
      int curId = _ss->_bdwt->getCurId();
      int Togen = _ssol->genRepairSolution(blkname);
  
     //  gettimeofday(&time3, NULL);
-    //  if (Togen == 1) _ssol->genRepairTasks(curId ,_ecn, _eck, _ecw);
+     if (Togen == 1) _ssol->genRepairTasks(curId ,_ecn, _eck, _ecw);
     //  gettimeofday(&time2, NULL);
      stripe->clearContant();
     cout << "SingleCoordinator::repair time = " << DistUtil::duration(time3, time2) << endl;

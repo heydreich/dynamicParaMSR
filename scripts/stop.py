@@ -56,11 +56,11 @@ for slave in slavelist:
     out, err = res.communicate()
 
     pid=-1
-    out = out.split("\n")
+    out = out.split("\n".encode())
     for line in out:
-       if line.find("redis-server") == -1:
+       if line.find("redis-server".encode()) == -1:
            continue
-       item = line.split(" ")
+       item = line.split(" ".encode())
 
        for i in range(1,7):
            if (item[i] != ''):
@@ -78,9 +78,8 @@ for slave in slavelist:
     #cmd="ssh "+slave+" \" ulimit -c unlimited  \""
     #print(cmd)
     #os.system(cmd)
-    
+
     cmd="ssh "+slave+" \"sudo wondershaper -c -a enp1s0f0\""
-    # print(cmd)
     os.system(cmd)
 
     cmd="ssh "+slave+" \"sudo service redis stop\""
