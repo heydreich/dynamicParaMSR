@@ -51,19 +51,20 @@ NodeBatchTask* Worker::readInstructions() {
             cerr << __func__ << " rReply->elements = 0, ERROR " << endl;
         }
         char* reqStr = rReply -> element[1] -> str;
-        AGCommand* agCmd = new AGCommand(reqStr);
+        AGCommand* agCmd = new AGCommand(reqStr, true);
         
         int batchid = agCmd->getBatchId();
+        int curId = agCmd->getCurId();
         int stripenum = agCmd->getNumStripes();
         vector<int> stripeidlist = agCmd->getStripeIdList();
         vector<int> stripetasknum = agCmd->getStripeTaskNum();
         
-        LOG << "Worker::raedInstructions.batchid: " << batchid << ", stripenum: " << stripenum << endl;
+        LOG << "Worker::raedInstructions.batchid: " << batchid << ", bandwidthId: " << curId << ", stripenum: " << stripenum << endl;
         for (int i=0; i<stripenum; i++) {
             LOG << "    stripeid: " << stripeidlist[i] << ", tasknum: " << stripetasknum[i] << endl;
         }
         
-        nbtask = recvBatchTasks(batchid, stripenum, stripeidlist, stripetasknum);
+        nbtask = recvBatchTasks(batchid, curId, stripenum, stripeidlist, stripetasknum);
         
         delete agCmd;
     }
@@ -114,6 +115,49 @@ NodeBatchTask* Worker::recvBatchTasks(int batchid, int stripenum, vector<int> st
     return nbtask;
 }
 
+
+NodeBatchTask* Worker::recvBatchTasks(int batchid, int curId, int stripenum, vector<int> stripeidlist, vector<int> stripetasknum) {
+    LOG << "Worker::recvBatchTasks batchid: " << batchid << ", stripenum: " << stripenum << endl;
+   
+    struct timeval time1, time2, time3, time4, time5, time6;
+    gettimeofday(&time1, NULL);
+
+    redisContext* recvCtx = RedisUtil::createContext(_conf -> _localIp);
+
+    unordered_map<int, vector<Task*>> taskmap;
+
+    for (int i=0; i<stripenum; i++) {
+        int stripeid = stripeidlist[i];
+        int tasknum = stripetasknum[i];
+
+        vector<Task*> tasklist;
+        string rkey = to_string(batchid)+":"+to_string(stripeid)+":command";
+        
+        for (int taskid=0; taskid<tasknum; taskid++) {
+            redisReply* rReply;
+            rReply = (redisReply*)redisCommand(recvCtx, "blpop %s 0", rkey.c_str());
+
+            char* reqStr = rReply -> element[1] -> str;
+            Task* curtask = new Task(reqStr, batchid, stripeid, _conf->_localIp);
+            // curtask->dump();
+            tasklist.push_back(curtask);
+
+            freeReplyObject(rReply);
+        }
+
+        taskmap.insert(make_pair(stripeid, tasklist));
+    }
+
+    NodeBatchTask* nbtask = new NodeBatchTask(batchid, curId, stripeidlist, stripetasknum, taskmap, 0);
+    //_batchtasklist->push(nbtask);
+
+    redisFree(recvCtx); 
+
+    gettimeofday(&time2, NULL);
+    LOG << "Worker::recvBatchTasks duration = " << DistUtil::duration(time1, time2) << endl;
+    return nbtask;
+}
+
 /* parallel stripe */
 void Worker::repairBatch(NodeBatchTask* nbtask) {
 
@@ -123,6 +167,7 @@ void Worker::repairBatch(NodeBatchTask* nbtask) {
 
     // 0. get batch information
     int batchid = nbtask->_batch_id;
+    int curId = nbtask->_curId;
     vector<int> stripeidlist = nbtask->_stripe_id_list;
     vector<int> tasknumlist = nbtask->_num_list;
     unordered_map<int, vector<Task*>> taskmap = nbtask->_taskmap;
@@ -172,7 +217,7 @@ void Worker::repairBatch(NodeBatchTask* nbtask) {
     _stripe2datamap.clear();
     gettimeofday(&time4, NULL);
 
-    sendFinishFlag(batchid);
+    sendFinishFlag(batchid, curId);
     gettimeofday(&time5, NULL);
 
     LOG << "LOG::repair.createqueue: " << DistUtil::duration(time1, time2) << endl;
@@ -1805,6 +1850,49 @@ void Worker::sendFinishFlag(int batchid) {
     }
 
     string key = to_string(batchid)+":"+to_string(nodeid)+":finish";
+    int value = 1;
+    redisAppendCommand(writeCtx, "RPUSH %s %b", key.c_str(), &value, sizeof(int));
+
+    redisGetReply(writeCtx, (void**)&rReply);
+    freeReplyObject(rReply);
+    redisFree(writeCtx);
+
+    LOG << "-------- nodeid " << nodeid << " send finish flag to coordinator --------" << endl;
+}
+
+void Worker::sendFinishFlag(int batchid, int curId) {
+
+    // 0. create context
+    unsigned int coorip = _conf->_coorIp;
+    redisContext* writeCtx = RedisUtil::createContext(coorip);
+    redisReply* rReply;
+
+    // 1. figure out the current nodeid
+    unsigned int localip = _conf->_localIp;
+    int nodeid = -1;
+    for (int i=0; i<_conf->_agentsIPs.size(); i++) {
+        LOG << "check localip " << RedisUtil::ip2Str(localip) << " with agentip " << RedisUtil::ip2Str(_conf->_agentsIPs[i]) << endl;
+        if (localip == _conf->_agentsIPs[i]) {
+            nodeid = i;
+            break;
+        }
+    }
+
+    if (nodeid == -1) {
+        for (int i=0; i<_conf->_repairIPs.size(); i++) {
+            LOG << "check localip " << RedisUtil::ip2Str(localip) << " with repairip " << RedisUtil::ip2Str(_conf->_repairIPs[i]) << endl;
+            if (localip == _conf->_repairIPs[i]) {
+                nodeid = _conf->_agentsIPs.size() + i;
+                break;
+            }
+        }
+    }
+
+    if (nodeid == -1) {
+        LOG << "ERROR NODE ID" << endl;
+    }
+
+    string key = to_string(batchid)+":"+to_string(curId)+":"+to_string(nodeid)+":finish";
     int value = 1;
     redisAppendCommand(writeCtx, "RPUSH %s %b", key.c_str(), &value, sizeof(int));
 

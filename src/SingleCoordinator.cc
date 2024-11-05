@@ -34,7 +34,7 @@ int main(int argc, char** argv) {
     int eck = conf->_eck;
     int ecw = conf->_ecw;
 
-    Bandwidth* bdwt = new Bandwidth(bandwidthFile, false);
+    Bandwidth* bdwt = new Bandwidth(bandwidthFile, true);
     bdwt->LoadNext();
     // bdwt->setBandwidth(conf);
 

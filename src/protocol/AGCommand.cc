@@ -38,6 +38,32 @@ AGCommand::AGCommand(char* reqStr) {
   _cmLen = 0;
 }
 
+AGCommand::AGCommand(char* reqStr, bool ReadBandwidth) {
+  _agCmd = reqStr;
+  _cmLen = 0; 
+  _maxLen = AGENT_COMMAND_LEN;
+
+  // 0. read batch id
+  _batch_id = readInt();
+
+  // 1. read bandwidthId
+  _curId = readInt();
+
+  // 2. read num stripes
+  _num_stripes = readInt();
+
+  for (int i=0; i<_num_stripes; i++) {
+      int stripeid = readInt();
+      int numtasks = readInt();
+
+      _stripe_id_list.push_back(stripeid);
+      _stripe_task_num.push_back(numtasks);
+  }
+
+  _agCmd = nullptr;
+  _cmLen = 0;
+}
+
 void AGCommand::writeInt(int value) {
     if (_cmLen + 4 > _maxLen) {
         // the current _agCmd cannot serve the request
@@ -125,6 +151,25 @@ void AGCommand::buildAGCommand(int batchid, int nstripes,
     }
 }
 
+void AGCommand::buildAGCommand(int batchid, int curId, int nstripes, 
+        vector<int> stripelist, vector<int> numlist) {
+
+    // 0. batchid
+    writeInt(batchid);
+
+    // 2. bandwidthid
+    writeInt(curId);
+
+    // 2. nstripes
+    writeInt(nstripes);
+
+    // 3. stripe|num
+    for (int i=0; i<nstripes; i++) {
+        writeInt(stripelist[i]);
+        writeInt(numlist[i]);
+    }
+}
+
 void AGCommand::checkLength() {
     if (_cmLen > AGENT_COMMAND_LEN) {
         cout << "ERROR::AGCommand length " << _cmLen << " is larger than AGENT_COMMAND_LEN of " << AGENT_COMMAND_LEN << endl;
@@ -137,6 +182,10 @@ int AGCommand::getBatchId() {
 
 int AGCommand::getNumStripes() {
     return _num_stripes;
+}
+
+int AGCommand::getCurId() {
+    return _curId;
 }
 
 vector<int> AGCommand::getStripeIdList() {

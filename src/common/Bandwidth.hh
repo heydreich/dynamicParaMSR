@@ -9,7 +9,7 @@
 
 using namespace tinyxml2;
 
-#define BANDWIDTHDEBUG true
+#define BANDWIDTHDEBUG false
 
 class Bandwidth {
   public:
@@ -24,7 +24,10 @@ class Bandwidth {
     std::vector<int> getIdealLoad(int index, double limitedbn);
     void setBandwidth(const Config* conf);
     void ResetBandwidth(const Config* conf);
+    void clearCache(const Config* conf);
     std::vector<int> sortByUp(std::vector<int> nodeidxs);
+    int getCurId();
+    void setFull(int node_id);
  
     //nodeid -> (upload, download)
   private:
@@ -38,6 +41,7 @@ class Bandwidth {
 
     const std::string ksetCmd = "sudo wondershaper -a ";
     const std::string ResetCmd = "sudo wondershaper -c -a ";
+    const double minBw = 50;
 
 };
 #endif

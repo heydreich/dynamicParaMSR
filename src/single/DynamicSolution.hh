@@ -39,6 +39,7 @@ class DynamicSolution : public SingleSolutionBase {
         vector<ColorSort*> candidatesSort;
         int candidatesNum;
         int _repair_nodeid;
+        double _limitedbn;
     
     public:
         // han add
@@ -51,8 +52,8 @@ class DynamicSolution : public SingleSolutionBase {
 
         State evalTable(const vector<vector<int>> & table);
         State evalTable(vector<vector<int>> table, vector<int> colors);
-        void SingleMLP(Stripe* stripe, const vector<int> & itm_idx, const vector<int> & candidates,ECDAG * ecdag, unordered_map<int, int> & coloring);
-        int chooseColor_single(Stripe* stripe, vector<int> candidateColors, vector<int> childColors, unordered_map<int, int> coloring, vector<int> idxs);
+        void SingleMLP(Stripe* stripe, const vector<int> & itm_idx, const vector<int> & candidates,ECDAG * ecdag, unordered_map<int, int> & coloring,vector<int> & idleColors);
+        int chooseColor_single(Stripe* stripe, vector<int> candidateColors, vector<int> childColors, unordered_map<int, int> coloring, vector<int> idxs, vector<int> & idleColors);
         bool isBetter(State st1, State st2);
         bool isBetter(State st1,int color1, State st2, int color2,const vector<vector<int>> & table);
 

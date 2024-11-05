@@ -132,6 +132,7 @@ class Worker {
 
         NodeBatchTask* readInstructions();
         NodeBatchTask* recvBatchTasks(int batchid, int stripenum, vector<int> stripeidlist, vector<int> stripetasknum);
+        NodeBatchTask* recvBatchTasks(int batchid, int curId, int stripenum, vector<int> stripeidlist, vector<int> stripetasknum);
 
         void repairBatch(NodeBatchTask* nbtask);
         void repairStripe(int batchid, int stripeid, int tasknum, vector<Task*> tasklist);
@@ -175,6 +176,7 @@ class Worker {
         void persist(int batchid, int stripeid, Task* task);
 
         void sendFinishFlag(int batchid);
+        void sendFinishFlag(int batchid, int curId);
         double getTimeStamp(struct timeval tv); // in microsecond
         string getTimeString(struct timeval tv);
 };

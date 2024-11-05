@@ -10,6 +10,18 @@ NodeBatchTask::NodeBatchTask(int batchid, vector<int> stripeidlist, vector<int> 
     _ip = ip;
 }
 
+NodeBatchTask::NodeBatchTask(int batchid, int curId, vector<int> stripeidlist, vector<int> numlist, 
+        unordered_map<int, vector<Task*>> taskmap, unsigned int ip) {
+
+    _batch_id = batchid;
+    _curId = curId;
+    _stripe_id_list = stripeidlist;
+    _num_list = numlist;
+    _taskmap = taskmap;
+    _ip = ip;
+}
+
+
 NodeBatchTask::~NodeBatchTask() {
 
     for (auto item: _taskmap) {
@@ -23,7 +35,7 @@ NodeBatchTask::~NodeBatchTask() {
 
 void NodeBatchTask::sendAGCommand(unsigned int ip) {
     AGCommand* agCmd = new AGCommand();
-    agCmd->buildAGCommand(_batch_id, _stripe_id_list.size(), _stripe_id_list, _num_list);
+    agCmd->buildAGCommand(_batch_id, _curId,  _stripe_id_list.size(), _stripe_id_list, _num_list);
     agCmd->sendTo(ip);
 
     delete agCmd;
@@ -90,7 +102,7 @@ void NodeBatchTask::waitFinishFlag(int nodeid, unsigned int coorip) {
     struct timeval time1;
     redisContext* recvCtx = RedisUtil::createContext(coorip);
 
-    string rkey = to_string(_batch_id)+":"+to_string(nodeid)+":finish";
+    string rkey = to_string(_batch_id)+":"+to_string(_curId)+":"+to_string(nodeid)+":finish";
     LOG << "-------- wait " << rkey << " --------" << endl;
     redisReply* rReply;
     rReply = (redisReply*)redisCommand(recvCtx, "blpop %s 0", rkey.c_str());

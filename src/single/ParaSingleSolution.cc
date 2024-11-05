@@ -99,6 +99,7 @@ void ParaSingleSolution::genOfflineColoringForSingleFailure(Stripe* stripe, unor
     //    int nodeid = item.second;
     //    cout << "dagidx: " << dagidx << ", nodeid: " << nodeid << endl;
     // }
+    stripe->_bandwidth -> setBandwidth(_conf); 
 }
 
 int ParaSingleSolution::genRepairSolution(string blkname) {
@@ -122,6 +123,7 @@ int ParaSingleSolution::genRepairSolution(string blkname) {
     // evaluate the coloring solution
     _stripe->evaluateColoring();
     _stripe->dumpLoad(_conf->_agents_num + 1);
+    return 1;
 }
 
 void ParaSingleSolution::setTradeoffPoints(TradeoffPoints* tp) {

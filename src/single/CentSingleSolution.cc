@@ -25,6 +25,8 @@ int CentSingleSolution::genRepairSolution(string blkname) {
     
     // evaluate the coloring solution
     _stripe->evaluateColoring();
+
+    return 1;
 }
 
 
@@ -88,6 +90,8 @@ void CentSingleSolution::genCentralizedColoringForSingleFailure(Stripe* stripe, 
         }
     }
 
+    stripe->_bandwidth -> setBandwidth(_conf);
+    
 //    // // debug
 //    // for (auto item: res) {
 //    //     int dagidx = item.first;

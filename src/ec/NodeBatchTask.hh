@@ -11,12 +11,14 @@ class NodeBatchTask {
 
     public:
         int _batch_id;
+        int _curId;
         vector<int> _stripe_id_list;
         vector<int> _num_list;
         unordered_map<int, vector<Task*>> _taskmap; // stripeid->tasklist
         unsigned int _ip;
 
         NodeBatchTask(int batchid, vector<int> stripeidlist, vector<int> numlist, unordered_map<int, vector<Task*>> taskmap, unsigned int ip);
+        NodeBatchTask(int batchid, int curId, vector<int> stripeidlist, vector<int> numlist, unordered_map<int, vector<Task*>> taskmap, unsigned int ip);
         ~NodeBatchTask();
 
         void sendAGCommand(unsigned int ip);

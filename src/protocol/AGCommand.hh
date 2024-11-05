@@ -18,6 +18,7 @@ class AGCommand {
     string _rKey;
 
     int _batch_id;
+    int _curId;
     int _num_stripes;
     vector<int> _stripe_id_list;
     vector<int> _stripe_task_num;
@@ -28,6 +29,7 @@ class AGCommand {
     AGCommand();
     ~AGCommand();
     AGCommand(char* reqStr);
+    AGCommand(char* reqStr, bool ReadBandwidth);
 
     // basic construction methods
     void writeInt(int value);
@@ -36,10 +38,12 @@ class AGCommand {
     string readString();
 
     void buildAGCommand(int batchid, int nstripes, vector<int> stripelist, vector<int> numlist);
+    void buildAGCommand(int batchid, int curId, int nstripes, vector<int> stripelist, vector<int> numlist);
     void checkLength();
 
     int getBatchId();
     int getNumStripes();
+    int getCurId();
     vector<int> getStripeIdList();
     vector<int> getStripeTaskNum();
 

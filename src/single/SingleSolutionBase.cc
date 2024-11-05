@@ -17,7 +17,7 @@ void SingleSolutionBase::init(Stripe* stripe, ECBase* ec, string codename, Confi
 }
 
 //void SingleSolutionBase::genRepairTasks(int ecn, int eck, int ecw, Config* conf, unordered_map<int, int> fail2repair, unsigned int coorIp) {
-void SingleSolutionBase::genRepairTasks(int ecn, int eck, int ecw){
+void SingleSolutionBase::genRepairTasks(int curId, int ecn, int eck, int ecw){
 
     struct timeval time1, time2, time3, time4, time5, time6;
     gettimeofday(&time1, NULL);
@@ -74,7 +74,7 @@ void SingleSolutionBase::genRepairTasks(int ecn, int eck, int ecw){
         }
 
         // 1.2 prepare NodeBatchTask
-        NodeBatchTask* nbtask = new NodeBatchTask(0, stripelist, numlist, stripetaskmap, ip);
+        NodeBatchTask* nbtask = new NodeBatchTask(0, curId, stripelist, numlist, stripetaskmap, ip);
 
         batchtaskmap.insert(make_pair(nodeid, nbtask));
     }

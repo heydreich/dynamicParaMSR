@@ -66,8 +66,11 @@ bool Bandwidth::LoadNext() {
 
 void Bandwidth::setBandwidth(const Config* conf) {
   for (auto node : _idx2bdwt) {
-    double uploaddb = node.second.first * 1024;
-    double downloaddb = node.second.second * 1024;
+    double coefficient = 1000;
+    double uploaddb = node.second.first * coefficient;
+    double downloaddb = node.second.second * coefficient;
+    if (uploaddb < minBw*coefficient) uploaddb = minBw*coefficient;
+    if (downloaddb < minBw*coefficient) downloaddb = minBw*coefficient;
     string upload = to_string(uploaddb);
     string download = to_string(downloaddb);
     upload = upload.substr(0, upload.find("."));
@@ -88,6 +91,11 @@ void Bandwidth::setBandwidth(const Config* conf) {
         auto _ = system(fmt.str().c_str());
     }
   }
+}
+
+void Bandwidth::setFull(int node_id) {
+    _idx2bdwt[node_id].first = 0;
+    _idx2bdwt[node_id].second = 1000;
 }
 
 void Bandwidth::ResetBandwidth(const Config* conf) {
@@ -112,6 +120,29 @@ void Bandwidth::ResetBandwidth(const Config* conf) {
 Bandwidth::~Bandwidth() {
     Close();
 }
+
+int Bandwidth::getCurId() {
+    return _cur;
+}
+
+void Bandwidth::clearCache(const Config* conf){
+    for (auto node : _idx2bdwt) {
+    std::stringstream fmt;
+    if (node.first < conf -> _agentsIPs.size()) fmt << "ssh " << 
+    RedisUtil::ip2Str(conf -> _agentsIPs[node.first]) <<  
+    " \"" << "sudo sync; sudo sh -c \'echo 3 > /proc/sys/vm/drop_caches\'" << "\"";
+    if (node.first >= conf -> _agentsIPs.size()) fmt << "ssh " <<
+    RedisUtil::ip2Str(conf -> _repairIPs[node.first-conf -> _agentsIPs.size()]) << 
+    " \"" << "sudo sync; sudo sh -c \'echo 3 > /proc/sys/vm/drop_caches\'" << "\"";
+    // auto _ = system(fmt.str().c_str());
+    if (_if_print) {
+        std::cout << fmt.str() << std::endl;
+    } else {
+        std::cout << fmt.str() << std::endl;
+        auto _ = system(fmt.str().c_str());
+    } 
+  }
+} 
 
 void Bandwidth::Close() {
     if (_bwf.is_open()) _bwf.close();

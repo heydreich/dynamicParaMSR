@@ -138,6 +138,11 @@ for slave in slavelist:
     #print(cmd)
     #os.system(cmd)
 
+    
+    cmd="ssh "+slave+" \"sudo wondershaper -c -a enp1s0f0\""
+    print(cmd)
+    os.system(cmd)
+
     cmd="ssh "+slave+" \"sudo service redis stop\""
     print(cmd)
     os.system(cmd)

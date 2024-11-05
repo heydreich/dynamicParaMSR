@@ -144,7 +144,6 @@ bool Coordinator::repairSingleBlock(string method, string blkname) {
      _method = method;
      Stripe* stripe = _ss->getStripeFromBlock(blkname);
      stripe->setBandwidth(_ss->_bdwt);
-     _ss->_bdwt->ResetBandwidth(_conf);
 
      int failblkidx = stripe->getBlockIdxByName(blkname);
      cout << "failblkidx = " << failblkidx << endl;
@@ -199,14 +198,16 @@ bool Coordinator::repairSingleBlock(string method, string blkname) {
          _ssol->init(stripe, _ec, _codename, _conf);
         //  _ssol->genRepairSolution(blkname);
      }
-     
+     int curId = _ss->_bdwt->getCurId();
      int Togen = _ssol->genRepairSolution(blkname);
  
-     gettimeofday(&time3, NULL);
-     if (Togen == 1) _ssol->genRepairTasks(_ecn, _eck, _ecw);
-     gettimeofday(&time2, NULL);
+    //  gettimeofday(&time3, NULL);
+    //  if (Togen == 1) _ssol->genRepairTasks(curId ,_ecn, _eck, _ecw);
+    //  gettimeofday(&time2, NULL);
      stripe->clearContant();
     cout << "SingleCoordinator::repair time = " << DistUtil::duration(time3, time2) << endl;
+     _ss->_bdwt->ResetBandwidth(_conf);
+    //  _ss->_bdwt->clearCache(_conf);
 
      return true;
 
