@@ -101,6 +101,9 @@ cmd="sudo service redis stop"
 print(cmd)
 os.system(cmd)
 
+cmd="ulimit -n 65535"
+print(cmd)
+os.system(cmd)
 
 cmd="sudo service redis restart"
 print(cmd)
@@ -156,6 +159,15 @@ for slave in slavelist:
     os.system(cmd)
     
     cmd="ssh "+slave+" \" rm -rf "+proj_dir+ "/blkDir/*/*.repair\""
+    os.system(cmd)
+
+    cmd="ssh "+slave+" \" rm -rf "+proj_dir+ "/build\""
+    os.system(cmd)
+
+    cmd="ssh "+slave+" \" mkdir -p "+proj_dir+ "/build\""
+    os.system(cmd)
+
+    cmd="ssh "+slave+" \" ulimit -n 65535 " + "\""
     os.system(cmd)
 
     os.system("ssh " + slave + " \"redis-cli flushall \"")

@@ -130,10 +130,10 @@ void Bandwidth::clearCache(const Config* conf){
     std::stringstream fmt;
     if (node.first < conf -> _agentsIPs.size()) fmt << "ssh " << 
     RedisUtil::ip2Str(conf -> _agentsIPs[node.first]) <<  
-    " \"" << "sudo sync; sudo sh -c \'echo 3 > /proc/sys/vm/drop_caches\'" << "\"";
+    " \"" << "redis-cli flushall" << "\"";
     if (node.first >= conf -> _agentsIPs.size()) fmt << "ssh " <<
     RedisUtil::ip2Str(conf -> _repairIPs[node.first-conf -> _agentsIPs.size()]) << 
-    " \"" << "sudo sync; sudo sh -c \'echo 3 > /proc/sys/vm/drop_caches\'" << "\"";
+    " \"" << "redis-cli flushall" << "\"";
     // auto _ = system(fmt.str().c_str());
     if (_if_print) {
         std::cout << fmt.str() << std::endl;

@@ -204,13 +204,15 @@ bool Coordinator::repairSingleBlock(string method, string blkname) {
      int curId = _ss->_bdwt->getCurId();
      int Togen = _ssol->genRepairSolution(blkname);
  
-    //  gettimeofday(&time3, NULL);
+     gettimeofday(&time3, NULL);
      if (Togen == 1) _ssol->genRepairTasks(curId ,_ecn, _eck, _ecw);
-    //  gettimeofday(&time2, NULL);
+     gettimeofday(&time2, NULL);
      stripe->clearContant();
+    //  _ss->_bdwt->clearCache(_conf);
+
     cout << "SingleCoordinator::repair time = " << DistUtil::duration(time3, time2) << endl;
      _ss->_bdwt->ResetBandwidth(_conf);
-    //  _ss->_bdwt->clearCache(_conf);
+
 
      return true;
 
