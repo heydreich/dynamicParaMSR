@@ -41,7 +41,12 @@ bool Bandwidth::LoadNext() {
             continue;
         }
         if (flag == 1) {
-            UploadArray[i] = stod(content);
+            // UploadArray[i] = stod(content);
+            // UploadArray[i] = stod(content);
+            // if (UploadArray[i] < 500) {
+            //     UploadArray[i] = 500;
+            // }
+            UploadArray[i] = 500;
             i++;
         } else if (flag == 2) {
             DownloadArray[i] = stod(content);

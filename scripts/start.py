@@ -172,7 +172,7 @@ for slave in slavelist:
 
     os.system("ssh " + slave + " \"redis-cli flushall \"")
 
-    os.system("ssh " + slave + " \"killall ParaAgent \"")
+    os.system("ssh " + slave + " \"sudo killall ParaAgent \"")
 
     #cmd="ssh " + slave + " \"mkdir " + proj_dir+"/build"+ "\""
     #print(cmd)

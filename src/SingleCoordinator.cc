@@ -12,17 +12,22 @@ void usage() {
     cout << "Usage: ./SingleCoordinator " << endl;
     cout << "   1. method [centralize|pararc|naive|dynamic]" << endl;
     cout << "   2. blockname " << endl;
+    cout << "   2. onlyPrintBandwidth [false]" << endl;
 }
 
 int main(int argc, char** argv) {
 
-    if (argc < 3) {
+    if (argc < 4) {
         usage();
         return 0;
     }
 
     string method = string(argv[1]);
     string blkname = string(argv[2]);
+    string only_print = string(argv[3]);
+    bool PrintOnly = false;
+    if (only_print == "true") PrintOnly = true;
+
     cout << "method: " << method << ", blkname: " << blkname << endl;
     //int failnodeid = atoi(argv[2]);
     //read config file and bandwidth file 
@@ -34,7 +39,7 @@ int main(int argc, char** argv) {
     int eck = conf->_eck;
     int ecw = conf->_ecw;
 
-    Bandwidth* bdwt = new Bandwidth(bandwidthFile, true);
+    Bandwidth* bdwt = new Bandwidth(bandwidthFile, PrintOnly);
     bdwt->LoadNext();
     // bdwt->setBandwidth(conf);
 

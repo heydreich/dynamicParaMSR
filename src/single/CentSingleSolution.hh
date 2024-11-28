@@ -11,7 +11,7 @@ class CentSingleSolution : public SingleSolutionBase {
     private:
 
         //void genRepairBatchesForSingleFailure(int fail_node_id,  string scenario, bool enqueue);
-        void genCentralizedColoringForSingleFailure(Stripe* stripe, unordered_map<int, int>& res, int failblkidx);
+        int genCentralizedColoringForSingleFailure(Stripe* stripe, unordered_map<int, int>& res, int failblkidx);
 
     public:
 

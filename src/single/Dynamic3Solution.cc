@@ -234,7 +234,7 @@ void Dynamic3Solution::SingleMLP(Stripe* stripe, const vector<int> & itm_idx, co
 }
 
 
-void Dynamic3Solution::genDynamicColoringForSingleFailure(Stripe* stripe, unordered_map<int, int>& res,
+int Dynamic3Solution::genDynamicColoringForSingleFailure(Stripe* stripe, unordered_map<int, int>& res,
         int fail_node_id) {
     // map a sub-packet idx to a real physical node id
     if(DEBUG_ENABLE3)
@@ -328,7 +328,7 @@ void Dynamic3Solution::genDynamicColoringForSingleFailure(Stripe* stripe, unorde
     sort(itm_idx.begin(), itm_idx.end());    
     struct timeval time1, time2;
     gettimeofday(&time1, NULL);
-    sortInit(candidateColors);
+    // sortInit(candidateColors);
     // cout << "sortInit complete" << endl;
     // for (auto item: candidatesSort) {
     //     cout << item->color << "," << item->bandwidthperblock << endl;
@@ -342,33 +342,42 @@ void Dynamic3Solution::genDynamicColoringForSingleFailure(Stripe* stripe, unorde
 
     double latency  = DistUtil::duration(time1, time2);
     cout << "Runtime: " << latency << endl;
+    double idlebn = stripe->getBottleneck();
+
+    if (idlebn * ecw >= 10) {
+        stripe->_bandwidth -> setBandwidth(_conf);
+        return 1;
+    } else {
+        return 0;
+    }
+
 } 
 
-void Dynamic3Solution::sortInit(vector<int>& candidateColors) {
-    vector<int> testload = {0,0};
-    for (int i = 0; i < candidateColors.size(); i++) {
-        candidatesSort.push_back(new Color3Sort());
-        int icolor=candidateColors[i];
-        candidatesSort[i]->color=icolor;
-        testload[0] = _interLoadTable[icolor][0];
-        testload[1] = _interLoadTable[icolor][1];
-        candidatesSort[i]->bandwidthperblock=_stripe->_bandwidth->evaluateSort(icolor, testload);
-        candidatesNum++;
-    }
+// void Dynamic3Solution::sortInit(vector<int>& candidateColors) {
+//     vector<int> testload = {0,0};
+//     for (int i = 0; i < candidateColors.size(); i++) {
+//         candidatesSort.push_back(new Color3Sort());
+//         int icolor=candidateColors[i];
+//         candidatesSort[i]->color=icolor;
+//         testload[0] = _interLoadTable[icolor][0];
+//         testload[1] = _interLoadTable[icolor][1];
+//         candidatesSort[i]->bandwidthperblock=_stripe->_bandwidth->evaluateSort(icolor, testload);
+//         candidatesNum++;
+//     }
 
-    for (int i = 0; i < candidatesSort.size()-1; i++) {
-        for (int j = 0; j < candidatesSort.size()-1-i; j++) {
-            double lBottle = candidatesSort[j]->bandwidthperblock;
-            double rBottle = candidatesSort[j+1]->bandwidthperblock;
-            if (lBottle < rBottle) {
-                Color3Sort
-                * temp = candidatesSort[j];
-                candidatesSort[j]=candidatesSort[j+1];
-                candidatesSort[j+1]=temp;
-            }
-        }
-    }
-}
+//     for (int i = 0; i < candidatesSort.size()-1; i++) {
+//         for (int j = 0; j < candidatesSort.size()-1-i; j++) {
+//             double lBottle = candidatesSort[j]->bandwidthperblock;
+//             double rBottle = candidatesSort[j+1]->bandwidthperblock;
+//             if (lBottle < rBottle) {
+//                 Color3Sort
+//                 * temp = candidatesSort[j];
+//                 candidatesSort[j]=candidatesSort[j+1];
+//                 candidatesSort[j+1]=temp;
+//             }
+//         }
+//     }
+// }
 
 
 void Dynamic3Solution::useIdleNodesForSingleFailure(Stripe* stripe, const vector<int> & itm_idx, vector<int>& idleColors,ECDAG * ecdag, unordered_map<int, int> & coloring, double limitedbn) {
@@ -470,7 +479,7 @@ int Dynamic3Solution::genRepairSolution(string blkname){
     
     // 1.2 generate centralized coloring for the current stripe
     unordered_map<int, int> curcoloring;
-    genDynamicColoringForSingleFailure(_stripe, curcoloring, fail_blk_idx);
+    int res = genDynamicColoringForSingleFailure(_stripe, curcoloring, fail_blk_idx);
     
     // set the coloring result in curstripe
     _stripe->setColoring(curcoloring);
@@ -478,6 +487,7 @@ int Dynamic3Solution::genRepairSolution(string blkname){
     // evaluate the coloring solution
     _stripe->evaluateColoring();
     // _stripe->dumpLoad(5);
+    return res;
 }
 
 

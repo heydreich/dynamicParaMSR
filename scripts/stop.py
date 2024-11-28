@@ -89,4 +89,4 @@ for slave in slavelist:
     os.system(cmd)
 
     print(cmd)
-    os.system("ssh " + slave + " \"killall ParaAgent \"")
+    os.system("ssh " + slave + " \"sudo killall ParaAgent \"")

@@ -205,7 +205,7 @@ bool Coordinator::repairSingleBlock(string method, string blkname) {
      int Togen = _ssol->genRepairSolution(blkname);
  
      gettimeofday(&time3, NULL);
-     if (Togen == 1) _ssol->genRepairTasks(curId ,_ecn, _eck, _ecw);
+    //  if (Togen == 1) _ssol->genRepairTasks(curId ,_ecn, _eck, _ecw);
      gettimeofday(&time2, NULL);
      stripe->clearContant();
     //  _ss->_bdwt->clearCache(_conf);

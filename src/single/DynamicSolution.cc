@@ -465,7 +465,7 @@ int DynamicSolution::genDynamicColoringForSingleFailure(Stripe* stripe, unordere
     double latency  = DistUtil::duration(time1, time2);
     cout << "Runtime: " << latency << endl;
 
-    if (idlebn * eck >= 10) {
+    if (idlebn * ecw >= 10) {
         stripe->_bandwidth -> setBandwidth(_conf);
         return 1;
     } else {

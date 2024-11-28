@@ -18,7 +18,7 @@ int CentSingleSolution::genRepairSolution(string blkname) {
     
     // 1.2 generate centralized coloring for the current stripe
     unordered_map<int, int> curcoloring;
-    genCentralizedColoringForSingleFailure(_stripe, curcoloring, fail_blk_idx);
+    int res = genCentralizedColoringForSingleFailure(_stripe, curcoloring, fail_blk_idx);
     
     // set the coloring result in curstripe
     _stripe->setColoring(curcoloring);
@@ -26,11 +26,11 @@ int CentSingleSolution::genRepairSolution(string blkname) {
     // evaluate the coloring solution
     _stripe->evaluateColoring();
 
-    return 1;
+    return res;
 }
 
 
-void CentSingleSolution::genCentralizedColoringForSingleFailure(Stripe* stripe, unordered_map<int, int>& res, int failblkidx) {
+int CentSingleSolution::genCentralizedColoringForSingleFailure(Stripe* stripe, unordered_map<int, int>& res, int failblkidx) {
     // map a sub-packet idx to a real physical node id
     
     ECDAG* ecdag = stripe->getECDAG();
@@ -90,7 +90,16 @@ void CentSingleSolution::genCentralizedColoringForSingleFailure(Stripe* stripe, 
         }
     }
 
-    stripe->_bandwidth -> setBandwidth(_conf);
+    // stripe->_bandwidth -> setBandwidth(_conf);
+    double idlebn = stripe->getBottleneck();
+    cout << "bottleneck: " << idlebn << endl;
+
+    if (idlebn * ecw >= 10) {
+        stripe->_bandwidth -> setBandwidth(_conf);
+        return 1;
+    } else {
+        return 0;
+    }
     
 //    // // debug
 //    // for (auto item: res) {
