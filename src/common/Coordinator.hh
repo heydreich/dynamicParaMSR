@@ -18,7 +18,7 @@
 #include "../single/DynamicSolution.hh"
 #include "../single/NaiveSingleSolution.hh"
 #include "../single/Dynamic2Solution.hh"
-#include "../single/Dynamic3Solution.hh"
+#include "../single/Affinaty.hh"
 #include "Config.hh"
 #include "StripeStore.hh"
 

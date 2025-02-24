@@ -1,5 +1,5 @@
-#ifndef _Dynamic3Solution_HH_
-#define _Dynamic3Solution_HH_
+#ifndef _Affinaty_HH_
+#define _Affinaty_HH_
 
 #include "../common/TradeoffPoints.hh"
 #include "../ec/ECBase.hh"
@@ -30,7 +30,7 @@ class Degree3Table {
 };
 
 
-class Dynamic3Solution : public SingleSolutionBase {
+class Affinaty : public SingleSolutionBase {
 
     private:
         TradeoffPoints* _tp;
@@ -60,8 +60,8 @@ class Dynamic3Solution : public SingleSolutionBase {
         void useIdleNodesForSingleFailure(Stripe* stripe, const vector<int> & itm_idx, vector<int> & idleColors,ECDAG * ecdag, unordered_map<int, int> & coloring, double limitedbn);
 
         // end
-        Dynamic3Solution();
-        Dynamic3Solution(int batchsize, int standbysize, int agentsnum);
+        Affinaty();
+        Affinaty(int batchsize, int standbysize, int agentsnum);
         void sortInit(vector<int>& candidateColors);
 
 };

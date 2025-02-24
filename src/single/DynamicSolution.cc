@@ -679,7 +679,8 @@ int DynamicSolution::genRepairSolution(string blkname){
     
     // 1.1 construct ECDAG to repair
     int repair_node_id = _conf->_agentsIPs.size();
-    ECDAG* curecdag = _stripe->genMutiRepairECDAG(_ec, blkname, repair_node_id);
+    // ECDAG* curecdag = _stripe->genMutiRepairECDAG(_ec, blkname, _codename,  repair_node_id);
+    ECDAG* curecdag = _stripe->genRepairECDAG(_ec, blkname);
     // curecdag->dump();
 
     // 1.2 get fail block idx

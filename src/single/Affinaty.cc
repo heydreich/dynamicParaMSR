@@ -1,11 +1,11 @@
-#include "Dynamic3Solution.hh"
+#include "Affinaty.hh"
 #include "ParaSingleSolution.hh"
 
-Dynamic3Solution::Dynamic3Solution(){
+Affinaty::Affinaty(){
     _groupList = new RepairGroup();
 }
 
-Dynamic3Solution::Dynamic3Solution(int batchsize, int standbysize, int agentsnum) {
+Affinaty::Affinaty(int batchsize, int standbysize, int agentsnum) {
     _batch_size = batchsize;
 }
 
@@ -41,7 +41,7 @@ void dumpTable3(vector<vector<int>> table)
 
 
 // if st1 is better than st2, then return ture;
-bool Dynamic3Solution::isBetter(State st1, State st2)
+bool Affinaty::isBetter(State st1, State st2)
 {
     // if load and bandwidth both equal, will return false
     if(st1._load < st2._load){
@@ -61,7 +61,7 @@ bool Dynamic3Solution::isBetter(State st1, State st2)
 
 
 // if st1 is better than st2, then return ture;
-bool Dynamic3Solution::isBetter(State st1,int color1, State st2, int color2,const vector<vector<int>> & table)
+bool Affinaty::isBetter(State st1,int color1, State st2, int color2,const vector<vector<int>> & table)
 {
     // just consider global input, because input load is easier to occur imbanlance
     if(st1._load < st2._load){
@@ -78,7 +78,7 @@ bool Dynamic3Solution::isBetter(State st1,int color1, State st2, int color2,cons
 }
 
 
-int Dynamic3Solution::chooseColor_single(Stripe* stripe, vector<int> candidateColors, vector<int> childColors, unordered_map<int, int> coloring, int idx)
+int Affinaty::chooseColor_single(Stripe* stripe, vector<int> candidateColors, vector<int> childColors, unordered_map<int, int> coloring, int idx)
 {
     // choose the color which has the minimum local load among the childColors node.
     int bestColor = -1;  
@@ -127,10 +127,10 @@ string childs3string(vector<int> childNodes) {
     return res;
 }
 
-void Dynamic3Solution::SingleMLP(Stripe* stripe, const vector<int> & itm_idx, const vector<int> & candidateColors,ECDAG * ecdag, unordered_map<int, int> & coloring)
+void Affinaty::SingleMLP(Stripe* stripe, const vector<int> & itm_idx, const vector<int> & candidateColors,ECDAG * ecdag, unordered_map<int, int> & coloring)
 {
     if(DEBUG_ENABLE3)
-        cout << "Dynamic3Solution::SingleMLP for stripe " << stripe->getStripeId() << endl;
+        cout << "Affinaty::SingleMLP for stripe " << stripe->getStripeId() << endl;
 
     // 1. init information and blank solution
     vector<int> topoIdxs = ecdag->genTopoIdxs();
@@ -234,11 +234,11 @@ void Dynamic3Solution::SingleMLP(Stripe* stripe, const vector<int> & itm_idx, co
 }
 
 
-int Dynamic3Solution::genDynamicColoringForSingleFailure(Stripe* stripe, unordered_map<int, int>& res,
+int Affinaty::genDynamicColoringForSingleFailure(Stripe* stripe, unordered_map<int, int>& res,
         int fail_node_id) {
     // map a sub-packet idx to a real physical node id
     if(DEBUG_ENABLE3)
-        cout << "Dynamic3Solution::genDynamicColoringForSingleFailure" << endl;
+        cout << "Affinaty::genDynamicColoringForSingleFailure" << endl;
     ECDAG* ecdag = stripe->getECDAG();
     vector<int> curplacement = stripe->getPlacement();
     int ecn = _ec->_n;
@@ -353,7 +353,7 @@ int Dynamic3Solution::genDynamicColoringForSingleFailure(Stripe* stripe, unorder
 
 } 
 
-// void Dynamic3Solution::sortInit(vector<int>& candidateColors) {
+// void Affinaty::sortInit(vector<int>& candidateColors) {
 //     vector<int> testload = {0,0};
 //     for (int i = 0; i < candidateColors.size(); i++) {
 //         candidatesSort.push_back(new Color3Sort());
@@ -380,7 +380,7 @@ int Dynamic3Solution::genDynamicColoringForSingleFailure(Stripe* stripe, unorder
 // }
 
 
-void Dynamic3Solution::useIdleNodesForSingleFailure(Stripe* stripe, const vector<int> & itm_idx, vector<int>& idleColors,ECDAG * ecdag, unordered_map<int, int> & coloring, double limitedbn) {
+void Affinaty::useIdleNodesForSingleFailure(Stripe* stripe, const vector<int> & itm_idx, vector<int>& idleColors,ECDAG * ecdag, unordered_map<int, int> & coloring, double limitedbn) {
     _groupList->evaluateDegree(ecdag, coloring, _ec->_w, _ec->_n);
     vector<int> usedColors;
     unordered_map<int, Degree3Table*> color2table;
@@ -431,7 +431,7 @@ void Dynamic3Solution::useIdleNodesForSingleFailure(Stripe* stripe, const vector
     }
 }
 
-State Dynamic3Solution::evalTable(const vector<vector<int>> & table)
+State Affinaty::evalTable(const vector<vector<int>> & table)
 {
     int bdwt = 0;
     int load = 0;
@@ -445,7 +445,7 @@ State Dynamic3Solution::evalTable(const vector<vector<int>> & table)
     return State(load,bdwt);
 }
 
-State Dynamic3Solution::evalTable(vector<vector<int>> table, vector<int> colors)
+State Affinaty::evalTable(vector<vector<int>> table, vector<int> colors)
 {
     // return the load which is the maximum load among the colors_node
     // return the bdwt which is full dag bandwidth
@@ -466,7 +466,7 @@ State Dynamic3Solution::evalTable(vector<vector<int>> table, vector<int> colors)
 
 
 
-int Dynamic3Solution::genRepairSolution(string blkname){
+int Affinaty::genRepairSolution(string blkname){
     _blkname = blkname;
     
     // 1.1 construct ECDAG to repair

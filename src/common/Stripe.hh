@@ -105,7 +105,7 @@ class Stripe {
         void evaluateColorLoad(vector<int> idxs, vector<int>* Load, int newColor);
         void changeBlockColor(int idx, int new_color);
         int evaluateIdleColor( const vector<int>& idleColors);
-        ECDAG* genMutiRepairECDAG(ECBase* ec, string blkname, int repair_node_id);
+        ECDAG* genMutiRepairECDAG(ECBase* ec, string blkname, string codename, int repair_node_id);
         double limitedBottleneck();
         double getNodeBottleneck(int nodeid);
         double preEvaluate(int repair_node_id, int ecn, int ecw, ECDAG* selectECDAG);

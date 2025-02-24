@@ -1443,7 +1443,7 @@ ECDAG* Stripe::genRepairECDAG(ECBase* ec, vector<int> failidx) {
 }
 
 
-ECDAG* Stripe::genMutiRepairECDAG(ECBase* ec, string blkname, int repair_node_id) {
+ECDAG* Stripe::genMutiRepairECDAG(ECBase* ec, string blkname, string codename,  int repair_node_id) {
     vector<int> from;
     vector<int> to;
 
@@ -1474,7 +1474,7 @@ ECDAG* Stripe::genMutiRepairECDAG(ECBase* ec, string blkname, int repair_node_id
     }
     int ii = 0;
     int len = 1;
-    while(len < ecn-eck) {
+    while(len < ecn-eck && codename=="Clay") {
         if (igb_idx[ii] == _fail_blk_idx) {
             ii++;
             continue;

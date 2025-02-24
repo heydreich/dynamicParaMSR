@@ -163,6 +163,7 @@ bool Coordinator::repairSingleBlock(string method, string blkname) {
          cout << "Non-supported code!" << endl;
          return 0;
      }
+    //  _ec->dump();
  
      int batchsize = _conf->_batch_size;
      int agentnum = _conf->_agents_num;
@@ -193,8 +194,8 @@ bool Coordinator::repairSingleBlock(string method, string blkname) {
          _ssol = new Dynamic2Solution();
          _ssol->init(stripe, _ec, _codename, _conf);
         //  _ssol->genRepairSolution(blkname);
-     } else if (method == "dynamic3") {
-         _ssol = new Dynamic3Solution();
+     } else if (method == "affinaty") {
+         _ssol = new Affinaty();
          _ssol->init(stripe, _ec, _codename, _conf);
         //  _ssol->genRepairSolution(blkname);
      } else {
@@ -204,9 +205,9 @@ bool Coordinator::repairSingleBlock(string method, string blkname) {
      int curId = _ss->_bdwt->getCurId();
      int Togen = _ssol->genRepairSolution(blkname);
  
-     gettimeofday(&time2, NULL);
-     if (Togen == 1) _ssol->genRepairTasks(curId ,_ecn, _eck, _ecw);
-     gettimeofday(&time3, NULL);
+    //  gettimeofday(&time2, NULL);
+    //  if (Togen == 1) _ssol->genRepairTasks(curId ,_ecn, _eck, _ecw);
+    //  gettimeofday(&time3, NULL);
      stripe->clearContant();
     //  _ss->_bdwt->clearCache(_conf);
 

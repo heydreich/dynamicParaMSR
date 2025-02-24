@@ -19,6 +19,7 @@
 <value>192.168.7.41</value>
 <value>192.168.7.42</value>
 <value>192.168.7.43</value>
+<value>192.168.7.44</value>
 </attribute>
 <attribute><name>repairnodes.addr</name>
 <value>192.168.7.30</value>
@@ -37,7 +38,7 @@
 <attribute><name>agent.thread.num</name><value>4</value></attribute>
 <attribute><name>cmddist.thread.num</name><value>4</value></attribute>
 <attribute><name>local.addr</name><value>192.168.7.13</value></attribute>
-<attribute><name>block.directory</name><value>/home/jsjs/Desktop/dynamicParaMSR/blkDir</value></attribute>
-<attribute><name>stripestore.directory</name><value>/home/jsjs/Desktop/dynamicParaMSR/stripeStore</value></attribute>
-<attribute><name>tradeoffpoint.directory</name><value>/home/jsjs/Desktop/dynamicParaMSR/offline</value></attribute>
+<attribute><name>block.directory</name><value>/home/lx/Extra/dynamicParaMSR/blkDir</value></attribute>
+<attribute><name>stripestore.directory</name><value>/home/lx/Extra/dynamicParaMSR/stripeStore</value></attribute>
+<attribute><name>tradeoffpoint.directory</name><value>/home/lx/Extra/dynamicParaMSR/offline</value></attribute>
 </setting>

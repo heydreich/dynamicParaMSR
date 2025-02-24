@@ -27,6 +27,10 @@ bool Bandwidth::LoadNext() {
     int i = 0;
     int lineNum = _nodeNum * 2 + 2;
     int readNum = 0;
+    int min = 0, max = 1000;
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> distrib(min, max);
     while (readNum < lineNum) {
         readNum++;
         _bwf >> content;
@@ -41,15 +45,17 @@ bool Bandwidth::LoadNext() {
             continue;
         }
         if (flag == 1) {
-            // UploadArray[i] = stod(content);
+            UploadArray[i] = stod(content);
+            // if (i > 14) UploadArray[i] = double(distrib(gen));
             // UploadArray[i] = stod(content);
             // if (UploadArray[i] < 500) {
             //     UploadArray[i] = 500;
             // }
-            UploadArray[i] = 500;
+            // UploadArray[i] = 500;
             i++;
         } else if (flag == 2) {
             DownloadArray[i] = stod(content);
+            // if (i > 14) DownloadArray[i] = double(distrib(gen));
             i++;
         }
     }

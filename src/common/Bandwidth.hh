@@ -6,6 +6,7 @@
 #include "../util/RedisUtil.hh"
 #include "Config.hh"
 #include "float.h"
+#include "random"
 
 using namespace tinyxml2;
 
