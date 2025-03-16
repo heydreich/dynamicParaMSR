@@ -168,7 +168,7 @@ double Bandwidth::getBottleneck(int index, std::vector<int> testTable) {
 
 int Bandwidth::getBottlePort(int index, std::vector<int> testTable) {
     //0 means bottle port is upPort, 1 means DownPort
-    double UpPerSubBlock = testTable[0] == 0 ? DBL_MAX : _idx2bdwt[index].first/testTable[1];
+    double UpPerSubBlock = testTable[0] == 0 ? DBL_MAX : _idx2bdwt[index].first/testTable[0];
     double DownPerSubBlock = testTable[1] == 0 ? DBL_MAX : _idx2bdwt[index].second/testTable[1];
     return UpPerSubBlock < DownPerSubBlock ? 0:1;
 }

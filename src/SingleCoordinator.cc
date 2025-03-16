@@ -9,7 +9,7 @@
 using namespace std;
 
 void usage() {
-    cout << "Usage: ./SingleCoordinator " << endl;
+    cout << "Usage: ./build/SingleCoordinator " << endl;
     cout << "   1. method [centralize|pararc|naive|dynamic]" << endl;
     cout << "   2. blockname " << endl;
     cout << "   2. onlyPrintBandwidth [false]" << endl;

@@ -8,6 +8,11 @@ output/*
 output*
 conf/*
 res
+result*
+dynamic/
+dynamic2/
+affinaty/
+cent/
 
 
 */*/log/*

@@ -26,32 +26,32 @@ pktbytes: 65536
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 47 29 20 0 15 1 33 96 59 688 0 0 0 0 0 256 
-  outmap: 0 64 64 64 111 93 84 64 111 97 88 100 81 223 0 0 0 0 0 0 
-load = 688
-bdwt = 1244
-bottleneck: 0.331839
-Runtime: 1504.99
+  inmap:  0 0 1 1 29 31 208 9 15 1 44 318 2 303 0 0 0 0 0 256 
+  outmap: 0 64 64 64 93 86 112 73 111 97 86 149 66 153 0 0 0 0 0 0 
+load = 318
+bdwt = 1218
+bottleneck: 1.99107
+Runtime: 1459.44
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 74000 -d 630000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 815000 -d 611000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 206000 -d 653000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 862000 -d 50000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 603000 -d 230000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 448000 -d 631000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 330000 -d 870000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 268000 -d 422000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 933000 -d 189000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 667000 -d 833000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 234000 -d 648000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 681000 -d 463000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 131000 -d 203000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 302000 -d 548000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 809000 -d 848000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 1000000 -d 620000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 890000 -d 884000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 889000 -d 768000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 590000 -d 584000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 223000 -d 1000000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 982000 -d 853000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 713000 -d 897000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 1000000 -d 482000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 1000000 -d 50000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -78,32 +78,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 48 32 16 0 181 0 163 125 57 307 0 0 0 0 0 256 
-  outmap: 0 64 64 64 112 96 80 64 112 96 111 102 81 139 0 0 0 0 0 0 
-load = 307
-bdwt = 1185
-bottleneck: 0.214286
-Runtime: 1565.12
+  inmap:  0 0 0 0 27 28 31 21 114 159 156 93 167 165 0 0 0 0 0 256 
+  outmap: 0 64 64 64 91 92 86 85 111 124 109 99 113 115 0 0 0 0 0 0 
+load = 256
+bdwt = 1217
+bottleneck: 3.90625
+Runtime: 1520.74
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 961000 -d 241000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 152000 -d 304000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 539000 -d 222000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 343000 -d 583000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 562000 -d 838000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 50000 -d 649000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 921000 -d 815000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 917000 -d 282000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 716000 -d 806000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 50000 -d 201000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 542000 -d 361000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 197000 -d 555000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 912000 -d 849000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 173000 -d 50000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 580000 -d 951000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 1000000 -d 641000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 641000 -d 50000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 1000000 -d 550000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 922000 -d 977000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 950000 -d 805000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 737000 -d 1000000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 914000 -d 1000000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 962000 -d 915000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 977000 -d 963000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 1000000 -d 979000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 825000 -d 597000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 647000 -d 999000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -130,32 +130,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 6 7 8 35 73 16 47 15 1 188 278 4 266 0 0 0 0 0 256 
-  outmap: 0 64 64 64 99 90 80 89 111 97 112 129 68 133 0 0 0 0 0 0 
-load = 278
-bdwt = 1200
-bottleneck: 1.73333
-Runtime: 1508.85
+  inmap:  0 1 1 2 36 22 22 16 48 85 182 176 200 178 0 0 0 0 0 256 
+  outmap: 0 64 64 64 100 86 86 80 111 110 120 113 114 113 0 0 0 0 0 0 
+load = 256
+bdwt = 1225
+bottleneck: 3.90625
+Runtime: 1509.3
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 558000 -d 478000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 960000 -d 860000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 272000 -d 80000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 486000 -d 212000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 927000 -d 733000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 224000 -d 890000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 156000 -d 129000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 432000 -d 957000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 175000 -d 175000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 414000 -d 333000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 352000 -d 960000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 994000 -d 658000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 374000 -d 737000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 899000 -d 50000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 1000000 -d 885000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 893000 -d 211000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 963000 -d 908000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 412000 -d 50000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 1000000 -d 839000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 1000000 -d 916000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 891000 -d 1000000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 833000 -d 1000000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 732000 -d 894000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 554000 -d 965000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 460000 -d 877000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -182,32 +182,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 22 18 38 18 15 108 234 64 163 272 0 0 0 0 0 256 
-  outmap: 0 64 64 64 86 82 102 82 111 105 122 88 111 127 0 0 0 0 0 0 
-load = 272
-bdwt = 1208
-bottleneck: 1.09009
-Runtime: 1557.28
+  inmap:  0 0 0 0 24 17 109 18 38 24 256 208 2 257 0 0 0 0 0 256 
+  outmap: 0 64 64 64 88 81 104 82 112 102 132 123 66 127 0 0 0 0 0 0 
+load = 257
+bdwt = 1209
+bottleneck: 2.62992
+Runtime: 1523.11
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 654000 -d 523000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 113000 -d 814000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 460000 -d 71000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 921000 -d 926000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 494000 -d 50000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 447000 -d 143000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 389000 -d 117000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 354000 -d 912000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 984000 -d 862000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 178000 -d 523000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 125000 -d 246000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 181000 -d 416000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 630000 -d 125000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 121000 -d 205000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 334000 -d 1000000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 1000000 -d 975000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 673000 -d 791000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 1000000 -d 461000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 914000 -d 339000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 410000 -d 1000000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 865000 -d 819000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 970000 -d 987000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 985000 -d 478000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 929000 -d 851000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 978000 -d 50000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -234,32 +234,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 35 17 122 2 16 0 2 67 466 243 0 0 0 0 0 256 
-  outmap: 0 64 64 64 99 81 110 66 112 96 66 98 172 134 0 0 0 0 0 0 
-load = 466
-bdwt = 1226
-bottleneck: 0.366279
-Runtime: 1558.85
+  inmap:  0 5 5 6 81 11 119 25 191 194 181 73 66 3 0 0 0 0 0 256 
+  outmap: 0 64 64 64 112 75 101 78 130 137 133 99 92 67 0 0 0 0 0 0 
+load = 256
+bdwt = 1216
+bottleneck: 3.90625
+Runtime: 1479.01
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 942000 -d 327000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 904000 -d 960000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 170000 -d 50000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 207000 -d 667000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 173000 -d 667000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 229000 -d 563000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 808000 -d 973000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 95000 -d 907000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 882000 -d 781000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 199000 -d 717000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 860000 -d 434000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 670000 -d 50000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 735000 -d 416000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 63000 -d 617000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 593000 -d 50000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 1000000 -d 995000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 786000 -d 848000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 944000 -d 1000000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 1000000 -d 549000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 947000 -d 399000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 569000 -d 1000000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 1000000 -d 842000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 551000 -d 1000000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 888000 -d 1000000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 812000 -d 1000000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 995000 -d 510000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 817000 -d 391000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -286,32 +286,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 48 49 6 15 16 0 78 140 118 502 0 0 0 0 0 256 
-  outmap: 0 64 64 64 112 93 70 79 112 96 102 100 91 181 0 0 0 0 0 0 
-load = 502
-bdwt = 1228
-bottleneck: 0.679558
-Runtime: 1551.73
+  inmap:  0 4 5 6 1 46 48 41 115 109 136 130 246 87 0 0 0 0 0 256 
+  outmap: 0 64 64 64 65 99 101 94 112 118 107 107 142 93 0 0 0 0 0 0 
+load = 256
+bdwt = 1230
+bottleneck: 3.60714
+Runtime: 1474.44
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 123000 -d 749000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 50000 -d 152000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 426000 -d 62000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 521000 -d 840000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 418000 -d 184000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 375000 -d 447000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 187000 -d 303000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 577000 -d 50000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 946000 -d 77000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 282000 -d 478000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 817000 -d 279000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 491000 -d 804000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 932000 -d 550000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 549000 -d 635000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 1000000 -d 360000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 805000 -d 1000000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 1000000 -d 874000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 999000 -d 968000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 823000 -d 1000000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 1000000 -d 50000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 961000 -d 1000000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 793000 -d 1000000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 404000 -d 455000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 644000 -d 888000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 949000 -d 655000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 881000 -d 651000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 1000000 -d 974000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -338,32 +338,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 46 9 28 13 15 1 43 96 518 208 0 0 0 0 0 256 
-  outmap: 0 64 64 64 110 73 92 77 111 97 85 100 184 112 0 0 0 0 0 0 
-load = 518
-bdwt = 1233
-bottleneck: 0.125
-Runtime: 1552.53
+  inmap:  0 0 0 0 41 24 15 16 16 0 212 208 208 208 0 0 0 0 0 256 
+  outmap: 0 64 64 64 105 88 79 80 112 96 114 114 112 112 0 0 0 0 0 0 
+load = 256
+bdwt = 1204
+bottleneck: 2.2807
+Runtime: 1512.64
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 403000 -d 624000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 631000 -d 413000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 279000 -d 574000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 864000 -d 817000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 89000 -d 998000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 313000 -d 131000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 104000 -d 50000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 862000 -d 608000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 908000 -d 348000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 643000 -d 269000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 902000 -d 807000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 638000 -d 189000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 50000 -d 649000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 50000 -d 448000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 759000 -d 1000000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 703000 -d 961000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 1000000 -d 661000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 891000 -d 1000000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 460000 -d 210000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 882000 -d 731000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 1000000 -d 964000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 993000 -d 50000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 879000 -d 1000000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 260000 -d 718000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -390,32 +390,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 48 3 32 13 15 1 208 198 236 195 0 0 0 0 0 256 
-  outmap: 0 64 64 64 112 67 96 77 111 97 112 111 118 112 0 0 0 0 0 0 
+  inmap:  0 0 0 0 36 183 10 18 15 1 166 209 89 221 0 0 0 0 0 256 
+  outmap: 0 64 64 64 100 107 74 82 111 97 110 118 97 116 0 0 0 0 0 0 
 load = 256
-bdwt = 1205
-bottleneck: 0.3125
-Runtime: 1568.05
+bdwt = 1204
+bottleneck: 2.8972
+Runtime: 1485.57
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 259000 -d 86000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 962000 -d 231000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 750000 -d 777000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 507000 -d 941000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 509000 -d 51000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 663000 -d 847000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 326000 -d 50000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 832000 -d 232000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 805000 -d 83000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 163000 -d 230000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 811000 -d 485000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 50000 -d 533000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 560000 -d 992000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 718000 -d 653000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 1000000 -d 667000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 1000000 -d 604000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 995000 -d 50000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 460000 -d 639000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 929000 -d 1000000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 310000 -d 694000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 653000 -d 1000000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 1000000 -d 791000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 977000 -d 1000000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 778000 -d 1000000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 529000 -d 399000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -442,12 +442,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 48 32 16 0 4 12 54 390 208 208 0 0 0 0 0 256 
-  outmap: 0 64 64 64 112 96 80 64 100 108 98 154 112 112 0 0 0 0 0 0 
-load = 390
-bdwt = 1228
-bottleneck: 0.0324675
-Runtime: 1555.2
+  inmap:  0 6 6 8 75 43 104 101 1 119 80 131 152 153 0 0 0 0 0 256 
+  outmap: 0 64 64 64 99 87 106 101 97 126 95 107 111 114 0 0 0 0 0 0 
+load = 256
+bdwt = 1235
+bottleneck: 3.90625
+Runtime: 1509.99
+ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 966000 -d 1000000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 372000 -d 1000000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 473000 -d 1000000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 1000000 -d 554000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 555000 -d 893000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 1000000 -d 581000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 1000000 -d 932000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 746000 -d 50000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 1000000 -d 818000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 1000000 -d 706000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 1000000 -d 860000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 681000 -d 1000000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -474,32 +494,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 48 8 14 26 3 13 17 19 456 387 0 0 0 0 0 256 
-  outmap: 0 64 64 64 112 72 78 90 99 109 81 72 169 173 0 0 0 0 0 0 
-load = 456
-bdwt = 1247
-bottleneck: 0.106509
-Runtime: 1548.8
+  inmap:  0 4 4 5 199 17 20 12 37 72 139 183 247 1 0 0 0 0 0 256 
+  outmap: 0 64 64 64 112 81 84 76 111 108 114 116 137 65 0 0 0 0 0 0 
+load = 256
+bdwt = 1196
+bottleneck: 2.86607
+Runtime: 1513.93
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 124000 -d 689000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 597000 -d 872000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 289000 -d 905000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 407000 -d 459000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 218000 -d 50000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 225000 -d 666000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 565000 -d 79000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 965000 -d 126000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 473000 -d 256000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 353000 -d 50000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 730000 -d 290000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 431000 -d 183000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 603000 -d 534000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 50000 -d 902000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 1000000 -d 50000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 1000000 -d 369000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 400000 -d 873000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 1000000 -d 327000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 970000 -d 847000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 321000 -d 1000000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 1000000 -d 797000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 1000000 -d 812000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 765000 -d 1000000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 788000 -d 1000000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 1000000 -d 922000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 855000 -d 972000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 496000 -d 1000000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -526,32 +546,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 43 16 24 13 192 0 164 160 156 152 0 0 0 0 0 256 
-  outmap: 0 64 64 64 107 80 88 77 112 96 112 108 104 100 0 0 0 0 0 0 
+  inmap:  0 0 0 0 143 15 16 159 26 1 122 145 164 151 0 0 0 0 0 256 
+  outmap: 0 64 64 64 105 79 80 105 111 97 106 111 108 104 0 0 0 0 0 0 
 load = 256
-bdwt = 1176
-bottleneck: 0.0446429
-Runtime: 1515.84
+bdwt = 1198
+bottleneck: 3.90625
+Runtime: 1515.2
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 748000 -d 309000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 512000 -d 703000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 365000 -d 163000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 323000 -d 616000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 723000 -d 602000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 893000 -d 895000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 100000 -d 50000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 651000 -d 163000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 391000 -d 700000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 50000 -d 582000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 386000 -d 887000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 763000 -d 975000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 459000 -d 650000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 952000 -d 941000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 1000000 -d 968000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 918000 -d 886000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 504000 -d 917000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 799000 -d 50000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 813000 -d 1000000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 486000 -d 856000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 1000000 -d 594000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 1000000 -d 986000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 420000 -d 770000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 867000 -d 815000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 1000000 -d 884000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 1000000 -d 967000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 1000000 -d 916000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 875000 -d 1000000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -578,32 +598,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 2 30 42 22 12 108 209 238 59 220 0 0 0 0 0 256 
-  outmap: 0 64 64 64 66 94 106 86 108 105 115 126 83 117 0 0 0 0 0 0 
+  inmap:  0 12 14 13 90 43 88 133 1 118 89 83 176 123 0 0 0 0 0 256 
+  outmap: 0 64 64 64 105 89 97 102 97 129 97 97 127 107 0 0 0 0 0 0 
 load = 256
-bdwt = 1198
-bottleneck: 1.73913
-Runtime: 1562.15
+bdwt = 1239
+bottleneck: 3.90625
+Runtime: 1517.73
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 691000 -d 925000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 791000 -d 227000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 905000 -d 760000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 494000 -d 307000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 855000 -d 605000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 895000 -d 50000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 521000 -d 392000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 684000 -d 923000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 790000 -d 311000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 666000 -d 229000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 241000 -d 318000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 200000 -d 726000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 805000 -d 951000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 758000 -d 167000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 644000 -d 602000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 898000 -d 1000000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 548000 -d 1000000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 893000 -d 1000000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 870000 -d 1000000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 1000000 -d 838000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 1000000 -d 780000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 1000000 -d 832000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 525000 -d 50000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 1000000 -d 585000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 941000 -d 502000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 830000 -d 405000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 916000 -d 859000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -630,32 +650,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 1 48 3 31 14 15 13 65 324 56 407 0 0 0 0 0 256 
-  outmap: 0 64 64 64 112 67 95 78 111 98 89 139 76 176 0 0 0 0 0 0 
-load = 407
-bdwt = 1233
-bottleneck: 0.453237
-Runtime: 1542.33
+  inmap:  0 0 0 0 178 2 74 16 26 72 168 96 152 145 0 0 0 0 0 256 
+  outmap: 0 64 64 64 111 66 100 80 111 106 114 98 107 100 0 0 0 0 0 0 
+load = 256
+bdwt = 1185
+bottleneck: 3.31532
+Runtime: 1463.05
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 127000 -d 318000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 439000 -d 849000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 954000 -d 852000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 374000 -d 91000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 587000 -d 928000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 959000 -d 349000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 503000 -d 50000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 822000 -d 708000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 745000 -d 165000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 785000 -d 350000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 341000 -d 248000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 419000 -d 763000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 63000 -d 485000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 671000 -d 334000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 1000000 -d 620000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 1000000 -d 337000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 796000 -d 1000000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 368000 -d 976000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 1000000 -d 50000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 660000 -d 873000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 620000 -d 302000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 504000 -d 1000000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 384000 -d 1000000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 1000000 -d 510000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -682,32 +702,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 48 4 12 32 15 1 56 388 208 208 0 0 0 0 0 256 
-  outmap: 0 64 64 64 112 68 76 96 111 97 98 154 112 112 0 0 0 0 0 0 
-load = 388
-bdwt = 1228
-bottleneck: 0.0714286
-Runtime: 1575.18
+  inmap:  0 0 0 0 101 2 29 19 37 206 72 119 174 198 0 0 0 0 0 256 
+  outmap: 0 64 64 64 112 66 93 83 111 119 100 105 115 117 0 0 0 0 0 0 
+load = 256
+bdwt = 1213
+bottleneck: 3.41176
+Runtime: 1487.47
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 759000 -d 831000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 139000 -d 973000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 757000 -d 579000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 737000 -d 145000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 209000 -d 256000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 560000 -d 688000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 756000 -d 50000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 693000 -d 50000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 774000 -d 867000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 486000 -d 331000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 877000 -d 873000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 338000 -d 875000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 50000 -d 201000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 681000 -d 638000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 921000 -d 973000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 738000 -d 358000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 981000 -d 1000000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 1000000 -d 823000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 590000 -d 1000000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 1000000 -d 50000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 1000000 -d 845000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 913000 -d 893000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 661000 -d 954000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 406000 -d 1000000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 971000 -d 826000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 829000 -d 708000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 810000 -d 879000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -734,32 +754,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 48 0 17 43 11 5 208 195 209 208 0 0 0 0 0 256 
-  outmap: 0 64 64 64 112 64 81 96 107 101 112 110 113 112 0 0 0 0 0 0 
+  inmap:  0 1 1 1 24 25 25 22 37 60 210 136 191 233 0 0 0 0 0 256 
+  outmap: 0 64 64 64 88 89 89 86 111 107 119 104 115 122 0 0 0 0 0 0 
 load = 256
-bdwt = 1200
-bottleneck: 0.3125
-Runtime: 1511.35
+bdwt = 1222
+bottleneck: 3.13115
+Runtime: 1471.66
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 742000 -d 188000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 80000 -d 841000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 259000 -d 440000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 498000 -d 906000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 826000 -d 592000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 993000 -d 721000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 252000 -d 50000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 533000 -d 123000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 139000 -d 968000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 387000 -d 428000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 67000 -d 424000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 50000 -d 389000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 856000 -d 995000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 332000 -d 947000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 382000 -d 1000000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 538000 -d 824000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 952000 -d 790000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 609000 -d 1000000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 689000 -d 50000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 997000 -d 713000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 915000 -d 843000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 775000 -d 880000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 1000000 -d 706000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 1000000 -d 862000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -786,32 +806,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 5 8 7 13 41 52 21 15 1 208 183 273 115 0 0 0 0 0 256 
-  outmap: 0 64 64 64 77 105 88 85 111 97 112 109 128 94 0 0 0 0 0 0 
-load = 273
-bdwt = 1198
-bottleneck: 1.25
-Runtime: 1516.34
+  inmap:  0 0 0 0 42 17 163 7 141 84 161 1 161 170 0 0 0 0 0 256 
+  outmap: 0 64 64 64 106 81 105 71 118 111 120 65 116 118 0 0 0 0 0 0 
+load = 256
+bdwt = 1203
+bottleneck: 3.66667
+Runtime: 1526.61
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 813000 -d 150000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 871000 -d 452000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 645000 -d 242000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 570000 -d 899000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 376000 -d 923000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 712000 -d 50000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 437000 -d 988000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 110000 -d 65000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 699000 -d 599000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 725000 -d 600000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 460000 -d 546000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 953000 -d 630000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 747000 -d 836000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 418000 -d 680000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 962000 -d 809000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 786000 -d 991000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 1000000 -d 965000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 274000 -d 671000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 942000 -d 1000000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 385000 -d 878000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 712000 -d 883000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 1000000 -d 359000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 720000 -d 751000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 1000000 -d 50000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 1000000 -d 756000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -838,12 +858,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 48 32 16 0 3 192 143 148 197 152 0 0 0 0 0 256 
-  outmap: 0 64 64 64 112 96 80 64 99 112 109 107 116 100 0 0 0 0 0 0 
+  inmap:  0 31 33 33 4 35 32 25 16 0 211 150 216 174 0 0 0 0 0 256 
+  outmap: 0 64 64 64 68 99 96 89 112 96 119 114 118 113 0 0 0 0 0 0 
 load = 256
-bdwt = 1187
-bottleneck: 0.0357143
-Runtime: 1522.44
+bdwt = 1216
+bottleneck: 3.90625
+Runtime: 1482.03
+ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 699000 -d 843000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 886000 -d 886000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 833000 -d 496000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 877000 -d 826000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 353000 -d 50000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 743000 -d 1000000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 1000000 -d 509000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 948000 -d 410000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 1000000 -d 485000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 785000 -d 1000000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 1000000 -d 732000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -870,32 +910,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 18 5 31 106 16 0 5 62 544 184 0 0 0 0 0 256 
-  outmap: 0 64 64 64 82 69 95 108 112 96 69 97 190 117 0 0 0 0 0 0 
-load = 544
-bdwt = 1227
-bottleneck: 0.268421
-Runtime: 1568.97
+  inmap:  0 0 0 0 33 174 20 10 15 1 142 153 201 198 0 0 0 0 0 256 
+  outmap: 0 64 64 64 97 107 84 74 111 97 108 106 114 113 0 0 0 0 0 0 
+load = 256
+bdwt = 1203
+bottleneck: 2.8972
+Runtime: 1491.87
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 599000 -d 479000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 876000 -d 259000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 930000 -d 479000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 578000 -d 795000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 67000 -d 50000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 799000 -d 205000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 665000 -d 103000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 188000 -d 823000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 73000 -d 598000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 136000 -d 526000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 811000 -d 246000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 939000 -d 60000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 501000 -d 982000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 51000 -d 568000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 884000 -d 929000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 987000 -d 1000000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 697000 -d 454000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 816000 -d 50000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 926000 -d 964000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 310000 -d 642000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 934000 -d 1000000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 942000 -d 512000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 1000000 -d 496000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 1000000 -d 950000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 890000 -d 1000000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 917000 -d 730000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 1000000 -d 962000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -922,32 +962,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 45 11 8 32 8 134 186 172 311 24 0 0 0 0 0 256 
-  outmap: 0 64 64 64 109 75 72 96 104 109 112 109 139 70 0 0 0 0 0 0 
-load = 311
-bdwt = 1187
-bottleneck: 0.715596
-Runtime: 1519.93
+  inmap:  0 1 1 1 57 69 105 132 75 167 160 38 2 172 0 0 0 0 0 256 
+  outmap: 0 64 64 64 94 93 109 101 120 128 133 84 66 116 0 0 0 0 0 0 
+load = 256
+bdwt = 1236
+bottleneck: 3.90625
+Runtime: 1458.24
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 612000 -d 50000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 968000 -d 158000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 187000 -d 790000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 88000 -d 929000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 141000 -d 140000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 444000 -d 391000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 665000 -d 96000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 524000 -d 77000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 806000 -d 317000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 974000 -d 458000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 78000 -d 114000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 292000 -d 521000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 575000 -d 795000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 492000 -d 735000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 580000 -d 1000000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 546000 -d 1000000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 614000 -d 817000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 491000 -d 1000000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 801000 -d 635000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 1000000 -d 498000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 961000 -d 437000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 1000000 -d 967000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 1000000 -d 296000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 968000 -d 50000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -974,32 +1014,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 33 8 90 37 104 0 49 288 288 52 0 0 0 0 0 256 
-  outmap: 0 64 64 64 97 72 98 90 112 96 91 138 143 76 0 0 0 0 0 0 
-load = 288
-bdwt = 1205
-bottleneck: 1.28261
-Runtime: 1516.3
+  inmap:  0 0 2 2 186 30 126 14 1 29 88 169 215 90 0 0 0 0 0 256 
+  outmap: 0 64 64 64 108 85 101 78 97 114 101 113 123 96 0 0 0 0 0 0 
+load = 256
+bdwt = 1208
+bottleneck: 3.41667
+Runtime: 1510.58
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 838000 -d 103000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 887000 -d 143000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 126000 -d 915000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 862000 -d 741000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 892000 -d 50000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 354000 -d 895000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 540000 -d 120000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 259000 -d 468000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 381000 -d 443000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 218000 -d 427000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 725000 -d 91000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 544000 -d 783000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 177000 -d 965000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 267000 -d 662000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 827000 -d 442000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 1000000 -d 672000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 960000 -d 1000000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 1000000 -d 303000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 754000 -d 1000000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 369000 -d 1000000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 699000 -d 995000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 479000 -d 1000000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 1000000 -d 50000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 734000 -d 745000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 1000000 -d 866000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -1026,32 +1066,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 48 32 14 2 15 1 220 237 340 45 0 0 0 0 0 256 
-  outmap: 0 64 64 64 112 96 78 66 111 97 115 121 142 80 0 0 0 0 0 0 
-load = 340
-bdwt = 1210
-bottleneck: 0.408696
-Runtime: 1517.32
+  inmap:  0 0 0 0 127 99 26 120 84 147 118 102 130 2 0 0 0 0 0 256 
+  outmap: 0 64 64 64 115 92 79 102 120 125 113 106 101 66 0 0 0 0 0 0 
+load = 256
+bdwt = 1211
+bottleneck: 3.90625
+Runtime: 1510.41
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 148000 -d 50000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 740000 -d 416000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 663000 -d 824000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 385000 -d 514000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 480000 -d 776000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 266000 -d 264000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 774000 -d 647000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 695000 -d 136000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 454000 -d 930000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 755000 -d 386000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 812000 -d 856000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 50000 -d 794000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 758000 -d 187000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 601000 -d 845000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 779000 -d 50000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 531000 -d 1000000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 1000000 -d 955000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 532000 -d 896000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 977000 -d 1000000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 646000 -d 790000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 938000 -d 404000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 1000000 -d 968000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 1000000 -d 641000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 775000 -d 1000000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 1000000 -d 850000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 1000000 -d 779000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 865000 -d 1000000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -1078,32 +1118,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 1 1 2 48 2 29 17 16 12 65 312 372 110 0 0 0 0 0 256 
-  outmap: 0 64 64 64 112 66 93 81 112 99 90 138 163 97 0 0 0 0 0 0 
-load = 372
-bdwt = 1243
-bottleneck: 0.2
-Runtime: 1533.24
+  inmap:  0 3 3 4 61 24 81 124 128 0 145 104 148 144 0 0 0 0 0 256 
+  outmap: 0 64 64 64 103 77 94 101 127 96 114 101 112 108 0 0 0 0 0 0 
+load = 256
+bdwt = 1225
+bottleneck: 3.90625
+Runtime: 1523.22
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 856000 -d 50000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 50000 -d 512000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 799000 -d 117000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 668000 -d 477000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 303000 -d 863000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 819000 -d 279000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 866000 -d 50000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 968000 -d 123000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 566000 -d 354000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 481000 -d 949000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 753000 -d 530000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 50000 -d 50000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 828000 -d 731000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 106000 -d 459000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 1000000 -d 977000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 899000 -d 1000000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 406000 -d 653000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 929000 -d 983000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 873000 -d 1000000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 959000 -d 317000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 854000 -d 844000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 596000 -d 851000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 903000 -d 1000000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 1000000 -d 50000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 953000 -d 967000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 1000000 -d 735000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -1130,32 +1170,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 12 14 15 41 19 42 20 113 72 127 6 177 317 0 0 0 0 0 256 
-  outmap: 0 64 64 64 105 83 97 73 127 106 114 70 123 141 0 0 0 0 0 0 
-load = 317
-bdwt = 1231
-bottleneck: 1.02837
-Runtime: 1550.01
+  inmap:  0 0 1 1 2 75 57 55 138 97 127 122 158 139 0 0 0 0 0 256 
+  outmap: 0 64 64 64 66 99 101 97 115 119 115 108 111 105 0 0 0 0 0 0 
+load = 256
+bdwt = 1228
+bottleneck: 3.90625
+Runtime: 1509.16
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 145000 -d 465000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 531000 -d 383000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 664000 -d 473000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 189000 -d 191000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 471000 -d 843000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 259000 -d 125000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 541000 -d 121000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 855000 -d 681000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 994000 -d 622000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 389000 -d 165000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 188000 -d 102000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 504000 -d 202000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 127000 -d 50000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 251000 -d 290000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 886000 -d 996000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 802000 -d 944000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 729000 -d 815000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 1000000 -d 687000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 1000000 -d 50000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 680000 -d 885000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 975000 -d 1000000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 878000 -d 658000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 598000 -d 817000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 1000000 -d 903000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 845000 -d 940000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 806000 -d 838000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 1000000 -d 962000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -1182,32 +1222,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 20 31 34 11 16 0 234 418 110 85 0 0 0 0 0 256 
-  outmap: 0 64 64 64 84 95 98 75 112 96 118 160 96 89 0 0 0 0 0 0 
-load = 418
-bdwt = 1215
-bottleneck: 0.46875
-Runtime: 1565.51
+  inmap:  0 0 0 0 2 182 43 38 25 114 124 145 179 111 0 0 0 0 0 256 
+  outmap: 0 64 64 64 66 113 98 91 112 119 106 107 118 97 0 0 0 0 0 0 
+load = 256
+bdwt = 1219
+bottleneck: 3.90625
+Runtime: 1508.04
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 534000 -d 137000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 390000 -d 539000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 109000 -d 133000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 785000 -d 63000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 50000 -d 924000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 606000 -d 215000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 601000 -d 640000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 493000 -d 926000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 540000 -d 123000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 640000 -d 607000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 288000 -d 50000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 115000 -d 405000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 386000 -d 750000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 446000 -d 168000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 1000000 -d 653000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 804000 -d 705000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 971000 -d 431000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 1000000 -d 742000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 301000 -d 1000000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 945000 -d 50000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 514000 -d 1000000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 851000 -d 425000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 804000 -d 1000000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 1000000 -d 738000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 1000000 -d 875000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 758000 -d 1000000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -1234,32 +1274,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 152 166 16 0 16 0 0 302 28 276 0 0 0 0 0 256 
-  outmap: 0 64 64 64 112 108 80 64 112 96 64 148 83 153 0 0 0 0 0 0 
-load = 302
-bdwt = 1212
-bottleneck: 1.08784
-Runtime: 1510.12
+  inmap:  0 0 0 0 43 17 26 10 148 24 154 163 189 171 0 0 0 0 0 256 
+  outmap: 0 64 64 64 107 81 90 74 112 100 113 109 115 108 0 0 0 0 0 0 
+load = 256
+bdwt = 1201
+bottleneck: 3.80357
+Runtime: 1477.92
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 739000 -d 452000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 422000 -d 159000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 455000 -d 50000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 906000 -d 946000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 358000 -d 244000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 151000 -d 374000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 134000 -d 828000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 517000 -d 529000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 775000 -d 537000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 637000 -d 912000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 911000 -d 213000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 286000 -d 50000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 161000 -d 849000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 705000 -d 87000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 1000000 -d 916000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 1000000 -d 862000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 636000 -d 734000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 761000 -d 50000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 1000000 -d 783000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 787000 -d 819000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 1000000 -d 791000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 892000 -d 237000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 426000 -d 1000000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 969000 -d 1000000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 990000 -d 1000000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 711000 -d 1000000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 509000 -d 859000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -1286,32 +1326,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 5 16 46 29 12 204 65 218 204 159 0 0 0 0 0 256 
-  outmap: 0 64 64 64 69 80 110 93 108 115 91 126 123 107 0 0 0 0 0 0 
+  inmap:  0 0 0 0 45 21 3 196 115 0 124 156 134 140 0 0 0 0 0 256 
+  outmap: 0 64 64 64 109 85 67 109 112 96 110 111 102 97 0 0 0 0 0 0 
 load = 256
-bdwt = 1214
-bottleneck: 1.10435
-Runtime: 1536.9
+bdwt = 1190
+bottleneck: 2.97248
+Runtime: 1468.26
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 657000 -d 692000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 777000 -d 249000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 664000 -d 292000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 603000 -d 740000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 388000 -d 793000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 806000 -d 50000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 470000 -d 87000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 434000 -d 987000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 353000 -d 665000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 270000 -d 271000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 127000 -d 688000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 377000 -d 239000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 538000 -d 497000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 651000 -d 935000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 1000000 -d 938000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 1000000 -d 901000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 927000 -d 1000000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 943000 -d 935000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 900000 -d 734000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 654000 -d 838000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 939000 -d 1000000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 630000 -d 50000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 324000 -d 1000000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 422000 -d 688000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 1000000 -d 278000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 1000000 -d 746000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -1338,32 +1378,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 135 4 29 17 10 6 208 152 173 194 0 0 0 0 0 256 
-  outmap: 0 64 64 64 110 68 93 81 106 102 112 105 106 109 0 0 0 0 0 0 
+  inmap:  0 1 1 1 49 128 137 87 95 171 2 160 41 114 0 0 0 0 0 256 
+  outmap: 0 64 64 64 93 108 108 100 123 127 66 128 85 113 0 0 0 0 0 0 
 load = 256
-bdwt = 1184
-bottleneck: 0.294643
-Runtime: 1506.65
+bdwt = 1243
+bottleneck: 3.90625
+Runtime: 1474.65
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 322000 -d 741000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 233000 -d 983000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 730000 -d 124000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 781000 -d 259000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 713000 -d 991000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 50000 -d 239000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 220000 -d 50000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 464000 -d 253000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 895000 -d 912000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 605000 -d 59000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 571000 -d 690000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 50000 -d 569000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 601000 -d 702000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 360000 -d 714000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 807000 -d 693000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 996000 -d 1000000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 761000 -d 1000000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 538000 -d 827000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 783000 -d 532000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 859000 -d 923000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 752000 -d 714000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 930000 -d 589000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 625000 -d 995000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 1000000 -d 50000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 880000 -d 280000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -1390,32 +1430,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 48 26 19 3 0 192 13 3 316 336 0 0 0 0 0 256 
-  outmap: 0 64 64 64 112 90 83 67 96 112 77 67 148 168 0 0 0 0 0 0 
-load = 336
-bdwt = 1212
-bottleneck: 0.0803571
-Runtime: 1523.1
+  inmap:  0 5 5 7 2 67 82 64 111 170 162 65 83 162 0 0 0 0 0 256 
+  outmap: 0 64 64 64 66 98 115 97 123 129 126 91 94 110 0 0 0 0 0 0 
+load = 256
+bdwt = 1241
+bottleneck: 3.90625
+Runtime: 1483.57
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 702000 -d 477000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 50000 -d 153000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 405000 -d 50000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 809000 -d 993000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 555000 -d 634000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 283000 -d 688000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 751000 -d 820000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 638000 -d 596000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 808000 -d 486000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 740000 -d 926000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 50000 -d 992000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 756000 -d 119000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 576000 -d 50000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 961000 -d 718000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 679000 -d 1000000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 919000 -d 909000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 477000 -d 402000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 762000 -d 1000000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 685000 -d 50000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 954000 -d 557000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 1000000 -d 969000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 799000 -d 698000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 984000 -d 1000000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 647000 -d 425000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 578000 -d 556000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -1442,32 +1482,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 208 20 2 26 15 1 29 268 219 168 0 0 0 0 0 256 
-  outmap: 0 64 64 64 112 84 66 90 111 97 82 134 132 112 0 0 0 0 0 0 
-load = 268
-bdwt = 1212
-bottleneck: 0.0892857
-Runtime: 1501
+  inmap:  0 4 5 6 47 2 38 35 157 169 156 160 99 85 0 0 0 0 0 256 
+  outmap: 0 64 64 64 111 66 91 88 129 121 122 116 98 85 0 0 0 0 0 0 
+load = 256
+bdwt = 1219
+bottleneck: 3.90625
+Runtime: 1474.49
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 647000 -d 915000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 815000 -d 50000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 662000 -d 265000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 107000 -d 108000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 847000 -d 616000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 50000 -d 782000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 729000 -d 939000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 814000 -d 490000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 248000 -d 602000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 900000 -d 873000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 600000 -d 997000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 464000 -d 205000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 480000 -d 945000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 896000 -d 953000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 1000000 -d 541000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 655000 -d 971000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 496000 -d 698000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 700000 -d 831000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 490000 -d 891000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 1000000 -d 922000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 703000 -d 50000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 1000000 -d 561000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 821000 -d 1000000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 580000 -d 1000000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 1000000 -d 680000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -1494,32 +1534,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 3 32 17 197 16 0 9 295 208 184 0 0 0 0 0 256 
-  outmap: 0 64 64 64 67 96 81 112 112 96 73 139 132 117 0 0 0 0 0 0 
-load = 295
-bdwt = 1217
-bottleneck: 0.625
-Runtime: 1543.81
+  inmap:  0 0 0 0 34 36 2 184 15 1 132 190 179 170 0 0 0 0 0 256 
+  outmap: 0 64 64 64 98 91 66 108 111 97 109 112 110 105 0 0 0 0 0 0 
+load = 256
+bdwt = 1199
+bottleneck: 2.82407
+Runtime: 1490.14
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 973000 -d 735000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 678000 -d 1000000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 906000 -d 502000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 645000 -d 94000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 331000 -d 694000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 307000 -d 50000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 365000 -d 871000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 951000 -d 668000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 70000 -d 737000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 323000 -d 422000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 887000 -d 492000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 474000 -d 75000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 143000 -d 688000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 444000 -d 399000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 1000000 -d 853000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 1000000 -d 859000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 1000000 -d 906000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 868000 -d 802000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 936000 -d 749000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 531000 -d 1000000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 1000000 -d 50000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 305000 -d 765000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 764000 -d 823000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 775000 -d 833000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 938000 -d 1000000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 647000 -d 988000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 1000000 -d 730000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -1546,32 +1586,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 197 17 10 89 16 12 63 78 151 318 0 0 0 0 0 256 
-  outmap: 0 64 64 64 110 81 74 100 112 99 96 91 108 144 0 0 0 0 0 0 
-load = 318
-bdwt = 1207
-bottleneck: 0.5
-Runtime: 1516.94
+  inmap:  0 0 0 0 127 25 76 16 1 122 130 156 160 158 0 0 0 0 0 256 
+  outmap: 0 64 64 64 102 89 98 80 97 129 112 111 104 113 0 0 0 0 0 0 
+load = 256
+bdwt = 1227
+bottleneck: 3.90625
+Runtime: 1509.36
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 159000 -d 556000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 708000 -d 80000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 411000 -d 834000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 50000 -d 62000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 981000 -d 50000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 144000 -d 983000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 428000 -d 481000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 486000 -d 804000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 193000 -d 673000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 694000 -d 287000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 298000 -d 101000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 382000 -d 768000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 423000 -d 525000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 353000 -d 334000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 593000 -d 1000000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 996000 -d 1000000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 346000 -d 806000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 796000 -d 677000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 561000 -d 741000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 989000 -d 1000000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 1000000 -d 891000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 734000 -d 357000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 1000000 -d 50000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 916000 -d 896000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 1000000 -d 826000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 934000 -d 996000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 1000000 -d 971000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -1598,32 +1638,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 48 24 11 13 48 97 102 330 290 1 0 0 0 0 0 256 
-  outmap: 0 64 64 64 112 88 75 77 111 113 99 150 138 65 0 0 0 0 0 0 
-load = 330
-bdwt = 1220
-bottleneck: 1.89855
-Runtime: 1523.31
+  inmap:  0 2 3 3 2 66 69 82 116 121 96 161 125 132 0 0 0 0 0 256 
+  outmap: 0 64 64 64 66 101 102 104 117 123 100 114 111 104 0 0 0 0 0 0 
+load = 256
+bdwt = 1234
+bottleneck: 3.90625
+Runtime: 1504.07
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 920000 -d 50000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 149000 -d 666000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 272000 -d 450000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 959000 -d 318000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 627000 -d 207000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 545000 -d 969000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 972000 -d 995000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 813000 -d 252000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 992000 -d 617000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 401000 -d 314000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 921000 -d 846000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 350000 -d 305000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 308000 -d 981000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 262000 -d 825000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 1000000 -d 828000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 1000000 -d 706000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 801000 -d 870000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 926000 -d 765000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 580000 -d 880000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 904000 -d 50000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 814000 -d 1000000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 967000 -d 972000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 667000 -d 750000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 958000 -d 1000000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 1000000 -d 735000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 785000 -d 1000000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 890000 -d 778000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -1650,32 +1690,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 30 9 174 18 16 0 0 127 46 541 0 0 0 0 0 256 
-  outmap: 0 64 64 64 94 73 109 82 112 96 64 111 90 194 0 0 0 0 0 0 
-load = 541
-bdwt = 1217
-bottleneck: 0.309278
-Runtime: 1560.16
+  inmap:  0 0 1 1 83 36 17 19 59 49 172 182 177 164 0 0 0 0 0 256 
+  outmap: 0 64 64 64 103 91 81 83 111 105 109 119 114 108 0 0 0 0 0 0 
+load = 256
+bdwt = 1216
+bottleneck: 3.90625
+Runtime: 1461.2
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 60000 -d 365000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 351000 -d 760000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 908000 -d 881000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 281000 -d 736000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 50000 -d 233000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 434000 -d 862000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 312000 -d 119000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 61000 -d 257000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 215000 -d 867000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 906000 -d 543000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 163000 -d 50000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 454000 -d 50000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 501000 -d 944000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 792000 -d 948000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 489000 -d 880000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 1000000 -d 665000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 791000 -d 319000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 1000000 -d 50000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 637000 -d 1000000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 678000 -d 953000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 1000000 -d 995000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 1000000 -d 879000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 799000 -d 531000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 1000000 -d 739000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 862000 -d 1000000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 609000 -d 1000000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -1702,32 +1742,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 5 4 5 4 108 134 15 255 182 34 27 64 161 0 0 0 0 0 256 
-  outmap: 0 64 64 64 68 117 118 79 156 134 89 82 101 118 0 0 0 0 0 0 
+  inmap:  0 0 0 0 86 59 32 148 84 109 106 132 94 101 0 0 0 0 0 256 
+  outmap: 0 64 64 64 97 92 85 105 114 112 105 109 98 98 0 0 0 0 0 0 
 load = 256
-bdwt = 1254
-bottleneck: 1.55769
-Runtime: 1532.25
+bdwt = 1207
+bottleneck: 3.90625
+Runtime: 1519.49
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 334000 -d 352000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 758000 -d 292000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 518000 -d 194000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 691000 -d 590000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 599000 -d 764000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 604000 -d 50000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 866000 -d 815000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 911000 -d 747000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 283000 -d 59000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 243000 -d 508000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 221000 -d 341000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 667000 -d 88000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 940000 -d 63000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 597000 -d 160000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 1000000 -d 722000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 538000 -d 743000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 1000000 -d 935000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 1000000 -d 50000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 793000 -d 1000000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 891000 -d 1000000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 1000000 -d 943000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 621000 -d 1000000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 864000 -d 643000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 918000 -d 1000000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 882000 -d 1000000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 887000 -d 1000000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 1000000 -d 837000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -1754,32 +1794,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 6 38 10 84 15 1 165 236 197 194 0 0 0 0 0 256 
-  outmap: 0 64 64 64 70 102 74 108 111 97 109 118 112 109 0 0 0 0 0 0 
+  inmap:  0 0 0 1 44 24 2 26 53 108 214 209 204 76 0 0 0 0 0 256 
+  outmap: 0 64 64 64 108 88 66 90 118 117 120 118 117 83 0 0 0 0 0 0 
 load = 256
-bdwt = 1202
-bottleneck: 0.983051
-Runtime: 1561.76
+bdwt = 1217
+bottleneck: 3.40833
+Runtime: 1502.49
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 982000 -d 945000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 308000 -d 353000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 497000 -d 835000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 610000 -d 50000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 754000 -d 859000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 619000 -d 50000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 431000 -d 618000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 905000 -d 50000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 169000 -d 365000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 943000 -d 410000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 356000 -d 300000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 497000 -d 525000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 116000 -d 795000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 935000 -d 384000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 1000000 -d 351000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 651000 -d 360000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 928000 -d 713000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 407000 -d 1000000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 909000 -d 1000000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 1000000 -d 834000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 865000 -d 50000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 993000 -d 835000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 898000 -d 1000000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 409000 -d 1000000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -1806,32 +1846,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 45 31 5 15 15 1 117 83 113 544 0 0 0 0 0 256 
-  outmap: 0 64 64 64 109 95 69 79 111 97 101 87 95 190 0 0 0 0 0 0 
-load = 544
-bdwt = 1225
-bottleneck: 0.210526
-Runtime: 1553.59
+  inmap:  0 12 14 16 48 24 1 23 169 172 38 157 136 160 0 0 0 0 0 256 
+  outmap: 0 64 64 64 112 88 65 87 126 127 82 118 115 114 0 0 0 0 0 0 
+load = 256
+bdwt = 1226
+bottleneck: 3.90625
+Runtime: 1471.24
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 50000 -d 263000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 51000 -d 490000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 395000 -d 764000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 50000 -d 855000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 316000 -d 714000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 920000 -d 571000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 814000 -d 675000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 260000 -d 50000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 923000 -d 729000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 372000 -d 890000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 366000 -d 710000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 950000 -d 901000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 888000 -d 344000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 243000 -d 726000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 697000 -d 922000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 284000 -d 853000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 920000 -d 390000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 800000 -d 856000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 953000 -d 50000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 1000000 -d 994000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 1000000 -d 975000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 522000 -d 235000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 927000 -d 1000000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 978000 -d 836000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -1858,32 +1898,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 5 5 6 101 30 13 5 70 108 157 83 232 129 0 0 0 0 0 256 
-  outmap: 0 64 64 64 112 94 77 69 111 113 115 100 120 97 0 0 0 0 0 0 
+  inmap:  0 1 1 1 39 38 53 55 74 170 1 164 185 189 0 0 0 0 0 256 
+  outmap: 0 64 64 64 94 91 95 86 117 124 65 119 122 122 0 0 0 0 0 0 
 load = 256
-bdwt = 1200
-bottleneck: 3.21739
-Runtime: 1551.58
+bdwt = 1227
+bottleneck: 3.90625
+Runtime: 1463.4
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 491000 -d 441000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 101000 -d 127000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 961000 -d 688000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 616000 -d 967000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 489000 -d 915000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 370000 -d 523000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 689000 -d 594000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 330000 -d 71000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 599000 -d 50000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 360000 -d 273000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 760000 -d 422000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 370000 -d 528000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 985000 -d 359000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 571000 -d 864000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 951000 -d 1000000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 511000 -d 1000000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 1000000 -d 565000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 949000 -d 912000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 866000 -d 656000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 939000 -d 1000000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 947000 -d 798000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 1000000 -d 580000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 671000 -d 454000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 614000 -d 1000000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 1000000 -d 50000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 963000 -d 1000000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 562000 -d 1000000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -1910,32 +1950,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 172 19 13 18 53 0 168 198 237 66 0 0 0 0 0 256 
-  outmap: 0 64 64 64 112 83 77 82 118 96 117 117 123 83 0 0 0 0 0 0 
+  inmap:  0 0 0 0 50 2 49 106 117 134 108 94 152 163 0 0 0 0 0 256 
+  outmap: 0 64 64 64 103 66 93 108 129 117 105 100 109 109 0 0 0 0 0 0 
 load = 256
-bdwt = 1200
-bottleneck: 1.90598
-Runtime: 1556.49
+bdwt = 1231
+bottleneck: 3.90625
+Runtime: 1525.72
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 680000 -d 158000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 206000 -d 659000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 975000 -d 628000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 817000 -d 333000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 889000 -d 859000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 227000 -d 744000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 891000 -d 718000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 962000 -d 282000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 863000 -d 784000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 938000 -d 523000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 287000 -d 50000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 245000 -d 682000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 223000 -d 541000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 452000 -d 656000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 520000 -d 907000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 881000 -d 1000000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 1000000 -d 942000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 358000 -d 1000000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 1000000 -d 985000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 1000000 -d 752000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 1000000 -d 50000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 950000 -d 572000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 910000 -d 1000000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 947000 -d 743000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 1000000 -d 755000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 1000000 -d 637000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 641000 -d 562000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 676000 -d 875000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -1962,32 +2002,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 141 16 33 17 16 0 157 185 190 194 0 0 0 0 0 256 
-  outmap: 0 64 64 64 105 80 97 81 112 96 110 111 112 109 0 0 0 0 0 0 
+  inmap:  0 0 0 0 45 32 105 70 153 97 47 91 158 155 0 0 0 0 0 256 
+  outmap: 0 64 64 64 100 85 100 92 123 109 82 97 115 114 0 0 0 0 0 0 
 load = 256
-bdwt = 1205
-bottleneck: 0.09375
-Runtime: 1575.51
+bdwt = 1209
+bottleneck: 3.90625
+Runtime: 1462.35
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 857000 -d 601000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 892000 -d 632000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 893000 -d 497000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 514000 -d 505000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 50000 -d 862000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 50000 -d 50000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 468000 -d 140000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 904000 -d 841000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 281000 -d 423000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 431000 -d 851000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 661000 -d 804000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 264000 -d 512000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 903000 -d 776000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 278000 -d 651000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 910000 -d 946000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 797000 -d 1000000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 751000 -d 1000000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 319000 -d 50000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 705000 -d 923000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 751000 -d 1000000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 1000000 -d 883000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 631000 -d 948000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 662000 -d 710000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 1000000 -d 350000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 1000000 -d 533000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 1000000 -d 938000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -2014,32 +2054,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 41 25 8 77 16 0 208 188 173 208 0 0 0 0 0 256 
-  outmap: 0 64 64 64 105 89 72 94 112 96 112 110 106 112 0 0 0 0 0 0 
+  inmap:  0 8 11 12 130 122 2 60 127 136 109 47 64 124 0 0 0 0 0 256 
+  outmap: 0 64 64 64 112 102 66 95 118 122 118 93 92 98 0 0 0 0 0 0 
 load = 256
-bdwt = 1200
-bottleneck: 0.319149
-Runtime: 1587.08
+bdwt = 1208
+bottleneck: 3.90625
+Runtime: 1513.48
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 912000 -d 719000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 950000 -d 160000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 354000 -d 756000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 744000 -d 377000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 840000 -d 673000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 791000 -d 160000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 842000 -d 919000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 492000 -d 708000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 50000 -d 50000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 591000 -d 330000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 601000 -d 157000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 971000 -d 656000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 799000 -d 944000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 828000 -d 193000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 912000 -d 916000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 651000 -d 1000000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 352000 -d 861000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 395000 -d 761000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 754000 -d 908000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 805000 -d 50000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 945000 -d 522000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 1000000 -d 856000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 798000 -d 452000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 1000000 -d 503000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -2066,32 +2106,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 19 18 22 90 4 12 110 96 278 77 39 43 160 0 0 0 0 0 256 
-  outmap: 0 64 64 64 112 68 76 112 114 152 107 94 89 108 0 0 0 0 0 0 
-load = 278
-bdwt = 1224
-bottleneck: 2.78289
-Runtime: 1563.3
+  inmap:  0 0 0 1 111 63 116 34 72 158 149 120 1 142 0 0 0 0 0 256 
+  outmap: 0 64 64 64 117 87 109 78 117 123 115 113 65 107 0 0 0 0 0 0 
+load = 256
+bdwt = 1223
+bottleneck: 3.90625
+Runtime: 1460.05
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 953000 -d 473000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 621000 -d 903000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 413000 -d 445000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 943000 -d 113000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 787000 -d 747000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 572000 -d 879000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 263000 -d 50000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 705000 -d 58000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 786000 -d 433000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 733000 -d 277000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 423000 -d 810000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 300000 -d 217000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 459000 -d 140000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 968000 -d 136000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 1000000 -d 894000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 423000 -d 810000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 544000 -d 957000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 734000 -d 1000000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 928000 -d 1000000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 1000000 -d 637000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 1000000 -d 364000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 755000 -d 493000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 785000 -d 1000000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 1000000 -d 936000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 890000 -d 782000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 989000 -d 50000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -2118,32 +2158,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 121 32 16 0 59 156 5 279 144 139 0 0 0 0 0 256 
-  outmap: 0 64 64 64 112 96 80 64 111 109 69 144 123 107 0 0 0 0 0 0 
-load = 279
-bdwt = 1207
-bottleneck: 0.203125
-Runtime: 1565.43
+  inmap:  0 0 0 1 57 18 31 38 138 135 214 130 181 2 0 0 0 0 0 256 
+  outmap: 0 64 64 64 112 82 86 80 117 124 120 105 117 66 0 0 0 0 0 0 
+load = 256
+bdwt = 1201
+bottleneck: 3.53333
+Runtime: 1512.5
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 689000 -d 715000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 418000 -d 788000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 50000 -d 460000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 529000 -d 116000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 183000 -d 106000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 84000 -d 194000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 720000 -d 893000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 728000 -d 186000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 534000 -d 917000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 92000 -d 730000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 66000 -d 644000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 122000 -d 50000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 629000 -d 431000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 551000 -d 987000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 870000 -d 50000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 468000 -d 934000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 571000 -d 833000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 1000000 -d 939000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 1000000 -d 458000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 879000 -d 1000000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 976000 -d 1000000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 696000 -d 896000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 424000 -d 999000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 1000000 -d 642000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 1000000 -d 893000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -2170,32 +2210,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 32 11 20 44 170 121 120 184 84 138 0 0 0 0 0 256 
-  outmap: 0 64 64 64 96 75 84 97 112 107 112 116 92 97 0 0 0 0 0 0 
+  inmap:  0 0 0 1 130 30 23 2 26 60 116 174 233 175 0 0 0 0 0 256 
+  outmap: 0 64 64 64 110 94 87 66 111 107 102 120 127 110 0 0 0 0 0 0 
 load = 256
-bdwt = 1180
-bottleneck: 1.25893
-Runtime: 1545.43
+bdwt = 1226
+bottleneck: 3.70588
+Runtime: 1502.22
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 629000 -d 690000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 244000 -d 382000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 99000 -d 50000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 248000 -d 741000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 870000 -d 227000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 782000 -d 852000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 503000 -d 228000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 349000 -d 877000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 193000 -d 411000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 141000 -d 978000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 160000 -d 818000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 919000 -d 618000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 922000 -d 619000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 880000 -d 213000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 1000000 -d 756000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 998000 -d 831000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 777000 -d 818000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 572000 -d 1000000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 421000 -d 695000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 1000000 -d 914000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 768000 -d 50000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 961000 -d 570000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 378000 -d 458000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 1000000 -d 731000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 1000000 -d 950000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -2222,32 +2262,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 3 208 18 28 15 1 113 133 151 267 0 0 0 0 0 256 
-  outmap: 0 64 64 64 67 112 82 92 111 97 106 104 100 130 0 0 0 0 0 0 
-load = 267
-bdwt = 1193
-bottleneck: 0.169643
-Runtime: 1563.33
+  inmap:  0 1 1 1 24 27 45 21 68 194 84 166 158 174 0 0 0 0 0 256 
+  outmap: 0 64 64 64 88 91 91 85 109 118 101 112 115 118 0 0 0 0 0 0 
+load = 256
+bdwt = 1220
+bottleneck: 3.81356
+Runtime: 1485.88
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 354000 -d 630000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 50000 -d 281000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 760000 -d 662000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 139000 -d 530000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 697000 -d 976000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 329000 -d 50000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 50000 -d 571000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 385000 -d 310000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 249000 -d 879000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 568000 -d 424000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 620000 -d 534000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 221000 -d 600000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 899000 -d 659000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 502000 -d 641000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 1000000 -d 891000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 359000 -d 932000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 1000000 -d 820000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 1000000 -d 50000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 1000000 -d 954000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 675000 -d 681000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 1000000 -d 797000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 857000 -d 1000000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 1000000 -d 770000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 641000 -d 970000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 450000 -d 1000000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 1000000 -d 973000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 1000000 -d 973000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 931000 -d 926000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -2274,32 +2314,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 26 208 18 6 14 2 110 189 204 160 0 0 0 0 0 256 
-  outmap: 0 64 64 64 90 112 82 70 110 98 105 115 115 104 0 0 0 0 0 0 
+  inmap:  0 0 1 1 39 88 75 91 94 108 118 143 76 151 0 0 0 0 0 256 
+  outmap: 0 64 64 64 83 103 99 104 117 117 113 112 91 110 0 0 0 0 0 0 
 load = 256
-bdwt = 1193
-bottleneck: 0.214286
-Runtime: 1543.34
+bdwt = 1241
+bottleneck: 3.90625
+Runtime: 1507.32
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 790000 -d 736000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 597000 -d 84000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 483000 -d 831000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 487000 -d 503000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 648000 -d 600000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 302000 -d 371000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 50000 -d 756000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 344000 -d 371000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 536000 -d 777000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 123000 -d 436000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 146000 -d 50000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 729000 -d 494000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 470000 -d 540000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 822000 -d 608000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 907000 -d 1000000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 592000 -d 795000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 695000 -d 788000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 628000 -d 50000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 337000 -d 820000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 732000 -d 401000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 776000 -d 627000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 988000 -d 1000000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 1000000 -d 505000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -2326,32 +2366,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 14 11 43 28 15 1 8 353 244 257 0 0 0 0 0 256 
-  outmap: 0 64 64 64 78 75 107 92 111 97 72 148 133 125 0 0 0 0 0 0 
-load = 353
-bdwt = 1230
-bottleneck: 0.9375
-Runtime: 1571.43
+  inmap:  0 1 1 1 19 25 167 31 101 0 200 181 164 85 0 0 0 0 0 256 
+  outmap: 0 64 64 64 83 89 109 84 124 96 124 117 121 93 0 0 0 0 0 0 
+load = 256
+bdwt = 1232
+bottleneck: 3.90625
+Runtime: 1474.07
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 178000 -d 548000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 50000 -d 50000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 80000 -d 590000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 159000 -d 50000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 60000 -d 472000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 811000 -d 109000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 671000 -d 80000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 730000 -d 489000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 520000 -d 318000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 705000 -d 694000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 576000 -d 963000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 487000 -d 75000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 757000 -d 997000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 406000 -d 591000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 1000000 -d 420000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 1000000 -d 549000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 871000 -d 1000000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 382000 -d 914000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 690000 -d 989000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 1000000 -d 562000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 899000 -d 887000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 448000 -d 1000000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 1000000 -d 50000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 950000 -d 894000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 780000 -d 841000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -2378,32 +2418,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 48 7 28 13 2 14 57 57 61 698 0 0 0 0 0 256 
-  outmap: 0 64 64 64 112 71 92 77 98 110 90 90 83 226 0 0 0 0 0 0 
-load = 698
-bdwt = 1241
-bottleneck: 0.455752
-Runtime: 1508.81
+  inmap:  0 0 1 1 47 46 61 26 48 121 208 197 1 199 0 0 0 0 0 256 
+  outmap: 0 64 64 64 102 88 96 79 111 121 123 117 65 118 0 0 0 0 0 0 
+load = 256
+bdwt = 1212
+bottleneck: 3.88618
+Runtime: 1458.39
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 103000 -d 913000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 339000 -d 449000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 433000 -d 755000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 908000 -d 248000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 112000 -d 165000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 371000 -d 955000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 768000 -d 150000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 402000 -d 472000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 689000 -d 653000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 365000 -d 50000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 498000 -d 944000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 229000 -d 615000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 228000 -d 453000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 436000 -d 535000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 898000 -d 1000000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 1000000 -d 574000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 920000 -d 786000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 899000 -d 1000000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 590000 -d 456000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 979000 -d 818000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 1000000 -d 873000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 920000 -d 1000000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 947000 -d 705000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 962000 -d 656000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 731000 -d 1000000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 478000 -d 1000000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 1000000 -d 50000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -2430,32 +2470,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 32 33 34 59 13 27 45 402 94 5 30 54 155 0 0 0 0 0 256 
-  outmap: 0 64 64 64 112 77 80 87 190 119 69 85 98 130 0 0 0 0 0 0 
-load = 402
-bdwt = 1239
-bottleneck: 1.46875
-Runtime: 1556.78
+  inmap:  0 0 0 0 44 17 23 12 16 0 215 138 262 235 0 0 0 0 0 256 
+  outmap: 0 64 64 64 108 81 87 76 112 96 119 102 126 119 0 0 0 0 0 0 
+load = 262
+bdwt = 1218
+bottleneck: 1.93651
+Runtime: 1504.65
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 389000 -d 362000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 914000 -d 769000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 886000 -d 796000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 94000 -d 203000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 841000 -d 733000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 568000 -d 991000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 544000 -d 113000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 386000 -d 84000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 864000 -d 722000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 772000 -d 935000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 754000 -d 220000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 837000 -d 50000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 211000 -d 91000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 440000 -d 135000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 926000 -d 1000000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 1000000 -d 836000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 749000 -d 630000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 1000000 -d 971000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 1000000 -d 934000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 991000 -d 1000000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 750000 -d 811000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 872000 -d 866000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 978000 -d 1000000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 1000000 -d 50000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 787000 -d 1000000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 993000 -d 472000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 244000 -d 766000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -2482,32 +2522,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 8 9 9 6 49 31 19 93 228 150 244 54 56 0 0 0 0 0 256 
-  outmap: 0 64 64 64 70 104 95 83 112 127 123 135 89 82 0 0 0 0 0 0 
+  inmap:  0 13 14 16 68 38 28 47 185 175 63 3 167 150 0 0 0 0 0 256 
+  outmap: 0 64 64 64 110 91 81 78 135 130 100 67 125 114 0 0 0 0 0 0 
 load = 256
-bdwt = 1212
-bottleneck: 1.77778
-Runtime: 1506.18
+bdwt = 1223
+bottleneck: 3.90625
+Runtime: 1501.38
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 713000 -d 126000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 482000 -d 391000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 934000 -d 728000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 337000 -d 510000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 433000 -d 484000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 165000 -d 50000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 233000 -d 761000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 557000 -d 306000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 355000 -d 969000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 493000 -d 937000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 922000 -d 877000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 376000 -d 305000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 240000 -d 493000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 244000 -d 124000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 822000 -d 888000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 1000000 -d 997000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 731000 -d 579000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 701000 -d 926000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 914000 -d 1000000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 1000000 -d 571000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 869000 -d 1000000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 453000 -d 1000000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 1000000 -d 964000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 1000000 -d 359000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 467000 -d 50000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 972000 -d 1000000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
@@ -2534,32 +2574,32 @@ ssh 192.168.7.38 "sudo wondershaper -c -a eth0"
 failblkidx = 0
 fail_node_id: 0
 Stripe 0
-  inmap:  0 0 0 0 43 19 24 10 2 14 262 326 202 53 0 0 0 0 0 256 
-  outmap: 0 64 64 64 107 83 88 74 98 110 124 141 117 77 0 0 0 0 0 0 
-load = 326
-bdwt = 1211
-bottleneck: 0.903226
-Runtime: 1514.43
+  inmap:  0 0 0 0 122 81 54 72 159 72 107 139 1 144 0 0 0 0 0 256 
+  outmap: 0 64 64 64 115 94 89 85 127 108 104 116 65 112 0 0 0 0 0 0 
+load = 256
+bdwt = 1207
+bottleneck: 3.90625
+Runtime: 1513.26
 ssh 192.168.7.30 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.44 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.43 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.42 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.41 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
 ssh 192.168.7.40 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
-ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 482000 -d 91000"
-ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 244000 -d 539000"
-ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 795000 -d 710000"
-ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 81000 -d 161000"
-ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 255000 -d 59000"
-ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 558000 -d 517000"
-ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 247000 -d 160000"
-ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 272000 -d 901000"
-ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 545000 -d 421000"
-ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 945000 -d 50000"
-ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 296000 -d 197000"
-ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 112000 -d 511000"
-ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 460000 -d 506000"
-ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 185000 -d 298000"
+ssh 192.168.7.39 "sudo wondershaper -a eth0 -u 1000000 -d 919000"
+ssh 192.168.7.14 "sudo wondershaper -a eth0 -u 588000 -d 1000000"
+ssh 192.168.7.23 "sudo wondershaper -a eth0 -u 383000 -d 1000000"
+ssh 192.168.7.27 "sudo wondershaper -a eth0 -u 1000000 -d 1000000"
+ssh 192.168.7.28 "sudo wondershaper -a eth0 -u 887000 -d 730000"
+ssh 192.168.7.29 "sudo wondershaper -a eth0 -u 694000 -d 1000000"
+ssh 192.168.7.31 "sudo wondershaper -a eth0 -u 1000000 -d 945000"
+ssh 192.168.7.32 "sudo wondershaper -a eth0 -u 940000 -d 669000"
+ssh 192.168.7.33 "sudo wondershaper -a eth0 -u 917000 -d 679000"
+ssh 192.168.7.34 "sudo wondershaper -a eth0 -u 736000 -d 1000000"
+ssh 192.168.7.35 "sudo wondershaper -a eth0 -u 1000000 -d 432000"
+ssh 192.168.7.36 "sudo wondershaper -a eth0 -u 904000 -d 649000"
+ssh 192.168.7.37 "sudo wondershaper -a eth0 -u 659000 -d 891000"
+ssh 192.168.7.38 "sudo wondershaper -a eth0 -u 1000000 -d 50000"
 SingleCoordinator::repair time = 0
 ssh 192.168.7.30 "sudo wondershaper -c -a eth0"
 ssh 192.168.7.44 "sudo wondershaper -c -a eth0"
